@@ -14,6 +14,9 @@ import java.io.*;
  * How to make frames:
  * https://docs.oracle.com/javase/tutorial/uiswing/components/frame.html#windowevents
  *
+ * How to make Menus
+ * https://docs.oracle.com/javase/tutorial/uiswing/components/menu.html
+ *
  * JList and File class, Loop to find all files and fill them into the list
  * https://docs.oracle.com/javase/tutorial/uiswing/components/list.html
  * http://docs.oracle.com/javase/7/docs/api/java/io/File.html
@@ -34,46 +37,18 @@ public class WindowFrame  {
         JFrame MainWindow = new JFrame("File Explorer"); //Creating and naming the window
         MainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Closing the window = exits the program
 
-
-        String[] columnNames = {"File name",
-                "Time created",
-                "Size",
-                "Random1",
-                "Random2"};
-
-        Object[][] data = {
-                {"Folder1", "09.10.2015",
-                        "1 KB", "", ""},
-                {"Folder2", "10.10.2015",
-                        "1 KB", "", ""}
-
-
-        };
-
-        //JTable table = new JTable(data, columnNames);
-
-        JList list = new JList(columnNames);
-        list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-        list.setLayoutOrientation(JList.HORIZONTAL_WRAP);
-        list.setVisibleRowCount(-1);
-
-
-        JScrollPane scrollPane = new JScrollPane(list);
-        scrollPane.setPreferredSize(new Dimension(250,80));
+        final JFileChooser filechooser = new JFileChooser(); //Creating new filechooser
 
 
 
-
-
-        MainWindow.setLayout(new BorderLayout());
-        //MainWindow.add(table.getTableHeader(), BorderLayout.PAGE_START);
-        MainWindow.add(list, BorderLayout.CENTER);
-
-        Image icon = Toolkit.getDefaultToolkit().getImage("FolderIcon.png"); //Import icon
+        Image icon = Toolkit.getDefaultToolkit().getImage("FolderIcon.png"); //Import icon for the window
         MainWindow.setIconImage(icon);
 
+
+        MainWindow.add(filechooser);
+
         MainWindow.pack();
-        MainWindow.setPreferredSize(new Dimension(1000, 750)); //SIze of the window
+        MainWindow.setSize(1000, 750); //SIze of the window
         MainWindow.setVisible(true); //Display the window
 
     }
