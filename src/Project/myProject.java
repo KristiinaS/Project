@@ -1,15 +1,14 @@
 package Project;
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.TilePane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
@@ -52,7 +51,13 @@ public class myProject extends Application {
         MorseButton = new Button("Morse Code");
         ReturnButton = new Button("Return to menu");
 
+        // making the buttons same size
+        AtbashButton.setMaxWidth(width/3);
+        CaesarButton.setMaxWidth(width/3);
+        VigenereButton.setMaxWidth(width/3);
+        MorseButton.setMaxWidth(width/3);
 
+        mainvbox.setAlignment(Pos.CENTER); // aligning main view text to center of the window
         mainvbox.getChildren().addAll(welcomeText,AtbashButton,CaesarButton,VigenereButton,MorseButton);
 
         // Button which takes back to the main view
@@ -77,14 +82,34 @@ public class myProject extends Application {
             Button EstonianABC = new Button("Use Estonian alphabet");
             Button insert = new Button("Try the cipher!");
             Button clear = new Button("Clear fields");
+            Button info = new Button("Info");
 
-            Atbashvbox.getChildren().addAll(ABCinput,WordInput,NewWord,EstonianABC,insert,clear,ReturnButton);
+            Atbashvbox.getChildren().addAll(ABCinput,WordInput,NewWord,EstonianABC,insert,clear,info,ReturnButton);
 
             // button that resets the fields to their original state
             clear.setOnAction(event1 -> {
                 ABCinput.setText("Insert the alphabet here");
                 WordInput.setText("Insert the word you want to cipher here");
                 NewWord.setText("Your answer will be displayed here");
+            });
+
+            info.setOnAction(event3 ->{
+                Pane HelpPane = new Pane();
+                Scene HelpScene = new Scene(HelpPane,width, height/2);
+                Stage HelpStage = new Stage();
+                HelpStage.setTitle("Info");
+                HelpStage.setScene(HelpScene);
+                HelpStage.getIcons().add(new Image("file:questionmark.png"));
+                HelpStage.show();
+
+                Label HelpText = new Label();
+                HelpText.setText("Atbash cipher works by substituting the first letter of an alphabet for the last letter, the second letter for the second to last and so on, effectively reversing the alphabet.");
+                HelpText.setPrefWidth(width);
+                HelpText.setWrapText(true);
+                
+
+                HelpPane.getChildren().addAll(HelpText);
+
             });
 
             EstonianABC.setOnAction(event2 -> {
