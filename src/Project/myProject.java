@@ -189,9 +189,10 @@ public class myProject extends Application {
             cWarning.setFont(Font.font(null, FontPosture.ITALIC,14));
             cWarning.setTextFill(Color.RED);
 
+
             String cABCinputText = "Insert the alphabet here";
-            String cStepInputText = "Insert the shift number (use minus (-) for left shift)";
-            String cWordInputText = "Insert the word you want to encrypt here";
+            String cStepInputText = "-2";//Insert the shift number (use minus (-) for left shift)
+            String cWordInputText = "ab"; //Insert the word you want to encrypt here
             String cNewWordText = "Your answer will be displayed here";
             TextField cABCinput = new TextField(cABCinputText);
             TextField cStepInput = new TextField(cStepInputText);
@@ -278,11 +279,12 @@ public class myProject extends Application {
                             if (Math.abs(step) > cLettersInABC){ //reduces the length of step (step <= ABC)
                                 step =  step % cLettersInABC;
                             }
-                            cABCindex2 = cLettersInABC + step;
+                            cABCindex2 = cLettersInABC + cABCindex2;
                         }
                         cOutputList.add(i,cABClist.get(cABCindex2));
                     }
                 }
+
                 String cOutput = String.join("",cOutputList);
                 cNewWord.setText(cOutput);
             });
