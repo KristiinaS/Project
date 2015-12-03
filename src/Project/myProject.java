@@ -79,13 +79,16 @@ public class myProject extends Application {
             mainStage.setTitle("Atbash Cipher");
             mainStage.show();
 
-            Label warning = new Label("At the moment only one word can be encrypted at a time!");
-            warning.setFont(Font.font(null, FontPosture.ITALIC,14));
-            warning.setTextFill(Color.RED);
+            Label aWarning = new Label("At the moment all letters are converted to lower case!");
+            aWarning.setFont(Font.font(null, FontPosture.ITALIC,14));
+            aWarning.setTextFill(Color.RED);
 
-            TextField aABCinput = new TextField("Insert the alphabet here");
-            TextField aWordInput = new TextField("Insert the word you want to cipher here");
-            TextField aNewWord = new TextField("Your answer will be displayed here");
+            String aABCinputText = "Insert the alphabet here";
+            String aWordInputText = "Insert the word you want to cipher here";
+            String aNewWordText = "Your answer will be displayed here";
+            TextField aABCinput = new TextField(aABCinputText);
+            TextField aWordInput = new TextField(aWordInputText);
+            TextField aNewWord = new TextField(aNewWordText);
 
             Button EstonianABC = new Button("Use Estonian alphabet");
             Button insert = new Button("Try the cipher!");
@@ -99,13 +102,13 @@ public class myProject extends Application {
             info.setMaxWidth(width/3);
 
 
-            Atbashvbox.getChildren().addAll(warning,aABCinput,aWordInput,aNewWord,EstonianABC,insert,clear,info,ReturnButton);
+            Atbashvbox.getChildren().addAll(aWarning,aABCinput,aWordInput,aNewWord,EstonianABC,insert,clear,info,ReturnButton);
 
             // button that resets the fields to their original state
             clear.setOnAction(event1 -> {
-                aABCinput.setText("Insert the alphabet here");
-                aWordInput.setText("Insert the word you want to cipher here");
-                aNewWord.setText("Your answer will be displayed here");
+                aABCinput.setText(aABCinputText);
+                aWordInput.setText(aWordInputText);
+                aNewWord.setText(aNewWordText);
             });
 
             // button with information about Atbash
@@ -157,9 +160,15 @@ public class myProject extends Application {
                 List<String> aOutputList = new ArrayList<String>(); // Empty list for the new word
 
                 for (int i = 0; i < aLettersInWord; i++) {
-                    int aABCindex = aABClist.indexOf(aWordList.get(i)); //find index of the letter (from word) in ABC
-                    int aABCindex2 = (LettersInABC - 1) - aABCindex; //find index of the encrypted letter
-                    aOutputList.add(i, aABClist.get(aABCindex2)); //encrypted letter to output list
+                    String aLetter = aWordList.get(i); // find the letter from word
+                    if (aABClist.contains(aLetter)== false) { //adding characters that are not in ABC
+                        aOutputList.add(i, aLetter);
+                    }
+                    else {
+                        int aABCindex = aABClist.indexOf(aLetter); //find index of the letter (from word) in ABC
+                        int aABCindex2 = (LettersInABC - 1) - aABCindex; //find index of the encrypted letter
+                        aOutputList.add(i, aABClist.get(aABCindex2)); //encrypted letter to output list
+                    }
                 }
 
                 String aOutput = String.join("",aOutputList);
@@ -176,10 +185,18 @@ public class myProject extends Application {
             mainStage.setTitle("Caesar Shift Cipher");
             mainStage.show();
 
-            TextField cABCinput = new TextField("Insert the alphabet here");
-            TextField cStepInput = new TextField("Insert the shift number (use minus (-) for left shift)");
-            TextField cWordInput = new TextField("Insert the word you want to cipher here");
-            TextField cNewWord = new TextField("Your answer will be displayed here");
+            Label cWarning = new Label("At the moment all letters are converted to lower case!");
+            cWarning.setFont(Font.font(null, FontPosture.ITALIC,14));
+            cWarning.setTextFill(Color.RED);
+
+            String cABCinputText = "Insert the alphabet here";
+            String cStepInputText = "Insert the shift number (use minus (-) for left shift)";
+            String cWordInputText = "Insert the word you want to cipher here";
+            String cNewWordText = "Your answer will be displayed here";
+            TextField cABCinput = new TextField(cABCinputText);
+            TextField cStepInput = new TextField(cStepInputText);
+            TextField cWordInput = new TextField(cWordInputText);
+            TextField cNewWord = new TextField(cNewWordText);
 
             Button EstonianABC = new Button("Use Estonian alphabet");
             Button insert = new Button("Try the cipher!");
@@ -190,15 +207,15 @@ public class myProject extends Application {
             EstonianABC.setMaxWidth(width/3);
             insert.setMaxWidth(width/3);
             clear.setMaxWidth(width/3);
-            info.setMaxWidth(width/3);
+            info.setMaxWidth(width / 3);
 
-            Caesarvbox.getChildren().addAll(cABCinput,cStepInput,cWordInput,cNewWord,EstonianABC,insert,clear,info,ReturnButton);
+            Caesarvbox.getChildren().addAll(cWarning,cABCinput, cStepInput, cWordInput, cNewWord, EstonianABC, insert, clear, info, ReturnButton);
 
             clear.setOnAction(event1 -> {
-                cABCinput.setText("Insert the alphabet here");
-                cStepInput.setText("Insert the shift number (use minus (-) for left shift)");
-                cWordInput.setText("Insert the word you want to cipher here");
-                cNewWord.setText("Your answer will be displayed here");
+                cABCinput.setText(cABCinputText);
+                cStepInput.setText(cStepInputText);
+                cWordInput.setText(cWordInputText);
+                cNewWord.setText(cNewWordText);
             });
 
             EstonianABC.setOnAction(event1 -> {
@@ -215,7 +232,6 @@ public class myProject extends Application {
 
                 String cWord = cWordInput.getText();
                 cWord = cWord.toLowerCase();
-                System.out.println(cWord);
                 List<String> cWordList = new ArrayList<String>(Arrays.asList(cWord.split(""))); // word string to list
                 int cLettersInWord = cWordList.size();
 
@@ -223,22 +239,25 @@ public class myProject extends Application {
                 List<String> cOutputList = new ArrayList<String>(); //list for new (output) word
 
                 for (int i = 0; i < cLettersInWord; i++) {
-                    int cABCindex = cABClist.indexOf(cWordList.get(i)); //find the index of letter (from word) in ABC
-                    int cABCindex2 = (cABCindex + step) % cLettersInABC;
-
-                    if (cABCindex2 < 0) {
-                        if (Math.abs(step) > cLettersInABC){ //if abs value of neg. step is bigger than ABC size
-                            step =  step % cLettersInABC;
-                        }
-                        cABCindex2 = cLettersInABC + step;
+                    String cLetter = cWordList.get(i);
+                    if (cABClist.contains(cLetter)== false) { //adding characters that are not in ABC
+                        cOutputList.add(i, cLetter);
                     }
-                    cOutputList.add(i,cABClist.get(cABCindex2));
-                }
+                    else {
+                        int cABCindex = cABClist.indexOf(cLetter); //find the index of letter (from word) in ABC
+                        int cABCindex2 = (cABCindex + step) % cLettersInABC;
 
+                        if (cABCindex2 < 0) {
+                            if (Math.abs(step) > cLettersInABC){ //reduces the length of step (step <= ABC)
+                                step =  step % cLettersInABC;
+                            }
+                            cABCindex2 = cLettersInABC + step;
+                        }
+                        cOutputList.add(i,cABClist.get(cABCindex2));
+                    }
+                }
                 String cOutput = String.join("",cOutputList);
                 cNewWord.setText(cOutput);
-
-
             });
         });
 
