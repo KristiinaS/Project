@@ -191,8 +191,8 @@ public class myProject extends Application {
 
 
             String cABCinputText = "Insert the alphabet here";
-            String cStepInputText = "-2";//Insert the shift number (use minus (-) for left shift)
-            String cWordInputText = "ab"; //Insert the word you want to encrypt here
+            String cStepInputText = "Insert the shift number (use minus (-) for left shift)";
+            String cWordInputText = "Insert the word you want to encrypt here";
             String cNewWordText = "Your answer will be displayed here";
             TextField cABCinput = new TextField(cABCinputText);
             TextField cStepInput = new TextField(cStepInputText);
@@ -237,7 +237,9 @@ public class myProject extends Application {
                         "method is named after Julius Caesar, who apparently used it to communicate with his " +
                         "generals.\n \nIt is a type of substitution cipher in which each letter in the plaintext " +
                         "is 'shifted' a certain number of places down the alphabet. For example, with a shift " +
-                        "of 1, A would be replaced by B, B would become C, and so on.");
+                        "of 1, A would be replaced by B, B would become C, and so on.\n \nIn order to reverse " +
+                        "the encrypted text, you need to use the opposite value of the shift. For example, if " +
+                        "the original shift is 2, you can encode the text with shift -2");
                 cHelpText.setPrefWidth(width);
                 cHelpText.setWrapText(true);
                 cHelpText.setTextAlignment(TextAlignment.JUSTIFY);
