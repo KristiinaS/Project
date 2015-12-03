@@ -84,69 +84,69 @@ public class myProject extends Application {
             aWarning.setTextFill(Color.RED);
 
             String aABCinputText = "Insert the alphabet here";
-            String aWordInputText = "Insert the word you want to cipher here";
+            String aWordInputText = "Insert the word you want to encrypt here";
             String aNewWordText = "Your answer will be displayed here";
             TextField aABCinput = new TextField(aABCinputText);
             TextField aWordInput = new TextField(aWordInputText);
             TextField aNewWord = new TextField(aNewWordText);
 
-            Button EstonianABC = new Button("Use Estonian alphabet");
-            Button insert = new Button("Try the cipher!");
-            Button clear = new Button("Clear fields");
-            Button info = new Button("Info");
+            Button aEstonianABC = new Button("Use Estonian alphabet");
+            Button aInsert = new Button("Try the cipher!");
+            Button aClear = new Button("Clear fields");
+            Button aInfo = new Button("Info");
 
             //buttons to same size
-            EstonianABC.setMaxWidth(width/3);
-            insert.setMaxWidth(width/3);
-            clear.setMaxWidth(width/3);
-            info.setMaxWidth(width/3);
+            aEstonianABC.setMaxWidth(width/3);
+            aInsert.setMaxWidth(width/3);
+            aClear.setMaxWidth(width/3);
+            aInfo.setMaxWidth(width/3);
 
 
-            Atbashvbox.getChildren().addAll(aWarning,aABCinput,aWordInput,aNewWord,EstonianABC,insert,clear,info,ReturnButton);
+            Atbashvbox.getChildren().addAll(aWarning,aABCinput,aWordInput,aNewWord,aEstonianABC,aInsert,aClear,aInfo,ReturnButton);
 
             // button that resets the fields to their original state
-            clear.setOnAction(event1 -> {
+            aClear.setOnAction(event1 -> {
                 aABCinput.setText(aABCinputText);
                 aWordInput.setText(aWordInputText);
                 aNewWord.setText(aNewWordText);
             });
 
             // button with information about Atbash
-            info.setOnAction(event3 ->{
-                VBox HelpPane = new VBox();
-                ScrollPane sp = new ScrollPane(HelpPane); //pane that can be scrolled
-                sp.setFitToWidth(true);
-                Scene HelpScene = new Scene(sp,width, height/2);
-                Stage HelpStage = new Stage(); // info opens in new window
-                HelpStage.setTitle("Info");
-                HelpStage.setScene(HelpScene);
-                HelpStage.getIcons().add(new Image("file:questionmark.png"));
-                HelpStage.show();
+            aInfo.setOnAction(event3 ->{
+                VBox aHelpPane = new VBox();
+                ScrollPane aScrollPane = new ScrollPane(aHelpPane); //pane that can be scrolled
+                aScrollPane.setFitToWidth(true);
+                Scene aHelpScene = new Scene(aScrollPane,width, height/2);
+                Stage aHelpStage = new Stage(); // info opens in new window
+                aHelpStage.setTitle("Info");
+                aHelpStage.setScene(aHelpScene);
+                aHelpStage.getIcons().add(new Image("file:questionmark.png"));
+                aHelpStage.show();
 
-                Label HelpTextHeader = new Label("Atbash Cipher");
-                HelpTextHeader.setFont(Font.font(null, FontWeight.BOLD,20));
-                Label HelpText = new Label();
-                HelpText.setText("The Atbash Cipher was originally a monoalphabetic substitution cipher used " +
+                Label aHelpTextHeader = new Label("Atbash Cipher");
+                aHelpTextHeader.setFont(Font.font(null, FontWeight.BOLD,20));
+                Label aHelpText = new Label();
+                aHelpText.setText("The Atbash Cipher was originally a monoalphabetic substitution cipher used " +
                         "for the Hebrew alphabet. It is one of the earliest known subtitution ciphers to have " +
                         "been used, and is very simple.\n \nThe Atbash Cipher simply reverses the plaintext " +
                         "alphabet to create the ciphertext alphabet. That is, the first letter of the alphabet " +
                         "is encrypted to the last letter of the alphabet, the second letter to the second last " +
                         "letter and so forth.");
-                HelpText.setPrefWidth(width);
-                HelpText.setWrapText(true);
-                HelpText.setTextAlignment(TextAlignment.JUSTIFY);
+                aHelpText.setPrefWidth(width);
+                aHelpText.setWrapText(true);
+                aHelpText.setTextAlignment(TextAlignment.JUSTIFY);
 
 
-                HelpPane.getChildren().addAll(HelpTextHeader, HelpText);
+                aHelpPane.getChildren().addAll(aHelpTextHeader,aHelpText);
 
             });
 
-            EstonianABC.setOnAction(event2 -> {
+            aEstonianABC.setOnAction(event2 -> {
                 aABCinput.setText("A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y");
             });
 
             // actions after the alphabet & word have been inserted
-            insert.setOnAction(event1 -> {
+            aInsert.setOnAction(event1 -> {
                 String aABC = aABCinput.getText(); // save inserted ABC to string
                 aABC = aABC.trim().replaceAll("\\s", "").toLowerCase(); // Remove spaces from ABC, convert to lower case
                 java.util.List<String> aABClist = new ArrayList<String>(Arrays.asList(aABC.split(""))); // ABC string to list
@@ -191,38 +191,65 @@ public class myProject extends Application {
 
             String cABCinputText = "Insert the alphabet here";
             String cStepInputText = "Insert the shift number (use minus (-) for left shift)";
-            String cWordInputText = "Insert the word you want to cipher here";
+            String cWordInputText = "Insert the word you want to encrypt here";
             String cNewWordText = "Your answer will be displayed here";
             TextField cABCinput = new TextField(cABCinputText);
             TextField cStepInput = new TextField(cStepInputText);
             TextField cWordInput = new TextField(cWordInputText);
             TextField cNewWord = new TextField(cNewWordText);
 
-            Button EstonianABC = new Button("Use Estonian alphabet");
-            Button insert = new Button("Try the cipher!");
-            Button clear = new Button("Clear fields");
-            Button info = new Button("Info");
+            Button cEstonianABC = new Button("Use Estonian alphabet");
+            Button cInsert = new Button("Try the cipher!");
+            Button cClear = new Button("Clear fields");
+            Button cInfo = new Button("Info");
 
             //buttons to same size
-            EstonianABC.setMaxWidth(width/3);
-            insert.setMaxWidth(width/3);
-            clear.setMaxWidth(width/3);
-            info.setMaxWidth(width / 3);
+            cEstonianABC.setMaxWidth(width/3);
+            cInsert.setMaxWidth(width/3);
+            cClear.setMaxWidth(width/3);
+            cInfo.setMaxWidth(width / 3);
 
-            Caesarvbox.getChildren().addAll(cWarning,cABCinput, cStepInput, cWordInput, cNewWord, EstonianABC, insert, clear, info, ReturnButton);
+            Caesarvbox.getChildren().addAll(cWarning,cABCinput,cStepInput,cWordInput,cNewWord,cEstonianABC,cInsert,cClear,cInfo,ReturnButton);
 
-            clear.setOnAction(event1 -> {
+            cClear.setOnAction(event1 -> {
                 cABCinput.setText(cABCinputText);
                 cStepInput.setText(cStepInputText);
                 cWordInput.setText(cWordInputText);
                 cNewWord.setText(cNewWordText);
             });
 
-            EstonianABC.setOnAction(event1 -> {
+            cInfo.setOnAction(event2 -> {
+                VBox cHelpPane = new VBox();
+                ScrollPane cScrollPane = new ScrollPane(cHelpPane); //pane that can be scrolled
+                cScrollPane.setFitToWidth(true);
+                Scene cHelpScene = new Scene(cScrollPane,width, height/2);
+                Stage cHelpStage = new Stage(); // info opens in new window
+                cHelpStage.setTitle("Info");
+                cHelpStage.setScene(cHelpScene);
+                cHelpStage.getIcons().add(new Image("file:questionmark.png"));
+                cHelpStage.show();
+
+                Label cHelpTextHeader = new Label("Atbash Cipher");
+                cHelpTextHeader.setFont(Font.font(null, FontWeight.BOLD,20));
+                Label cHelpText = new Label();
+                cHelpText.setText("The Caesar cipher is one of the earliest known and simplest ciphers. The " +
+                        "method is named after Julius Caesar, who apparently used it to communicate with his " +
+                        "generals.\n \nIt is a type of substitution cipher in which each letter in the plaintext " +
+                        "is 'shifted' a certain number of places down the alphabet. For example, with a shift " +
+                        "of 1, A would be replaced by B, B would become C, and so on.");
+                cHelpText.setPrefWidth(width);
+                cHelpText.setWrapText(true);
+                cHelpText.setTextAlignment(TextAlignment.JUSTIFY);
+
+
+                cHelpPane.getChildren().addAll(cHelpTextHeader, cHelpText);
+            });
+
+            cEstonianABC.setOnAction(event1 -> {
                 cABCinput.setText("A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y");
             });
 
-            insert.setOnAction(event1 -> {
+            cInsert.setOnAction(event1 -> {
                 String cABC = cABCinput.getText(); //ABC input to string
                 cABC = cABC.trim().replaceAll("\\s","").toLowerCase(); //Remove spaces, commas from ABC + to lower case
                 List<String> cABClist = new ArrayList<String>(Arrays.asList(cABC.split(""))); //ABC string to list
