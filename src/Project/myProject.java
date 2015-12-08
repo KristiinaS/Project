@@ -5,6 +5,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -14,8 +15,11 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
+import javax.imageio.ImageIO;
 import javax.xml.soap.Text;
 import java.awt.event.ActionEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -84,7 +88,7 @@ public class myProject extends Application {
             aWarning.setTextFill(Color.RED);
 
             String aABCinputText = "Insert the alphabet here";
-            String aWordInputText = "Insert the word you want to encrypt here";
+            String aWordInputText = "Insert the word you want to encipher here";
             String aNewWordText = "Your answer will be displayed here";
             TextField aABCinput = new TextField(aABCinputText);
             TextField aWordInput = new TextField(aWordInputText);
@@ -192,7 +196,7 @@ public class myProject extends Application {
 
             String cABCinputText = "Insert the alphabet here";
             String cStepInputText = "Insert the shift number (use minus (-) for left shift)";
-            String cWordInputText = "Insert the word you want to encrypt here";
+            String cWordInputText = "Insert the word you want to encipher here";
             String cNewWordText = "Your answer will be displayed here";
             TextField cABCinput = new TextField(cABCinputText);
             TextField cStepInput = new TextField(cStepInputText);
@@ -208,7 +212,7 @@ public class myProject extends Application {
             cEstonianABC.setMaxWidth(width/3);
             cInsert.setMaxWidth(width/3);
             cClear.setMaxWidth(width/3);
-            cInfo.setMaxWidth(width / 3);
+            cInfo.setMaxWidth(width/3);
 
             Caesarvbox.getChildren().addAll(cWarning,cABCinput,cStepInput,cWordInput,cNewWord,cEstonianABC,cInsert,cClear,cInfo,ReturnButton);
 
@@ -292,6 +296,7 @@ public class myProject extends Application {
             });
         });
 
+        // Õpetus - http://www.counton.org/explorer/codebreaking/vigenere-cipher.php
         VigenereButton.setOnAction(event -> {
             Vigenerevbox = new VBox();
             VigenereScene = new Scene(Vigenerevbox, width, height);
@@ -299,7 +304,95 @@ public class myProject extends Application {
             mainStage.setTitle("Vigenère Cipher");
             mainStage.show();
 
-            Vigenerevbox.getChildren().addAll(ReturnButton);
+            String vABCinputText = "Insert the alphabet here";
+            String vStepInputText = "Enter the keyword";
+            String vWordInputText = "Insert the word you want to encipher here";
+            String vNewWordText = "Your answer will be displayed here";
+            TextField vABCinput = new TextField(vABCinputText);
+            TextField vStepInput = new TextField(vStepInputText);
+            TextField vWordInput = new TextField(vWordInputText);
+            TextField vNewWord = new TextField(vNewWordText);
+
+            Button vEstonianABC = new Button("Use Estonian alphabet");
+            Button vInsert = new Button("Try the cipher!");
+            Button vClear = new Button("Clear fields");
+            Button vInfo = new Button("Info");
+
+            //buttons to same size
+            vEstonianABC.setMaxWidth(width/3);
+            vInsert.setMaxWidth(width/3);
+            vClear.setMaxWidth(width/3);
+            vInfo.setMaxWidth(width/3);
+
+            Vigenerevbox.getChildren().addAll(vABCinput,vStepInput,vWordInput,vNewWord,vEstonianABC,vInsert,vClear,vInfo,ReturnButton);
+
+            vEstonianABC.setOnAction(event1 -> {
+                vABCinput.setText("A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y");
+            });
+
+            vClear.setOnAction(event1 -> {
+                vABCinput.setText(vABCinputText);
+                vStepInput.setText(vStepInputText);
+                vWordInput.setText(vWordInputText);
+                vNewWord.setText(vNewWordText);
+            });
+
+            vInfo.setOnAction(event2 -> {
+                VBox vHelpPane = new VBox();
+                ScrollPane vScrollPane = new ScrollPane(vHelpPane); //pane that can be scrolled
+                vScrollPane.setFitToWidth(true);
+                Scene vHelpScene = new Scene(vScrollPane,width, height/2);
+                Stage vHelpStage = new Stage(); // info opens in new window
+                vHelpStage.setTitle("Info");
+                vHelpStage.setScene(vHelpScene);
+                vHelpStage.getIcons().add(new Image("file:questionmark.png"));
+                vHelpStage.show();
+
+                Label vHelpTextHeader = new Label("Atbash Cipher");
+                vHelpTextHeader.setFont(Font.font(null, FontWeight.BOLD,20));
+                Label vHelpText = new Label();
+                vHelpText.setText("The Vigenère cipher was invented by a Frenchman, Blaise de Vigenère in " +
+                        "the 16th century. It is a simple form of polyalphabetic cipher which uses a series of " +
+                        "different Caesar ciphers to encrypt the data based on the letters of a keyword. " +
+                        "Blaise de Vigenère developed a square to help encode messages (see below - " +
+                        "Vigenére Table). A different row of the square can be used to encrypt each letter " +
+                        "of the message. In other words, the sender might encrypt the first letter according " +
+                        "to row 5, the second according to row 14, and the third letter according to row 21," +
+                        " and so on. In order to unscramble the message, it is important that the intended " +
+                        "receiver knows which row of the Vigenère Square has been used to encipher each letter, " +
+                        "and so there must be an agreed system of switching between rows. This agreement is " +
+                        "achieved via the keyword.\n \nTo illustrate how the keyword is used, let's encipher " +
+                        "a word MOTHER with keyword KEY. First, the keyword is spelt out above the message " +
+                        "and repeated until each letter in the message is associated with a letter from the " +
+                        "keyword. Above first letter of the message, M, is the key letter, K. To encrypt this " +
+                        "first letter, we go to the column headed by M and then see where it intersects the row " +
+                        "starting with K, which is at the letter W. Consequently, the letter M in the plaintext " +
+                        "is represented by W in the ciphertext. This step is continued until the whole text has " +
+                        "been enciphered. In this case the enciphered text would be WSRRIP.");
+                vHelpText.setPrefWidth(width);
+                vHelpText.setWrapText(true);
+                vHelpText.setTextAlignment(TextAlignment.JUSTIFY);
+
+                Button vTable = new Button("Vigenére table");
+
+                vHelpPane.getChildren().addAll(vHelpTextHeader,vHelpText,vTable);
+
+                vTable.setOnAction(event1 -> {
+                    Pane vImagePane = new Pane();
+                    Scene vImageScene = new Scene(vImagePane,565,481);
+                    Stage vImageStage = new Stage();
+                    vImageStage.setScene(vImageScene);
+                    vImageStage.setTitle("Vigenére Table");
+                    vImageStage.getIcons().add(new Image("file:questionmark.png"));
+                    vImageStage.show();
+
+                    ImageView vImageView = new ImageView();
+                    Image VigenereTable = new Image("file:tabularecta.jpg");
+                    vImageView.setImage(VigenereTable);
+
+                    vImagePane.getChildren().addAll(vImageView);
+                });
+            });
         });
 
         MorseButton.setOnAction(event -> {
