@@ -1,3 +1,3 @@
 # Project
 
-Vana idee: File Explorer. Uus idee: programm, kus on koos erinevad sifrid-koodid (Atbash, Caesar, Morse).
+Vana idee: File Explorer. Uus idee: programm, kus on koos erinevad sifrid-koodid (Atbash, Caesar, Vigenére, Morse).
