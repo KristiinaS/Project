@@ -1,6 +1,9 @@
 package Project;
 
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -33,8 +36,27 @@ public class myProject extends Application {
     Scene mainScene, AtbashScene, CaesarScene, VigenereScene, MorseScene;
     VBox mainvbox, Atbashvbox, Caesarvbox, Vigenerevbox, Morsevbox;
     Stage mainStage;
+    Tooltip Choose = new Tooltip("Choose alphabet");
     int width = 600;
     int height = 350;
+
+    String ABCinputText = "Insert the alphabet here or choose it from the list below";
+
+    String[] Alphabets = {"A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y",
+            "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z","" +
+            "А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я"};
+
+    List<String> ABClanguages = new ArrayList<String>(Arrays.asList("User defined alphabet","Estonian",
+            "English", "Russian"));
+
+    //combining 2 arrays - for alphabet
+    public static String [] combine(String[] a, String[] b) {
+        int length = a.length + b.length;
+        String[] result = new String[length];
+        System.arraycopy(a,0,result,0,a.length);
+        System.arraycopy(b,0,result,a.length,b.length);
+        return result;
+    }
 
 
     @Override
@@ -87,10 +109,9 @@ public class myProject extends Application {
             aWarning.setFont(Font.font(null, FontPosture.ITALIC,14));
             aWarning.setTextFill(Color.RED);
 
-            String aABCinputText = "Insert the alphabet here";
             String aWordInputText = "Insert the word you want to encipher here";
             String aNewWordText = "Your answer will be displayed here";
-            TextField aABCinput = new TextField(aABCinputText);
+            TextField aABCinput = new TextField(ABCinputText);
             TextField aWordInput = new TextField(aWordInputText);
             TextField aNewWord = new TextField(aNewWordText);
 
@@ -99,18 +120,36 @@ public class myProject extends Application {
             Button aClear = new Button("Clear fields");
             Button aInfo = new Button("Info");
 
+            //alphabets for drop down menu
+            String[] aABCinputTextArray = {ABCinputText}; //string to array
+            String[] aAlphabets = combine(aABCinputTextArray,Alphabets); //add alphabets together
+
+            //Defining the drop down menu
+            ChoiceBox aLanguageABC = new ChoiceBox(FXCollections.observableArrayList(ABClanguages));
+            aLanguageABC.setTooltip(Choose); //dispay text if mouse is hovering over the button
+            aLanguageABC.getSelectionModel().selectFirst(); //dispays the first selectin by default
+
+            //replace alphabet if language is chosen from drop down menu
+            aLanguageABC.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+                @Override
+                public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                    aABCinput.setText(aAlphabets[newValue.intValue()]);
+                }
+            });
+
             //buttons to same size
             aEstonianABC.setMaxWidth(width/3);
             aInsert.setMaxWidth(width/3);
             aClear.setMaxWidth(width/3);
             aInfo.setMaxWidth(width/3);
+            aLanguageABC.setMaxWidth(width/3);
 
 
-            Atbashvbox.getChildren().addAll(aWarning,aABCinput,aWordInput,aNewWord,aEstonianABC,aInsert,aClear,aInfo,ReturnButton);
+            Atbashvbox.getChildren().addAll(aWarning,aABCinput,aWordInput,aNewWord,aLanguageABC,aInsert,aClear,aInfo,ReturnButton);
 
             // button that resets the fields to their original state
             aClear.setOnAction(event1 -> {
-                aABCinput.setText(aABCinputText);
+                aABCinput.setText(ABCinputText);
                 aWordInput.setText(aWordInputText);
                 aNewWord.setText(aNewWordText);
             });
@@ -143,10 +182,6 @@ public class myProject extends Application {
 
                 aHelpPane.getChildren().addAll(aHelpTextHeader,aHelpText);
 
-            });
-
-            aEstonianABC.setOnAction(event2 -> {
-                aABCinput.setText("A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y");
             });
 
             // actions after the alphabet & word have been inserted
@@ -194,11 +229,10 @@ public class myProject extends Application {
             cWarning.setTextFill(Color.RED);
 
 
-            String cABCinputText = "Insert the alphabet here";
             String cStepInputText = "Insert the shift number (use minus (-) for left shift)";
             String cWordInputText = "Insert the word you want to encipher here";
             String cNewWordText = "Your answer will be displayed here";
-            TextField cABCinput = new TextField(cABCinputText);
+            TextField cABCinput = new TextField(ABCinputText);
             TextField cStepInput = new TextField(cStepInputText);
             TextField cWordInput = new TextField(cWordInputText);
             TextField cNewWord = new TextField(cNewWordText);
@@ -208,16 +242,34 @@ public class myProject extends Application {
             Button cClear = new Button("Clear fields");
             Button cInfo = new Button("Info");
 
+            //alphabets for drop down menu
+            String[] cABCinputTextArray = {ABCinputText}; //string to array
+            String[] cAlphabets = combine(cABCinputTextArray,Alphabets); //add alphabets together
+
+            //Defining the drop down menu
+            ChoiceBox cLanguageABC = new ChoiceBox(FXCollections.observableArrayList(ABClanguages));
+            cLanguageABC.setTooltip(Choose); //dispay text if mouse is hovering over the button
+            cLanguageABC.getSelectionModel().selectFirst(); //dispays the first selectin by default
+
+            //replace alphabet if language is chosen from drop down menu
+            cLanguageABC.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+                @Override
+                public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                    cABCinput.setText(cAlphabets[newValue.intValue()]);
+                }
+            });
+
             //buttons to same size
             cEstonianABC.setMaxWidth(width/3);
             cInsert.setMaxWidth(width/3);
             cClear.setMaxWidth(width/3);
             cInfo.setMaxWidth(width/3);
+            cLanguageABC.setMaxWidth(width/3);
 
-            Caesarvbox.getChildren().addAll(cWarning,cABCinput,cStepInput,cWordInput,cNewWord,cEstonianABC,cInsert,cClear,cInfo,ReturnButton);
+            Caesarvbox.getChildren().addAll(cWarning,cABCinput,cStepInput,cWordInput,cNewWord,cLanguageABC,cInsert,cClear,cInfo,ReturnButton);
 
             cClear.setOnAction(event1 -> {
-                cABCinput.setText(cABCinputText);
+                cABCinput.setText(ABCinputText);
                 cStepInput.setText(cStepInputText);
                 cWordInput.setText(cWordInputText);
                 cNewWord.setText(cNewWordText);
@@ -250,10 +302,6 @@ public class myProject extends Application {
 
 
                 cHelpPane.getChildren().addAll(cHelpTextHeader, cHelpText);
-            });
-
-            cEstonianABC.setOnAction(event1 -> {
-                cABCinput.setText("A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y");
             });
 
             cInsert.setOnAction(event1 -> {
@@ -308,11 +356,10 @@ public class myProject extends Application {
             vWarning.setFont(Font.font(null, FontPosture.ITALIC,14));
             vWarning.setTextFill(Color.RED);
 
-            String vABCinputText = "Insert the alphabet here";
             String vKeyInputText = "Enter the keyword";
             String vWordInputText = "Insert the word you want to encipher here";
             String vNewWordText = "Your answer will be displayed here";
-            TextField vABCinput = new TextField(vABCinputText);
+            TextField vABCinput = new TextField(ABCinputText);
             TextField vKeyInput = new TextField(vKeyInputText);
             TextField vWordInput = new TextField(vWordInputText);
             TextField vNewWord = new TextField(vNewWordText);
@@ -323,14 +370,33 @@ public class myProject extends Application {
             Button vClear = new Button("Clear fields");
             Button vInfo = new Button("Info");
 
+            //alphabets for drop down menu
+            String[] vABCinputTextArray = {ABCinputText}; //string to array
+            String[] vAlphabets = combine(vABCinputTextArray,Alphabets); //add alphabets together
+
+            //Defining the drop down menu
+            ChoiceBox vLanguageABC = new ChoiceBox(FXCollections.observableArrayList(ABClanguages));
+            vLanguageABC.setTooltip(Choose); //dispay text if mouse is hovering over the button
+            vLanguageABC.getSelectionModel().selectFirst(); //dispays the first selectin by default
+
+            //replace alphabet if language is chosen from drop down menu
+            vLanguageABC.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+                @Override
+                public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                    vABCinput.setText(vAlphabets[newValue.intValue()]);
+                }
+            });
+
+
             //buttons to same size
             vEstonianABC.setMaxWidth(width/3);
             vEnglishABC.setMaxWidth(width/3);
             vInsert.setMaxWidth(width/3);
             vClear.setMaxWidth(width/3);
             vInfo.setMaxWidth(width/3);
+            vLanguageABC.setMaxWidth(width/3);
 
-            Vigenerevbox.getChildren().addAll(vWarning,vABCinput,vKeyInput,vWordInput,vNewWord,vEstonianABC,vEnglishABC,vInsert,vClear,vInfo,ReturnButton);
+            Vigenerevbox.getChildren().addAll(vWarning,vABCinput,vKeyInput,vWordInput,vNewWord,vLanguageABC,vInsert,vClear,vInfo,ReturnButton);
 
             vInsert.setOnAction(event3 -> {
                 String vABC = vABCinput.getText(); //ABC input to string
@@ -385,16 +451,8 @@ public class myProject extends Application {
 
             });
 
-            vEstonianABC.setOnAction(event1 -> {
-                vABCinput.setText("A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y");
-            });
-
-            vEnglishABC.setOnAction(event3 -> {
-                vABCinput.setText("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z");
-            });
-
             vClear.setOnAction(event1 -> {
-                vABCinput.setText(vABCinputText);
+                vABCinput.setText(ABCinputText);
                 vKeyInput.setText(vKeyInputText);
                 vWordInput.setText(vWordInputText);
                 vNewWord.setText(vNewWordText);
