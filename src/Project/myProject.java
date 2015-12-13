@@ -39,15 +39,18 @@ public class myProject extends Application {
     Tooltip Choose = new Tooltip("Choose alphabet");
     int width = 600;
     int height = 350;
+    int buttonWidth = width/3;
 
     String ABCinputText = "Insert the alphabet here or choose it from the list below";
 
     String[] Alphabets = {"A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y",
-            "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z","" +
-            "А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я"};
+            "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z",
+            "А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я",
+            "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Æ Ø Å",
+            "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Å Ä Ö"};
 
     List<String> ABClanguages = new ArrayList<String>(Arrays.asList("User defined alphabet","Estonian",
-            "English", "Russian"));
+            "English", "Russian","Danish/Norwegian","Swedish"));
 
     //combining 2 arrays - for alphabet
     public static String [] combine(String[] a, String[] b) {
@@ -81,11 +84,11 @@ public class myProject extends Application {
         ReturnButton = new Button("Return to menu");
 
         // making the buttons same size
-        AtbashButton.setMaxWidth(width/3);
-        CaesarButton.setMaxWidth(width/3);
-        VigenereButton.setMaxWidth(width/3);
-        MorseButton.setMaxWidth(width/3);
-        ReturnButton.setMaxWidth(width/3);
+        AtbashButton.setMaxWidth(buttonWidth);
+        CaesarButton.setMaxWidth(buttonWidth);
+        VigenereButton.setMaxWidth(buttonWidth);
+        MorseButton.setMaxWidth(buttonWidth);
+        ReturnButton.setMaxWidth(buttonWidth);
 
         mainvbox.setAlignment(Pos.CENTER); // aligning main view text to center of the window
         mainvbox.getChildren().addAll(welcomeText,AtbashButton,CaesarButton,VigenereButton,MorseButton);
@@ -138,11 +141,11 @@ public class myProject extends Application {
             });
 
             //buttons to same size
-            aEstonianABC.setMaxWidth(width/3);
-            aInsert.setMaxWidth(width/3);
-            aClear.setMaxWidth(width/3);
-            aInfo.setMaxWidth(width/3);
-            aLanguageABC.setMaxWidth(width/3);
+            aEstonianABC.setMaxWidth(buttonWidth);
+            aInsert.setMaxWidth(buttonWidth);
+            aClear.setMaxWidth(buttonWidth);
+            aInfo.setMaxWidth(buttonWidth);
+            aLanguageABC.setMaxWidth(buttonWidth);
 
 
             Atbashvbox.getChildren().addAll(aWarning,aABCinput,aWordInput,aNewWord,aLanguageABC,aInsert,aClear,aInfo,ReturnButton);
@@ -260,11 +263,11 @@ public class myProject extends Application {
             });
 
             //buttons to same size
-            cEstonianABC.setMaxWidth(width/3);
-            cInsert.setMaxWidth(width/3);
-            cClear.setMaxWidth(width/3);
-            cInfo.setMaxWidth(width/3);
-            cLanguageABC.setMaxWidth(width/3);
+            cEstonianABC.setMaxWidth(buttonWidth);
+            cInsert.setMaxWidth(buttonWidth);
+            cClear.setMaxWidth(buttonWidth);
+            cInfo.setMaxWidth(buttonWidth);
+            cLanguageABC.setMaxWidth(buttonWidth);
 
             Caesarvbox.getChildren().addAll(cWarning,cABCinput,cStepInput,cWordInput,cNewWord,cLanguageABC,cInsert,cClear,cInfo,ReturnButton);
 
@@ -389,12 +392,12 @@ public class myProject extends Application {
 
 
             //buttons to same size
-            vEstonianABC.setMaxWidth(width/3);
-            vEnglishABC.setMaxWidth(width/3);
-            vInsert.setMaxWidth(width/3);
-            vClear.setMaxWidth(width/3);
-            vInfo.setMaxWidth(width/3);
-            vLanguageABC.setMaxWidth(width/3);
+            vEstonianABC.setMaxWidth(buttonWidth);
+            vEnglishABC.setMaxWidth(buttonWidth);
+            vInsert.setMaxWidth(buttonWidth);
+            vClear.setMaxWidth(buttonWidth);
+            vInfo.setMaxWidth(buttonWidth);
+            vLanguageABC.setMaxWidth(buttonWidth);
 
             Vigenerevbox.getChildren().addAll(vWarning,vABCinput,vKeyInput,vWordInput,vNewWord,vLanguageABC,vInsert,vClear,vInfo,ReturnButton);
 
