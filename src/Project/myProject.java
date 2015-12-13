@@ -152,7 +152,7 @@ public class myProject extends Application {
             // actions after the alphabet & word have been inserted
             aInsert.setOnAction(event1 -> {
                 String aABC = aABCinput.getText(); // save inserted ABC to string
-                aABC = aABC.trim().replaceAll("\\s", "").toLowerCase(); // Remove spaces from ABC, convert to lower case
+                aABC = aABC.trim().replaceAll("\\s", "").replaceAll(",","").toLowerCase(); // Remove spaces & commas from ABC, convert to lower case
                 java.util.List<String> aABClist = new ArrayList<String>(Arrays.asList(aABC.split(""))); // ABC string to list
                 int LettersInABC = aABClist.size(); // get length of the ABC
 
@@ -258,7 +258,7 @@ public class myProject extends Application {
 
             cInsert.setOnAction(event1 -> {
                 String cABC = cABCinput.getText(); //ABC input to string
-                cABC = cABC.trim().replaceAll("\\s","").toLowerCase(); //Remove spaces, commas from ABC + to lower case
+                cABC = cABC.trim().replaceAll("\\s","").replaceAll(",","").toLowerCase(); //Remove spaces, commas from ABC + to lower case
                 List<String> cABClist = new ArrayList<String>(Arrays.asList(cABC.split(""))); //ABC string to list
                 int cLettersInABC = cABClist.size();
 
@@ -304,35 +304,98 @@ public class myProject extends Application {
             mainStage.setTitle("Vigenère Cipher");
             mainStage.show();
 
+            Label vWarning = new Label("At the moment only one word can be enciphered at a time!");
+            vWarning.setFont(Font.font(null, FontPosture.ITALIC,14));
+            vWarning.setTextFill(Color.RED);
+
             String vABCinputText = "Insert the alphabet here";
-            String vStepInputText = "Enter the keyword";
+            String vKeyInputText = "Enter the keyword";
             String vWordInputText = "Insert the word you want to encipher here";
             String vNewWordText = "Your answer will be displayed here";
             TextField vABCinput = new TextField(vABCinputText);
-            TextField vStepInput = new TextField(vStepInputText);
+            TextField vKeyInput = new TextField(vKeyInputText);
             TextField vWordInput = new TextField(vWordInputText);
             TextField vNewWord = new TextField(vNewWordText);
 
             Button vEstonianABC = new Button("Use Estonian alphabet");
+            Button vEnglishABC = new Button("Use English alphabet");
             Button vInsert = new Button("Try the cipher!");
             Button vClear = new Button("Clear fields");
             Button vInfo = new Button("Info");
 
             //buttons to same size
             vEstonianABC.setMaxWidth(width/3);
+            vEnglishABC.setMaxWidth(width/3);
             vInsert.setMaxWidth(width/3);
             vClear.setMaxWidth(width/3);
             vInfo.setMaxWidth(width/3);
 
-            Vigenerevbox.getChildren().addAll(vABCinput,vStepInput,vWordInput,vNewWord,vEstonianABC,vInsert,vClear,vInfo,ReturnButton);
+            Vigenerevbox.getChildren().addAll(vWarning,vABCinput,vKeyInput,vWordInput,vNewWord,vEstonianABC,vEnglishABC,vInsert,vClear,vInfo,ReturnButton);
+
+            vInsert.setOnAction(event3 -> {
+                String vABC = vABCinput.getText(); //ABC input to string
+                vABC = vABC.trim().replaceAll("\\s","").replaceAll(",","").toLowerCase(); //Remove spaces, commas from ABC + to lower case
+                List<String> vABClist = new ArrayList<String>(Arrays.asList(vABC.split(""))); //ABC string to list
+                int vLettersInABC = vABClist.size(); //Length of ABC
+
+                String vKey = vKeyInput.getText(); //Keyword input to string
+                vKey = vKey.toLowerCase(); //Keyword to lower case
+                List<Character> vKeyList = new ArrayList<Character>();
+                for (char c : vKey.toCharArray()) { //String characters to list
+                    vKeyList.add(c);
+                }
+                int vLettersInKey = vKeyList.size(); //Length of keyword
+
+                String vWord = vWordInput.getText(); //Word input to string
+                vWord = vWord.toLowerCase(); //word to lower case
+                List<String> vWordList = new ArrayList<String>(Arrays.asList(vWord.split(""))); //Word string to list
+                int vLettersInWord = vWordList.size(); //Length of word
+
+                List<String> vOutputList = new ArrayList<String>(); //List for new (output) word
+
+                if (vLettersInWord > vLettersInKey){
+                    int vMissingLetters = vLettersInWord - vLettersInKey;//how many letters are missing from keyword
+                    for (int j = 0; j < vMissingLetters; j++) {
+                        char vChar = vKeyList.get(j);
+                        vKeyList.add(vChar); //adding missing letters to list
+                    }
+                }
+
+
+                for (int i = 0; i < vLettersInWord; i++) {
+                    String vWordLetter = vWordList.get(i); //check letters in the word
+                    char vKeyLetter = vKeyList.get(i);
+                    //Character.toString(vKeyLetter); //converting character to string
+                    int vStep = vABClist.indexOf(Character.toString(vKeyLetter));
+
+                    if (vABClist.contains(vWordLetter) == false) { //adding characters which are not in ABC to output
+                        vOutputList.add(i,vWordLetter);
+                    } else {
+                        int vABCindex = vABClist.indexOf(vWordLetter); //find index of word letter in ABC
+                        int vABCindex2 = vABCindex + vStep;
+                        if (vABCindex2 > vLettersInABC) { //reduces length of step by abc length (step < abc !)
+                            vABCindex2 = vABCindex2 - vLettersInABC;
+                        }
+                        vOutputList.add(i,vABClist.get(vABCindex2)); //add output letter to output list
+                    }
+                }
+
+                String vOutput = String.join("",vOutputList); //output list to string
+                vNewWord.setText(vOutput);
+
+            });
 
             vEstonianABC.setOnAction(event1 -> {
                 vABCinput.setText("A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y");
             });
 
+            vEnglishABC.setOnAction(event3 -> {
+                vABCinput.setText("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z");
+            });
+
             vClear.setOnAction(event1 -> {
                 vABCinput.setText(vABCinputText);
-                vStepInput.setText(vStepInputText);
+                vKeyInput.setText(vKeyInputText);
                 vWordInput.setText(vWordInputText);
                 vNewWord.setText(vNewWordText);
             });
