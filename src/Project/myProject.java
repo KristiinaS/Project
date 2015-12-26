@@ -38,11 +38,12 @@ public class myProject extends Application {
     VBox mainvbox, Atbashvbox, Caesarvbox, Vigenerevbox, Morsevbox;
     Stage mainStage;
     Tooltip Choose = new Tooltip("Choose alphabet");
-    int width = 600;
-    int height = 350;
+    int width = 771;
+    int height = 706;
     int buttonWidth = width/3;
     int vBoxPadding = 5;
-    String TextBackgroundColor = "#E6E6E6";
+    String TextBackgroundColor = "#F2F2F2";
+    String BackgroundPicture = "http://www.webdesignhot.com/wp-content/uploads/2012/09/Abstract-Green-Bokeh-Light-Background-Vector-Graphic.jpg";
 
     String ABCinputText = "Insert the alphabet here or choose it from the list below";
     String[] Alphabets = {ABCinputText,
@@ -71,12 +72,12 @@ public class myProject extends Application {
 
         mainvbox = new VBox();
         mainScene = new Scene(mainvbox, width, height);
-        mainStage.setTitle("Ciphers"); // naming the window
+        mainStage.setTitle("Ciphers and Codes"); // naming the window
         mainStage.setScene(mainScene);
         mainStage.getIcons().add(new Image("file:FolderIcon.png")); // different icon for the window
         mainStage.show();
 
-        Label welcomeText = new Label("Choose a cipher from the list below.");
+        Label welcomeText = new Label("Choose a cipher or code from the list below.");
         welcomeText.setFont(Font.font(null, FontWeight.BOLD,20));
 
         // defining buttons on main page
@@ -93,6 +94,7 @@ public class myProject extends Application {
         MorseButton.setMaxWidth(buttonWidth);
         ReturnButton.setMaxWidth(buttonWidth);
 
+        mainvbox.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
         mainvbox.setAlignment(Pos.CENTER); // aligning main view text to center of the window
         mainvbox.getChildren().addAll(welcomeText,AtbashButton,CaesarButton,VigenereButton,MorseButton);
 
@@ -112,6 +114,9 @@ public class myProject extends Application {
             mainStage.setTitle("Atbash Cipher");
             mainStage.show();
 
+            Label aWelcomeText = new Label("Atbash Cipher");
+            aWelcomeText.setFont(Font.font(null, FontWeight.BOLD,20));
+
             Label aWarning = new Label("At the moment all letters are converted to lower case!");
             aWarning.setFont(Font.font(null, FontPosture.ITALIC,14));
             aWarning.setTextFill(Color.RED);
@@ -127,7 +132,7 @@ public class myProject extends Application {
 
             Button aInsert = new Button("Try the cipher!");
             Button aClear = new Button("Clear fields");
-            Button aReverse = new Button("Reverse the words");
+            Button aSwap = new Button("Swap the words");
             Button aInfo = new Button("Info");
 
             //Defining the drop down menu
@@ -146,13 +151,13 @@ public class myProject extends Application {
             //buttons to same size
             aInsert.setMaxWidth(buttonWidth);
             aClear.setMaxWidth(buttonWidth);
-            aReverse.setMaxWidth(buttonWidth);
+            aSwap.setMaxWidth(buttonWidth);
             aInfo.setMaxWidth(buttonWidth);
             aLanguageABC.setMaxWidth(buttonWidth);
 
             HBox aHbox1 = new HBox(vBoxPadding,aLanguageABC,aClear);
             HBox aHbox2 = new HBox(vBoxPadding,aInsert,aInfo);
-            HBox aHbox3 = new HBox(vBoxPadding,aReverse,ReturnButton);
+            HBox aHbox3 = new HBox(vBoxPadding,aSwap,ReturnButton);
             aHbox1.setAlignment(Pos.CENTER);
             aHbox1.setTranslateY(vBoxPadding*5);
             aHbox2.setAlignment(Pos.CENTER);
@@ -164,12 +169,14 @@ public class myProject extends Application {
             HBox.setHgrow(aClear,Priority.ALWAYS);
             HBox.setHgrow(aInsert,Priority.ALWAYS);
             HBox.setHgrow(aInfo,Priority.ALWAYS);
-            HBox.setHgrow(aReverse,Priority.ALWAYS);
+            HBox.setHgrow(aSwap,Priority.ALWAYS);
             HBox.setHgrow(ReturnButton,Priority.ALWAYS);
 
-            Atbashvbox.getChildren().addAll(aWarning,aABCinput,aWordInput,aNewWord,aHbox1,aHbox2,aHbox3);
+            Atbashvbox.setAlignment(Pos.CENTER);
+            Atbashvbox.setStyle("-fx-background-image: url(" + BackgroundPicture + ")");
+            Atbashvbox.getChildren().addAll(aWelcomeText,aWarning,aABCinput,aWordInput,aNewWord,aHbox1,aHbox2,aHbox3);
 
-            aReverse.setOnAction(event2 -> {
+            aSwap.setOnAction(event2 -> {
                 String aOldWord = aWordInput.getText();
                 String aCipherWord = aNewWord.getText();
                 aWordInput.setText(aCipherWord);
@@ -188,9 +195,9 @@ public class myProject extends Application {
             aInfo.setOnAction(event3 ->{
                 VBox aHelpPane = new VBox();
                 aHelpPane.setPadding(new Insets(vBoxPadding));
-                ScrollPane aScrollPane = new ScrollPane(aHelpPane); //pane that can be scrolled
-                aScrollPane.setFitToWidth(true);
-                Scene aHelpScene = new Scene(aScrollPane,width, height/2);
+                //ScrollPane aScrollPane = new ScrollPane(aHelpPane); //pane that can be scrolled
+                //aScrollPane.setFitToWidth(true);
+                Scene aHelpScene = new Scene(aHelpPane,width, height/2);
                 Stage aHelpStage = new Stage(); // info opens in new window
                 aHelpStage.setTitle("Info");
                 aHelpStage.setScene(aHelpScene);
@@ -210,7 +217,7 @@ public class myProject extends Application {
                 aHelpText.setWrapText(true);
                 aHelpText.setTextAlignment(TextAlignment.JUSTIFY);
 
-
+                aHelpPane.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
                 aHelpPane.getChildren().addAll(aHelpTextHeader,aHelpText);
 
             });
@@ -253,8 +260,11 @@ public class myProject extends Application {
             Caesarvbox.setPadding(new Insets(vBoxPadding));
             CaesarScene = new Scene(Caesarvbox, width, height);
             mainStage.setScene(CaesarScene);
-            mainStage.setTitle("Caesar Shift Cipher");
+            mainStage.setTitle("Caesar Cipher");
             mainStage.show();
+
+            Label cWelcomeText = new Label("Caesar Cipher");
+            cWelcomeText.setFont(Font.font(null, FontWeight.BOLD,20));
 
             Label cWarning = new Label("At the moment all letters are converted to lower case!");
             cWarning.setFont(Font.font(null, FontPosture.ITALIC,14));
@@ -271,7 +281,7 @@ public class myProject extends Application {
 
             Button cInsert = new Button("Try the cipher!");
             Button cClear = new Button("Clear fields");
-            Button cReverse = new Button("Reverse the words");
+            Button cSwap = new Button("Swap the words");
             Button cInfo = new Button("Info");
 
             cNewWord.setEditable(false);
@@ -293,13 +303,13 @@ public class myProject extends Application {
             //buttons to same size
             cInsert.setMaxWidth(buttonWidth);
             cClear.setMaxWidth(buttonWidth);
-            cReverse.setMaxWidth(buttonWidth);
+            cSwap.setMaxWidth(buttonWidth);
             cInfo.setMaxWidth(buttonWidth);
             cLanguageABC.setMaxWidth(buttonWidth);
 
             HBox cHbox1 = new HBox(vBoxPadding,cLanguageABC,cClear);
             HBox cHbox2 = new HBox(vBoxPadding,cInsert,cInfo);
-            HBox cHbox3 = new HBox(vBoxPadding,cReverse,ReturnButton);
+            HBox cHbox3 = new HBox(vBoxPadding,cSwap,ReturnButton);
             cHbox1.setAlignment(Pos.CENTER);
             cHbox1.setTranslateY(vBoxPadding*5);
             cHbox2.setAlignment(Pos.CENTER);
@@ -311,12 +321,14 @@ public class myProject extends Application {
             HBox.setHgrow(cClear,Priority.ALWAYS);
             HBox.setHgrow(cInsert,Priority.ALWAYS);
             HBox.setHgrow(cInfo,Priority.ALWAYS);
-            HBox.setHgrow(cReverse,Priority.ALWAYS);
+            HBox.setHgrow(cSwap,Priority.ALWAYS);
             HBox.setHgrow(ReturnButton,Priority.ALWAYS);
 
-            Caesarvbox.getChildren().addAll(cWarning,cABCinput,cStepInput,cWordInput,cNewWord,cHbox1,cHbox2,cHbox3);
+            Caesarvbox.setAlignment(Pos.CENTER);
+            Caesarvbox.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
+            Caesarvbox.getChildren().addAll(cWelcomeText,cWarning,cABCinput,cStepInput,cWordInput,cNewWord,cHbox1,cHbox2,cHbox3);
 
-            cReverse.setOnAction(event2 -> {
+            cSwap.setOnAction(event2 -> {
                 String cOldWord = cWordInput.getText();
                 String cCipherWord = cNewWord.getText();
                 cWordInput.setText(cCipherWord);
@@ -333,16 +345,16 @@ public class myProject extends Application {
             cInfo.setOnAction(event2 -> {
                 VBox cHelpPane = new VBox();
                 cHelpPane.setPadding(new Insets(vBoxPadding));
-                ScrollPane cScrollPane = new ScrollPane(cHelpPane); //pane that can be scrolled
-                cScrollPane.setFitToWidth(true);
-                Scene cHelpScene = new Scene(cScrollPane,width, height/2);
+                //ScrollPane cScrollPane = new ScrollPane(cHelpPane); //pane that can be scrolled
+                //cScrollPane.setFitToWidth(true);
+                Scene cHelpScene = new Scene(cHelpPane,width, height/2);
                 Stage cHelpStage = new Stage(); // info opens in new window
                 cHelpStage.setTitle("Info");
                 cHelpStage.setScene(cHelpScene);
                 cHelpStage.getIcons().add(new Image("file:questionmark.png"));
                 cHelpStage.show();
 
-                Label cHelpTextHeader = new Label("Atbash Cipher");
+                Label cHelpTextHeader = new Label("Caesar Cipher");
                 cHelpTextHeader.setFont(Font.font(null, FontWeight.BOLD,20));
                 Label cHelpText = new Label();
                 cHelpText.setText("The Caesar cipher is one of the earliest known and simplest ciphers. The " +
@@ -356,7 +368,7 @@ public class myProject extends Application {
                 cHelpText.setWrapText(true);
                 cHelpText.setTextAlignment(TextAlignment.JUSTIFY);
 
-
+                cHelpPane.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
                 cHelpPane.getChildren().addAll(cHelpTextHeader, cHelpText);
             });
 
@@ -409,7 +421,11 @@ public class myProject extends Application {
             mainStage.setTitle("Vigenère Cipher");
             mainStage.show();
 
-            Label vWarning = new Label("At the moment only one word can be enciphered at a time!");
+            Label vWelcomeText = new Label("Vigenère Cipher");
+            vWelcomeText.setFont(Font.font(null, FontWeight.BOLD,20));
+
+            Label vWarning = new Label("At the moment only one word can be enciphered at a time and all " +
+                    "letters are converted to lower case!");
             vWarning.setFont(Font.font(null, FontPosture.ITALIC,14));
             vWarning.setTextFill(Color.RED);
 
@@ -426,7 +442,7 @@ public class myProject extends Application {
 
             Button vInsert = new Button("Try the cipher!");
             Button vClear = new Button("Clear fields");
-            Button vReverse = new Button("Reverse the words");
+            Button vSwap = new Button("Swap the words");
             Button vInfo = new Button("Info");
 
 
@@ -447,13 +463,32 @@ public class myProject extends Application {
             //buttons to same size
             vInsert.setMaxWidth(buttonWidth);
             vClear.setMaxWidth(buttonWidth);
-            vReverse.setMaxWidth(buttonWidth);
+            vSwap.setMaxWidth(buttonWidth);
             vInfo.setMaxWidth(buttonWidth);
             vLanguageABC.setMaxWidth(buttonWidth);
 
-            Vigenerevbox.getChildren().addAll(vWarning,vABCinput,vKeyInput,vWordInput,vNewWord,vLanguageABC,vInsert,vReverse,vClear,vInfo,ReturnButton);
+            HBox vHbox1 = new HBox(vBoxPadding,vLanguageABC,vClear);
+            HBox vHbox2 = new HBox(vBoxPadding,vInsert,vInfo);
+            HBox vHbox3 = new HBox(vBoxPadding,vSwap,ReturnButton);
+            vHbox1.setAlignment(Pos.CENTER);
+            vHbox1.setTranslateY(vBoxPadding*5);
+            vHbox2.setAlignment(Pos.CENTER);
+            vHbox2.setTranslateY(vBoxPadding*5);
+            vHbox3.setAlignment(Pos.CENTER);
+            vHbox3.setTranslateY(vBoxPadding*5);
 
-            vReverse.setOnAction(event2 -> {
+            HBox.setHgrow(vLanguageABC,Priority.ALWAYS);
+            HBox.setHgrow(vClear,Priority.ALWAYS);
+            HBox.setHgrow(vInsert,Priority.ALWAYS);
+            HBox.setHgrow(vInfo,Priority.ALWAYS);
+            HBox.setHgrow(vSwap,Priority.ALWAYS);
+            HBox.setHgrow(ReturnButton,Priority.ALWAYS);
+
+            Vigenerevbox.setAlignment(Pos.CENTER);
+            Vigenerevbox.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
+            Vigenerevbox.getChildren().addAll(vWelcomeText,vWarning,vABCinput,vKeyInput,vWordInput,vNewWord,vHbox1,vHbox2,vHbox3);
+
+            vSwap.setOnAction(event2 -> {
                 String vOldWord = vWordInput.getText();
                 String vCipherWord = vNewWord.getText();
                 vWordInput.setText(vCipherWord);
@@ -532,7 +567,7 @@ public class myProject extends Application {
                 vHelpStage.getIcons().add(new Image("file:questionmark.png"));
                 vHelpStage.show();
 
-                Label vHelpTextHeader = new Label("Atbash Cipher");
+                Label vHelpTextHeader = new Label("Vigenère Cipher");
                 vHelpTextHeader.setFont(Font.font(null, FontWeight.BOLD,20));
                 Label vHelpText = new Label();
                 vHelpText.setText("The Vigenère cipher was invented by a Frenchman, Blaise de Vigenère in " +
@@ -557,8 +592,10 @@ public class myProject extends Application {
                 vHelpText.setWrapText(true);
                 vHelpText.setTextAlignment(TextAlignment.JUSTIFY);
 
-                Button vTable = new Button("Vigenére table");
+                Button vTable = new Button("Vigenère table");
 
+                //TO DO: Fix scrollpane background!!
+                vHelpPane.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
                 vHelpPane.getChildren().addAll(vHelpTextHeader,vHelpText,vTable);
 
                 vTable.setOnAction(event1 -> {
@@ -583,10 +620,111 @@ public class myProject extends Application {
             Morsevbox = new VBox();
             MorseScene = new Scene(Morsevbox, width, height);
             mainStage.setScene(MorseScene);
-            mainStage.setTitle("Morse code");
+            mainStage.setTitle("Morse Code");
             mainStage.show();
 
-            Morsevbox.getChildren().addAll(ReturnButton);
+            Label mWelcomeText = new Label("Morse Code");
+            mWelcomeText.setFont(Font.font(null, FontWeight.BOLD,20));
+
+            Label mWarning = new Label("At the moment the translator is not working!");
+            mWarning.setFont(Font.font(null, FontPosture.ITALIC,14));
+            mWarning.setTextFill(Color.RED);
+
+            String mWordInputText = "Insert the word you want to translate into Morse code here";
+            String mNewWordText = "Your answer will be displayed here";
+            TextField mWordInput = new TextField(mWordInputText);
+            TextField mNewWord = new TextField(mNewWordText);
+
+            mNewWord.setEditable(false);
+            mNewWord.setStyle("-fx-background-color:" + TextBackgroundColor);
+
+            Button mTranslate = new Button("Translate!");
+            Button mClear = new Button("Clear fields");
+            Button mInfo = new Button("Info");
+            Button mSwap = new Button("Swap the words");
+
+            mTranslate.setMaxWidth(buttonWidth);
+            mClear.setMaxWidth(buttonWidth);
+            mInfo.setMaxWidth(buttonWidth);
+            mSwap.setMaxWidth(buttonWidth);
+
+            HBox mHbox1 = new HBox(vBoxPadding,mTranslate,mClear);
+            mHbox1.setAlignment(Pos.CENTER);
+            mHbox1.setTranslateY(vBoxPadding*5);
+            HBox mHbox2 = new HBox(vBoxPadding,mSwap,mInfo);
+            mHbox2.setAlignment(Pos.CENTER);
+            mHbox2.setTranslateY(vBoxPadding*5);
+            HBox mHbox3 = new HBox(vBoxPadding,ReturnButton);
+            mHbox3.setAlignment(Pos.CENTER);
+            mHbox3.setTranslateY(vBoxPadding*5);
+
+            HBox.setHgrow(ReturnButton,Priority.ALWAYS);
+            HBox.setHgrow(mTranslate,Priority.ALWAYS);
+            HBox.setHgrow(mInfo,Priority.ALWAYS);
+            HBox.setHgrow(mClear,Priority.ALWAYS);
+            HBox.setHgrow(mSwap,Priority.ALWAYS);
+
+            Morsevbox.setAlignment(Pos.CENTER);
+            Morsevbox.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
+            Morsevbox.getChildren().addAll(mWelcomeText,mWarning,mWordInput,mNewWord,mHbox1,mHbox2,mHbox3);
+
+
+            mSwap.setOnAction(event1 -> {
+                String mOldWord = mWordInput.getText();
+                String mCipherWord = mNewWord.getText();
+                mWordInput.setText(mCipherWord);
+                mNewWord.setText(mOldWord);
+            });
+
+            mClear.setOnAction(event1 -> {
+                mWordInput.setText(mWordInputText);
+                mNewWord.setText(mNewWordText);
+            });
+
+            mTranslate.setOnAction(event2 -> {
+
+            });
+
+            mInfo.setOnAction(event1 -> {
+                VBox mHelpPane = new VBox();
+                mHelpPane.setPadding(new Insets(vBoxPadding));
+                //ScrollPane cScrollPane = new ScrollPane(cHelpPane); //pane that can be scrolled
+                //cScrollPane.setFitToWidth(true);
+                Scene mHelpScene = new Scene(mHelpPane,width, height/2);
+                Stage mHelpStage = new Stage(); // info opens in new window
+                mHelpStage.setTitle("Info");
+                mHelpStage.setScene(mHelpScene);
+                mHelpStage.getIcons().add(new Image("file:questionmark.png"));
+                mHelpStage.show();
+
+                Label mHelpTextHeader = new Label("Morse Code");
+                mHelpTextHeader.setFont(Font.font(null, FontWeight.BOLD,20));
+                Label mHelpText = new Label();
+                mHelpText.setText("Morse code is a method of transmitting text information as a series of " +
+                        "on-off tones, lights, or clicks that can be directly understood by a skilled listener " +
+                        "or observer without special equipment. The International Morse Code encodes the ISO " +
+                        "basic Latin alphabet, some extra Latin letters, the Arabic numerals and a small set " +
+                        "of punctuation and procedural signals (prosigns) as standardized sequences of short and " +
+                        "long signals called \"dots\" " +
+                        "and \"dashes\", or \"dits\" and \"dahs\". Because many non-English natural languages " +
+                        "use more than the 26 Roman letters, extensions to the Morse alphabet exist for those " +
+                        "languages.\n \nEach Morse code symbol represents either a text character (letter or " +
+                        "numeral) or a prosign and is represented by a unique sequence of dots and dashes. The " +
+                        "duration of a dash is three times the duration of a dot. Each dot or dash is followed " +
+                        "by a short silence, equal to the dot duration. The letters of a word are separated by a " +
+                        "space equal to three dots (one dash), and the words are separated by a space equal to " +
+                        "seven dots. The dot duration is the basic unit of time measurement in code transmission. " +
+                        "To increase the speed of the communication, the code was designed so that the length of " +
+                        "each character in Morse varies approximately inversely to its frequency of occurrence in " +
+                        "English. Thus the most common letter in English, the letter \"E\", has the shortest code, " +
+                        "a single dot.");
+                mHelpText.setPrefWidth(width);
+                mHelpText.setWrapText(true);
+                mHelpText.setTextAlignment(TextAlignment.JUSTIFY);
+
+                mHelpPane.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
+                mHelpPane.getChildren().addAll(mHelpTextHeader, mHelpText);
+            });
         });
     }
 }
