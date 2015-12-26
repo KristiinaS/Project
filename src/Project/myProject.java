@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -40,10 +41,12 @@ public class myProject extends Application {
     int width = 600;
     int height = 350;
     int buttonWidth = width/3;
+    int vBoxPadding = 5;
+    String TextBackgroundColor = "#E6E6E6";
 
     String ABCinputText = "Insert the alphabet here or choose it from the list below";
-
-    String[] Alphabets = {"A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y",
+    String[] Alphabets = {ABCinputText,
+            "A B C D E F G H I J K L M N O P Q R S Š Z Ž T U V W Õ Ä Ö Ü X Y",
             "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z",
             "А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я",
             "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Æ Ø Å",
@@ -103,6 +106,7 @@ public class myProject extends Application {
         // Atbach Cipher content
         AtbashButton.setOnAction(event -> {
             Atbashvbox = new VBox();
+            Atbashvbox.setPadding(new Insets(vBoxPadding));
             AtbashScene = new Scene(Atbashvbox, width, height);
             mainStage.setScene(AtbashScene);
             mainStage.setTitle("Atbash Cipher");
@@ -118,14 +122,13 @@ public class myProject extends Application {
             TextField aWordInput = new TextField(aWordInputText);
             TextField aNewWord = new TextField(aNewWordText);
 
-            Button aEstonianABC = new Button("Use Estonian alphabet");
+            aNewWord.setEditable(false);
+            aNewWord.setStyle("-fx-background-color:" + TextBackgroundColor);
+
             Button aInsert = new Button("Try the cipher!");
             Button aClear = new Button("Clear fields");
+            Button aReverse = new Button("Reverse the words");
             Button aInfo = new Button("Info");
-
-            //alphabets for drop down menu
-            String[] aABCinputTextArray = {ABCinputText}; //string to array
-            String[] aAlphabets = combine(aABCinputTextArray,Alphabets); //add alphabets together
 
             //Defining the drop down menu
             ChoiceBox aLanguageABC = new ChoiceBox(FXCollections.observableArrayList(ABClanguages));
@@ -136,19 +139,43 @@ public class myProject extends Application {
             aLanguageABC.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
                 @Override
                 public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                    aABCinput.setText(aAlphabets[newValue.intValue()]);
+                    aABCinput.setText(Alphabets[newValue.intValue()]);
                 }
             });
 
             //buttons to same size
-            aEstonianABC.setMaxWidth(buttonWidth);
             aInsert.setMaxWidth(buttonWidth);
             aClear.setMaxWidth(buttonWidth);
+            aReverse.setMaxWidth(buttonWidth);
             aInfo.setMaxWidth(buttonWidth);
             aLanguageABC.setMaxWidth(buttonWidth);
 
+            HBox aHbox1 = new HBox(vBoxPadding,aLanguageABC,aClear);
+            HBox aHbox2 = new HBox(vBoxPadding,aInsert,aInfo);
+            HBox aHbox3 = new HBox(vBoxPadding,aReverse,ReturnButton);
+            aHbox1.setAlignment(Pos.CENTER);
+            aHbox1.setTranslateY(vBoxPadding*5);
+            aHbox2.setAlignment(Pos.CENTER);
+            aHbox2.setTranslateY(vBoxPadding*5);
+            aHbox3.setAlignment(Pos.CENTER);
+            aHbox3.setTranslateY(vBoxPadding*5);
 
-            Atbashvbox.getChildren().addAll(aWarning,aABCinput,aWordInput,aNewWord,aLanguageABC,aInsert,aClear,aInfo,ReturnButton);
+            HBox.setHgrow(aLanguageABC,Priority.ALWAYS);
+            HBox.setHgrow(aClear,Priority.ALWAYS);
+            HBox.setHgrow(aInsert,Priority.ALWAYS);
+            HBox.setHgrow(aInfo,Priority.ALWAYS);
+            HBox.setHgrow(aReverse,Priority.ALWAYS);
+            HBox.setHgrow(ReturnButton,Priority.ALWAYS);
+
+            Atbashvbox.getChildren().addAll(aWarning,aABCinput,aWordInput,aNewWord,aHbox1,aHbox2,aHbox3);
+
+            aReverse.setOnAction(event2 -> {
+                String aOldWord = aWordInput.getText();
+                String aCipherWord = aNewWord.getText();
+                aWordInput.setText(aCipherWord);
+                aNewWord.setText(aOldWord);
+            });
+
 
             // button that resets the fields to their original state
             aClear.setOnAction(event1 -> {
@@ -160,6 +187,7 @@ public class myProject extends Application {
             // button with information about Atbash
             aInfo.setOnAction(event3 ->{
                 VBox aHelpPane = new VBox();
+                aHelpPane.setPadding(new Insets(vBoxPadding));
                 ScrollPane aScrollPane = new ScrollPane(aHelpPane); //pane that can be scrolled
                 aScrollPane.setFitToWidth(true);
                 Scene aHelpScene = new Scene(aScrollPane,width, height/2);
@@ -222,6 +250,7 @@ public class myProject extends Application {
         //Caesar Cipher content
         CaesarButton.setOnAction(event -> {
             Caesarvbox = new VBox();
+            Caesarvbox.setPadding(new Insets(vBoxPadding));
             CaesarScene = new Scene(Caesarvbox, width, height);
             mainStage.setScene(CaesarScene);
             mainStage.setTitle("Caesar Shift Cipher");
@@ -240,14 +269,13 @@ public class myProject extends Application {
             TextField cWordInput = new TextField(cWordInputText);
             TextField cNewWord = new TextField(cNewWordText);
 
-            Button cEstonianABC = new Button("Use Estonian alphabet");
             Button cInsert = new Button("Try the cipher!");
             Button cClear = new Button("Clear fields");
+            Button cReverse = new Button("Reverse the words");
             Button cInfo = new Button("Info");
 
-            //alphabets for drop down menu
-            String[] cABCinputTextArray = {ABCinputText}; //string to array
-            String[] cAlphabets = combine(cABCinputTextArray,Alphabets); //add alphabets together
+            cNewWord.setEditable(false);
+            cNewWord.setStyle("-fx-background-color:" + TextBackgroundColor);
 
             //Defining the drop down menu
             ChoiceBox cLanguageABC = new ChoiceBox(FXCollections.observableArrayList(ABClanguages));
@@ -258,18 +286,42 @@ public class myProject extends Application {
             cLanguageABC.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
                 @Override
                 public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                    cABCinput.setText(cAlphabets[newValue.intValue()]);
+                    cABCinput.setText(Alphabets[newValue.intValue()]);
                 }
             });
 
             //buttons to same size
-            cEstonianABC.setMaxWidth(buttonWidth);
             cInsert.setMaxWidth(buttonWidth);
             cClear.setMaxWidth(buttonWidth);
+            cReverse.setMaxWidth(buttonWidth);
             cInfo.setMaxWidth(buttonWidth);
             cLanguageABC.setMaxWidth(buttonWidth);
 
-            Caesarvbox.getChildren().addAll(cWarning,cABCinput,cStepInput,cWordInput,cNewWord,cLanguageABC,cInsert,cClear,cInfo,ReturnButton);
+            HBox cHbox1 = new HBox(vBoxPadding,cLanguageABC,cClear);
+            HBox cHbox2 = new HBox(vBoxPadding,cInsert,cInfo);
+            HBox cHbox3 = new HBox(vBoxPadding,cReverse,ReturnButton);
+            cHbox1.setAlignment(Pos.CENTER);
+            cHbox1.setTranslateY(vBoxPadding*5);
+            cHbox2.setAlignment(Pos.CENTER);
+            cHbox2.setTranslateY(vBoxPadding*5);
+            cHbox3.setAlignment(Pos.CENTER);
+            cHbox3.setTranslateY(vBoxPadding*5);
+
+            HBox.setHgrow(cLanguageABC,Priority.ALWAYS);
+            HBox.setHgrow(cClear,Priority.ALWAYS);
+            HBox.setHgrow(cInsert,Priority.ALWAYS);
+            HBox.setHgrow(cInfo,Priority.ALWAYS);
+            HBox.setHgrow(cReverse,Priority.ALWAYS);
+            HBox.setHgrow(ReturnButton,Priority.ALWAYS);
+
+            Caesarvbox.getChildren().addAll(cWarning,cABCinput,cStepInput,cWordInput,cNewWord,cHbox1,cHbox2,cHbox3);
+
+            cReverse.setOnAction(event2 -> {
+                String cOldWord = cWordInput.getText();
+                String cCipherWord = cNewWord.getText();
+                cWordInput.setText(cCipherWord);
+                cNewWord.setText(cOldWord);
+            });
 
             cClear.setOnAction(event1 -> {
                 cABCinput.setText(ABCinputText);
@@ -280,6 +332,7 @@ public class myProject extends Application {
 
             cInfo.setOnAction(event2 -> {
                 VBox cHelpPane = new VBox();
+                cHelpPane.setPadding(new Insets(vBoxPadding));
                 ScrollPane cScrollPane = new ScrollPane(cHelpPane); //pane that can be scrolled
                 cScrollPane.setFitToWidth(true);
                 Scene cHelpScene = new Scene(cScrollPane,width, height/2);
@@ -350,6 +403,7 @@ public class myProject extends Application {
         // Õpetus - http://www.counton.org/explorer/codebreaking/vigenere-cipher.php
         VigenereButton.setOnAction(event -> {
             Vigenerevbox = new VBox();
+            Vigenerevbox.setPadding(new Insets(vBoxPadding));
             VigenereScene = new Scene(Vigenerevbox, width, height);
             mainStage.setScene(VigenereScene);
             mainStage.setTitle("Vigenère Cipher");
@@ -367,15 +421,14 @@ public class myProject extends Application {
             TextField vWordInput = new TextField(vWordInputText);
             TextField vNewWord = new TextField(vNewWordText);
 
-            Button vEstonianABC = new Button("Use Estonian alphabet");
-            Button vEnglishABC = new Button("Use English alphabet");
+            vNewWord.setEditable(false);
+            vNewWord.setStyle("-fx-background-color:" + TextBackgroundColor);
+
             Button vInsert = new Button("Try the cipher!");
             Button vClear = new Button("Clear fields");
+            Button vReverse = new Button("Reverse the words");
             Button vInfo = new Button("Info");
 
-            //alphabets for drop down menu
-            String[] vABCinputTextArray = {ABCinputText}; //string to array
-            String[] vAlphabets = combine(vABCinputTextArray,Alphabets); //add alphabets together
 
             //Defining the drop down menu
             ChoiceBox vLanguageABC = new ChoiceBox(FXCollections.observableArrayList(ABClanguages));
@@ -386,20 +439,26 @@ public class myProject extends Application {
             vLanguageABC.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
                 @Override
                 public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                    vABCinput.setText(vAlphabets[newValue.intValue()]);
+                    vABCinput.setText(Alphabets[newValue.intValue()]);
                 }
             });
 
 
             //buttons to same size
-            vEstonianABC.setMaxWidth(buttonWidth);
-            vEnglishABC.setMaxWidth(buttonWidth);
             vInsert.setMaxWidth(buttonWidth);
             vClear.setMaxWidth(buttonWidth);
+            vReverse.setMaxWidth(buttonWidth);
             vInfo.setMaxWidth(buttonWidth);
             vLanguageABC.setMaxWidth(buttonWidth);
 
-            Vigenerevbox.getChildren().addAll(vWarning,vABCinput,vKeyInput,vWordInput,vNewWord,vLanguageABC,vInsert,vClear,vInfo,ReturnButton);
+            Vigenerevbox.getChildren().addAll(vWarning,vABCinput,vKeyInput,vWordInput,vNewWord,vLanguageABC,vInsert,vReverse,vClear,vInfo,ReturnButton);
+
+            vReverse.setOnAction(event2 -> {
+                String vOldWord = vWordInput.getText();
+                String vCipherWord = vNewWord.getText();
+                vWordInput.setText(vCipherWord);
+                vNewWord.setText(vOldWord);
+            });
 
             vInsert.setOnAction(event3 -> {
                 String vABC = vABCinput.getText(); //ABC input to string
@@ -442,7 +501,7 @@ public class myProject extends Application {
                     } else {
                         int vABCindex = vABClist.indexOf(vWordLetter); //find index of word letter in ABC
                         int vABCindex2 = vABCindex + vStep;
-                        if (vABCindex2 > vLettersInABC) { //reduces length of step by abc length (step < abc !)
+                        if (vABCindex2 >= vLettersInABC) { //reduces length of step by abc length (step < abc !)
                             vABCindex2 = vABCindex2 - vLettersInABC;
                         }
                         vOutputList.add(i,vABClist.get(vABCindex2)); //add output letter to output list
@@ -463,6 +522,7 @@ public class myProject extends Application {
 
             vInfo.setOnAction(event2 -> {
                 VBox vHelpPane = new VBox();
+                vHelpPane.setPadding(new Insets(vBoxPadding));
                 ScrollPane vScrollPane = new ScrollPane(vHelpPane); //pane that can be scrolled
                 vScrollPane.setFitToWidth(true);
                 Scene vHelpScene = new Scene(vScrollPane,width, height/2);
@@ -528,11 +588,5 @@ public class myProject extends Application {
 
             Morsevbox.getChildren().addAll(ReturnButton);
         });
-
     }
-
-
-
-
-
 }
