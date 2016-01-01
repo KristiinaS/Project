@@ -12,21 +12,16 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
-import javax.imageio.ImageIO;
-import javax.xml.soap.Text;
-import java.awt.event.ActionEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.lang.reflect.Array;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -363,7 +358,7 @@ public class myProject extends Application {
                         "is 'shifted' a certain number of places down the alphabet. For example, with a shift " +
                         "of 1, A would be replaced by B, B would become C, and so on.\n \nIn order to reverse " +
                         "the encrypted text, you need to use the opposite value of the shift. For example, if " +
-                        "the original shift is 2, you can encode the text with shift -2");
+                        "the original shift is 2, you can encode the text with shift -2.");
                 cHelpText.setPrefWidth(width);
                 cHelpText.setWrapText(true);
                 cHelpText.setTextAlignment(TextAlignment.JUSTIFY);
@@ -682,6 +677,51 @@ public class myProject extends Application {
             });
 
             mTranslate.setOnAction(event2 -> {
+                String mWord = mWordInput.getText();
+                mWord = mWord.toUpperCase(); //convert input word to upper case
+                List<String> mWordList = new ArrayList<String>(Arrays.asList(mWord.split(""))); // Word string to list
+                int mLettersInWord = mWordList.size(); // get length of the word
+
+                List<String> mOutputList = new ArrayList<String>(); // Empty list for the new word
+
+                File mMorseInternational = new File("MorseInternational.txt");
+                HashMap <String,String> mList = new HashMap<String, String>();
+
+                try {
+                    BufferedReader mBR = new BufferedReader(new FileReader(mMorseInternational));
+                    String mLine = mBR.readLine(); //read line from file
+                    while (mLine != null) {
+                        //System.out.println(mLine);
+                        String[] mTempList = mLine.split("\\s");
+                        //System.out.println("mTemplist = " + Arrays.toString(mTempList));
+                        String mLetter = mTempList[0];
+                        //System.out.println("mLetter = " + mLetter);
+                        String mMorse = mTempList[1];
+                        //System.out.println("mMorse = " + mMorse);
+                        mList.put(mLetter, mMorse); //add key + value to HashMap
+                        mLine = mBR.readLine(); //read next line
+                    }
+                    for (int i = 0; i < mLettersInWord; i++) {
+                        String mLetter = mWordList.get(i); // find the letter from word
+                        if (mList.containsKey(mLetter)== false) { //adding characters that are not in ABC
+                            mOutputList.add(i, mLetter + " ");
+                        }
+                        else {
+                            String mValue = mList.get(mLetter);
+                            System.out.println("Võti = " + mValue);
+                            mOutputList.add(i, mValue + " "); //encrypted letter to output list
+                        }
+                    }
+
+                    String mOutput = String.join("",mOutputList);
+                    mNewWord.setText(mOutput);
+
+                    mBR.close();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
             });
 
