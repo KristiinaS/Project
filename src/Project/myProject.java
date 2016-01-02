@@ -1,5 +1,6 @@
 package Project;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -17,6 +18,7 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import jdk.nashorn.internal.ir.IfNode;
 
 import java.io.*;
 import java.util.*;
@@ -70,7 +72,7 @@ public class myProject extends Application {
         mainStage.show();
 
         Label welcomeText = new Label("Choose a cipher or code from the list below.");
-        welcomeText.setFont(Font.font(null, FontWeight.BOLD,20));
+        WelcomeTextStyle(welcomeText);
 
         // defining buttons on main page
         AtbashButton = new Button("Atbash Cipher");
@@ -79,22 +81,14 @@ public class myProject extends Application {
         MorseButton = new Button("Morse Code");
         ReturnButton = new Button("Return to menu");
 
-        // making the buttons same size
-        AtbashButton.setMaxWidth(buttonWidth);
-        CaesarButton.setMaxWidth(buttonWidth);
-        VigenereButton.setMaxWidth(buttonWidth);
-        MorseButton.setMaxWidth(buttonWidth);
-        ReturnButton.setMaxWidth(buttonWidth);
+        ButtonsSameSize(null,AtbashButton,CaesarButton,VigenereButton,MorseButton);// making the buttons same size
 
-        mainvbox.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
-        mainvbox.setAlignment(Pos.CENTER); // aligning main view text to center of the window
+        PaneStyle(mainvbox); //background & alignment
         mainvbox.getChildren().addAll(welcomeText,AtbashButton,CaesarButton,VigenereButton,MorseButton);
 
         // Button which takes back to the main view
         ReturnButton.setOnAction(event1 -> {
-            mainStage.setScene(mainScene);
-            mainStage.setTitle("Ciphers");
-            mainStage.show();
+            ReturnToMainView();
         });
 
         // Atbach Cipher content
@@ -107,26 +101,21 @@ public class myProject extends Application {
             mainStage.show();
 
             Label aWelcomeText = new Label("Atbash Cipher");
-            aWelcomeText.setFont(Font.font(null, FontWeight.BOLD,20));
+            WelcomeTextStyle(aWelcomeText);
 
             Label aWarning = new Label("At the moment all letters are converted to lower case!");
-            aWarning.setFont(Font.font(null, FontPosture.ITALIC,14));
-            aWarning.setTextFill(Color.RED);
+            WarningTextStyle(aWarning);
 
             String aWordInputText = "Insert the word you want to encipher here";
             String aNewWordText = "Your answer will be displayed here";
             TextField aABCinput = new TextField(ABCinputText);
             TextField aWordInput = new TextField(aWordInputText);
             TextField aNewWord = new TextField(aNewWordText);
+            WordNotEditable(aNewWord);//cannot change text in TextField
 
-            aNewWord.setEditable(false);
-            aNewWord.setStyle("-fx-background-color:" + TextBackgroundColor);
-
-            //Defining the drop down menu
-
-            ChoiceBox aLanguageABC = new ChoiceBox(FXCollections.observableArrayList(ABClanguages));
+            ChoiceBox aLanguageABC = new ChoiceBox(FXCollections.observableArrayList(ABClanguages));//Defining the drop down menu
             DefineABC(aLanguageABC);
-            ChangeABC(aLanguageABC,aABCinput);//replace alphabet if language is chosen from drop down menu
+            ChangeABC(aLanguageABC,aABCinput);//replace alphabet if different ABC is chosen from drop down menu
 
             Button aInsert = new Button("Try the cipher!");
             Button aClear = new Button("Clear fields");
@@ -135,8 +124,7 @@ public class myProject extends Application {
 
             ButtonsSameSize(aLanguageABC,aClear,aInsert,aInfo,aSwap);
 
-            Atbashvbox.setAlignment(Pos.CENTER);
-            Atbashvbox.setStyle("-fx-background-image: url(" + BackgroundPicture + ")");
+            PaneStyle(Atbashvbox);
             Atbashvbox.getChildren().addAll(aWelcomeText,aWarning,aABCinput,aWordInput,aNewWord,
                     ButtonsToVbox(aLanguageABC,aClear,aInsert,aInfo,aSwap));
 
@@ -204,12 +192,10 @@ public class myProject extends Application {
             mainStage.show();
 
             Label cWelcomeText = new Label("Caesar Cipher");
-            cWelcomeText.setFont(Font.font(null, FontWeight.BOLD,20));
+            WelcomeTextStyle(cWelcomeText);
 
             Label cWarning = new Label("At the moment all letters are converted to lower case!");
-            cWarning.setFont(Font.font(null, FontPosture.ITALIC,14));
-            cWarning.setTextFill(Color.RED);
-
+            WarningTextStyle(cWarning);
 
             String cStepInputText = "Insert the shift number (use minus (-) for left shift)";
             String cWordInputText = "Insert the word you want to encipher here";
@@ -218,24 +204,20 @@ public class myProject extends Application {
             TextField cStepInput = new TextField(cStepInputText);
             TextField cWordInput = new TextField(cWordInputText);
             TextField cNewWord = new TextField(cNewWordText);
+            WordNotEditable(cNewWord);//cannot change text in TextField
 
             Button cInsert = new Button("Try the cipher!");
             Button cClear = new Button("Clear fields");
             Button cSwap = new Button("Answer to input");
             Button cInfo = new Button("Info");
 
-            cNewWord.setEditable(false);
-            cNewWord.setStyle("-fx-background-color:" + TextBackgroundColor);
-
-            //Defining the drop down menu
-            ChoiceBox cLanguageABC = new ChoiceBox(FXCollections.observableArrayList(ABClanguages));
+            ChoiceBox cLanguageABC = new ChoiceBox(FXCollections.observableArrayList(ABClanguages));//Defining the drop down menu
             DefineABC(cLanguageABC);
             ChangeABC(cLanguageABC, cABCinput);//replace alphabet if language is chosen from drop down menu
 
             ButtonsSameSize(cLanguageABC,cClear,cInsert,cInfo,cSwap);
 
-            Caesarvbox.setAlignment(Pos.CENTER);
-            Caesarvbox.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
+            PaneStyle(Caesarvbox);
             Caesarvbox.getChildren().addAll(cWelcomeText,cWarning,cABCinput,cStepInput,cWordInput,cNewWord,
                     ButtonsToVbox(cLanguageABC,cClear,cInsert,cInfo,cSwap));
 
@@ -300,7 +282,6 @@ public class myProject extends Application {
             });
         });
 
-        // Õpetus - http://www.counton.org/explorer/codebreaking/vigenere-cipher.php
         VigenereButton.setOnAction(event -> {
             Vigenerevbox = new VBox();
             Vigenerevbox.setPadding(new Insets(vBoxPadding));
@@ -310,12 +291,11 @@ public class myProject extends Application {
             mainStage.show();
 
             Label vWelcomeText = new Label("Vigenère Cipher");
-            vWelcomeText.setFont(Font.font(null, FontWeight.BOLD,20));
+            WelcomeTextStyle(vWelcomeText);
 
             Label vWarning = new Label("At the moment only one word can be enciphered at a time and all " +
                     "letters are converted to lower case!");
-            vWarning.setFont(Font.font(null, FontPosture.ITALIC,14));
-            vWarning.setTextFill(Color.RED);
+            WarningTextStyle(vWarning);
 
             String vKeyInputText = "Enter the keyword";
             String vWordInputText = "Insert the word you want to encipher here";
@@ -324,9 +304,7 @@ public class myProject extends Application {
             TextField vKeyInput = new TextField(vKeyInputText);
             TextField vWordInput = new TextField(vWordInputText);
             TextField vNewWord = new TextField(vNewWordText);
-
-            vNewWord.setEditable(false);
-            vNewWord.setStyle("-fx-background-color:" + TextBackgroundColor);
+            WordNotEditable(vNewWord); //cannot change text in TextField
 
             Button vInsert = new Button("Try the cipher!");
             Button vClear = new Button("Clear fields");
@@ -339,12 +317,11 @@ public class myProject extends Application {
             DefineABC(vLanguageABC);
             ChangeABC(vLanguageABC,vABCinput);//replace alphabet if language is chosen from drop down menu
 
-            ButtonsSameSize(vLanguageABC,vClear,vInfo,vInfo,vSwap);
+            ButtonsSameSize(vLanguageABC,vClear,vInsert,vInfo,vSwap);
 
-            Vigenerevbox.setAlignment(Pos.CENTER);
-            Vigenerevbox.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
+            PaneStyle(Vigenerevbox);
             Vigenerevbox.getChildren().addAll(vWelcomeText,vWarning,vABCinput,vKeyInput,vWordInput,vNewWord,
-                    ButtonsToVbox(vLanguageABC,vClear,vInfo,vInfo,vSwap));
+                    ButtonsToVbox(vLanguageABC,vClear,vInsert,vInfo,vSwap));
 
             vSwap.setOnAction(event2 -> {
                 Swap(vNewWord,vWordInput);
@@ -446,30 +423,25 @@ public class myProject extends Application {
             mainStage.show();
 
             Label mWelcomeText = new Label("Morse Code");
-            mWelcomeText.setFont(Font.font(null, FontWeight.BOLD,20));
+            WelcomeTextStyle(mWelcomeText);
 
             Label mWarning = new Label("At the moment translating from Morse to Latin alphabet doesn't work!");
-            mWarning.setFont(Font.font(null, FontPosture.ITALIC,14));
-            mWarning.setTextFill(Color.RED);
+            WarningTextStyle(mWarning);
 
             String mWordInputText = "Insert the word you want to translate into Morse code here";
             String mNewWordText = "Your answer will be displayed here";
             TextField mWordInput = new TextField(mWordInputText);
             TextField mNewWord = new TextField(mNewWordText);
-
-            mNewWord.setEditable(false);
-            mNewWord.setStyle("-fx-background-color:" + TextBackgroundColor);
+            WordNotEditable(mNewWord);//cannot change text in TextField
 
             Button mTranslate = new Button("Translate!");
             Button mClear = new Button("Clear fields");
             Button mInfo = new Button("Info");
             Button mSwap = new Button("Answer to input");
 
-
             ButtonsSameSize(null,mTranslate,mClear,mSwap,mInfo);
 
-            Morsevbox.setAlignment(Pos.CENTER);
-            Morsevbox.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
+            PaneStyle(Morsevbox);
             Morsevbox.getChildren().addAll(mWelcomeText,mWarning,mWordInput,mNewWord,
                     ButtonsToVbox(null,mTranslate,mClear,mSwap,mInfo));
 
@@ -483,64 +455,48 @@ public class myProject extends Application {
             });
 
             mTranslate.setOnAction(event2 -> {
-                String mWord = mWordInput.getText();
-                mWord = mWord.toUpperCase(); //convert input word to upper case
-                List<String> mWordList = new ArrayList<String>(Arrays.asList(mWord.split(""))); // Word string to list
-                int mLettersInWord = mWordList.size(); // get length of the word
-                //System.out.println("Tähti: " + mLettersInWord);
-
+                String mWord = mWordInput.getText(); //save input from TextField
                 List<String> mOutputList = new ArrayList<String>(); // Empty list for the new word
-
-                File mMorseInternational = new File("MorseInternational.txt");
-                HashMap <String,String> mList = new HashMap<String, String>();
+                File mMorseInternational = new File("MorseInternational.txt"); //ERROR!! "A" doesn't work with UTF-8.
+                HashMap <String,String> mList = new HashMap<String, String>(); //HashMap for Morse alphabet
 
                 try {
-                    BufferedReader mBR = new BufferedReader(new FileReader(mMorseInternational));
+                    BufferedReader mBR = new BufferedReader(new FileReader(mMorseInternational)); //read file
                     String mLine = mBR.readLine(); //read line from file
-                    while (mLine != null) {
-                        //System.out.println(mLine);
-                        String[] mTempList = mLine.split("\\s");
-                        //System.out.println("mTemplist = " + Arrays.toString(mTempList));
-                        String mLetter = mTempList[0];
-                        //System.out.println("mLetter = " + mLetter);
-                        String mMorse = mTempList[1];
-                        //System.out.println("mMorse = " + mMorse);
-                        mList.put(mLetter, mMorse); //add key + value to HashMap
-                        mLine = mBR.readLine(); //read next line
-                    }
 
+                    if (mWord.matches("^[/. -]+$")){ //Translate Morse to Latin
+                        String[] mWordList = mWord.split("\\s+"); //Words from sentence to list
+                        int mLettersInWord = mWordList.length; //elements in list
 
-                    Set<Map.Entry<String,String>> hashSet = mList.entrySet();
-                    int a = 0;
-                    for (Map.Entry entry:hashSet){
-                        System.out.println("Key="+entry.getKey()+", value="+entry.getValue()+ "(indeks: " + a + ")");
-                        a=a+1;
-                    }
+                        FileToHashMap(true,mLine,mList,mBR);
 
-                    String item = mList.keySet().toArray()[45].toString();
-                    System.out.println("mis on kohal 45? " + item);
-
-
-                    //ERROR!! "A" täht ei tööta UTF-8-ga.
-
-                    for (int i = 0; i < mLettersInWord; i++) {
-                        String mLetter = mWordList.get(i); // find the letter from word
-                        /*
-                        System.out.println("Täht sõnest: " + mLetter);
-                        System.out.println("Kas on listis: " + mList.containsKey(mLetter));
-                        String Value = mList.get(mLetter);
-                        System.out.println("Võti = " + Value);
-                        */
-                        if (mList.containsKey(mLetter)== false) { //adding characters that are not in Morse code
-                            if (Character.isWhitespace(mLetter.charAt(0))){
-                                mOutputList.add(i, "/ ");
+                        for (int i = 0; i < mLettersInWord; i++) {
+                            if (mWordList[i].equals("/")) {
+                                mOutputList.add(i," "); //Replace "/" with a whitespace
                             } else {
-                                mOutputList.add(i, mLetter + " ");
+                                String mValue = mList.get(mWordList[i]); //find value of key
+                                mOutputList.add(i,mValue); //letter of morse code to output list
                             }
-                        } else {
-                            String mValue = mList.get(mLetter);
-                            //System.out.println("Võti = " + mValue);
-                            mOutputList.add(i, mValue + " "); //encrypted letter to output list
+                        }
+                    } else { // Translate Latin to Morse
+                        mWord = mWord.toUpperCase(); //convert input word to upper case
+                        List<String> mWordList = new ArrayList<String>(Arrays.asList(mWord.split(""))); // Word string to list
+                        int mLettersInWord = mWordList.size(); // get length of the word
+
+                        FileToHashMap(false,mLine,mList,mBR);
+
+                        for (int i = 0; i < mLettersInWord; i++) {
+                            String mLetter = mWordList.get(i); // find the letter from word
+                            if (mList.containsKey(mLetter)== false) { //adding characters that are not in Morse code
+                                if (Character.isWhitespace(mLetter.charAt(0))){
+                                    mOutputList.add(i, "/ ");
+                                } else {
+                                    mOutputList.add(i, mLetter + " ");
+                                }
+                            } else {
+                                String mValue = mList.get(mLetter);
+                                mOutputList.add(i, mValue + " "); //morse code of letter to output list
+                            }
                         }
                     }
 
@@ -588,6 +544,47 @@ public class myProject extends Application {
         });
     }
 
+    private HashMap<String, String> FileToHashMap(boolean isMorse,String Line, HashMap<String, String> List,BufferedReader BR)
+            throws IOException {
+        while (Line != null) {
+            String[] mTempList = Line.split("\\s"); //save key + value to array
+            String Letter = mTempList[0]; //save letter (key)
+            String Morse = mTempList[1]; //save morse code of letter (value)
+            if (isMorse == true){
+                List.put(Morse, Letter); //add key + value to HashMap
+            } else {
+                List.put(Letter,Morse); //add key + value to HashMap
+            }
+            Line = BR.readLine(); //read next line
+        }
+        return List;
+    }
+
+    private void WelcomeTextStyle(Label WelcomeText) {
+        WelcomeText.setFont(Font.font(null, FontWeight.BOLD,20));
+    }
+
+    private void WarningTextStyle(Label Warning) {
+        Warning.setFont(Font.font(null, FontPosture.ITALIC,14));
+        Warning.setTextFill(Color.RED);
+    }
+
+    private void WordNotEditable(TextField NewWord) {
+        NewWord.setEditable(false);
+        NewWord.setStyle("-fx-background-color:" + TextBackgroundColor);
+    }
+
+    private void PaneStyle(VBox pane) {
+        pane.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
+        pane.setAlignment(Pos.CENTER); // aligning main view text to center of the window
+    }
+
+    private void ReturnToMainView() {
+        mainStage.setScene(mainScene);
+        mainStage.setTitle("Ciphers");
+        mainStage.show();
+    }
+
     private void ChangeABC(ChoiceBox LanguageABC,TextField ABCinput) {
         //replace alphabet if language is chosen from drop down menu
         LanguageABC.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
@@ -633,6 +630,9 @@ public class myProject extends Application {
     }
 
     private void ButtonsSameSize(ChoiceBox Button1,Button Button2,Button Button3,Button Button4,Button Button5) {
+        ReturnButton.setMaxWidth(buttonWidth);
+        HBox.setHgrow(ReturnButton,Priority.ALWAYS);
+
         if (Button1 == null) {
             Button[] Buttons = new Button[4];
             Buttons[0] = Button2;
@@ -644,7 +644,6 @@ public class myProject extends Application {
                 Buttons[i].setMaxWidth(buttonWidth);
                 HBox.setHgrow(Buttons[i],Priority.ALWAYS);
             }
-            HBox.setHgrow(ReturnButton,Priority.ALWAYS);
         } else {
             Button1.setMaxWidth(buttonWidth);
             Button2.setMaxWidth(buttonWidth);
@@ -657,7 +656,6 @@ public class myProject extends Application {
             HBox.setHgrow(Button3,Priority.ALWAYS);
             HBox.setHgrow(Button4,Priority.ALWAYS);
             HBox.setHgrow(Button5,Priority.ALWAYS);
-            HBox.setHgrow(ReturnButton,Priority.ALWAYS);
         }
     }
 
