@@ -122,52 +122,23 @@ public class myProject extends Application {
             aNewWord.setEditable(false);
             aNewWord.setStyle("-fx-background-color:" + TextBackgroundColor);
 
+            //Defining the drop down menu
+
+            ChoiceBox aLanguageABC = new ChoiceBox(FXCollections.observableArrayList(ABClanguages));
+            DefineABC(aLanguageABC);
+            ChangeABC(aLanguageABC,aABCinput);//replace alphabet if language is chosen from drop down menu
+
             Button aInsert = new Button("Try the cipher!");
             Button aClear = new Button("Clear fields");
             Button aSwap = new Button("Answer to input");
             Button aInfo = new Button("Info");
 
-            //Defining the drop down menu
-            ChoiceBox aLanguageABC = new ChoiceBox(FXCollections.observableArrayList(ABClanguages));
-            aLanguageABC.setTooltip(Choose); //dispay text if mouse is hovering over the button
-            aLanguageABC.getSelectionModel().selectFirst(); //dispays the first selectin by default
-
-            //replace alphabet if language is chosen from drop down menu
-            aLanguageABC.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-                @Override
-                public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                    aABCinput.setText(Alphabets[newValue.intValue()]);
-                }
-            });
-
-            HBox aHbox1 = new HBox(vBoxPadding,aLanguageABC,aClear);
-            HBox aHbox2 = new HBox(vBoxPadding,aInsert,aInfo);
-            HBox aHbox3 = new HBox(vBoxPadding,aSwap,ReturnButton);
-
-            //buttons to same size
-            aInsert.setMaxWidth(buttonWidth);
-            aClear.setMaxWidth(buttonWidth);
-            aSwap.setMaxWidth(buttonWidth);
-            aInfo.setMaxWidth(buttonWidth);
-            aLanguageABC.setMaxWidth(buttonWidth);
-
-            aHbox1.setAlignment(Pos.CENTER);
-            aHbox1.setTranslateY(vBoxPadding*5);
-            aHbox2.setAlignment(Pos.CENTER);
-            aHbox2.setTranslateY(vBoxPadding*5);
-            aHbox3.setAlignment(Pos.CENTER);
-            aHbox3.setTranslateY(vBoxPadding*5);
-
-            HBox.setHgrow(aLanguageABC,Priority.ALWAYS);
-            HBox.setHgrow(aClear,Priority.ALWAYS);
-            HBox.setHgrow(aInsert,Priority.ALWAYS);
-            HBox.setHgrow(aInfo,Priority.ALWAYS);
-            HBox.setHgrow(aSwap,Priority.ALWAYS);
-            HBox.setHgrow(ReturnButton,Priority.ALWAYS);
+            ButtonsSameSize(aLanguageABC,aClear,aInsert,aInfo,aSwap);
 
             Atbashvbox.setAlignment(Pos.CENTER);
             Atbashvbox.setStyle("-fx-background-image: url(" + BackgroundPicture + ")");
-            Atbashvbox.getChildren().addAll(aWelcomeText,aWarning,aABCinput,aWordInput,aNewWord,aHbox1,aHbox2,aHbox3);
+            Atbashvbox.getChildren().addAll(aWelcomeText,aWarning,aABCinput,aWordInput,aNewWord,
+                    ButtonsToVbox(aLanguageABC,aClear,aInsert,aInfo,aSwap));
 
             aSwap.setOnAction(event2 -> {
                 Swap(aNewWord,aWordInput);
@@ -258,44 +229,15 @@ public class myProject extends Application {
 
             //Defining the drop down menu
             ChoiceBox cLanguageABC = new ChoiceBox(FXCollections.observableArrayList(ABClanguages));
-            cLanguageABC.setTooltip(Choose); //dispay text if mouse is hovering over the button
-            cLanguageABC.getSelectionModel().selectFirst(); //dispays the first selectin by default
+            DefineABC(cLanguageABC);
+            ChangeABC(cLanguageABC, cABCinput);//replace alphabet if language is chosen from drop down menu
 
-            //replace alphabet if language is chosen from drop down menu
-            cLanguageABC.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-                @Override
-                public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                    cABCinput.setText(Alphabets[newValue.intValue()]);
-                }
-            });
-
-            //buttons to same size
-            cInsert.setMaxWidth(buttonWidth);
-            cClear.setMaxWidth(buttonWidth);
-            cSwap.setMaxWidth(buttonWidth);
-            cInfo.setMaxWidth(buttonWidth);
-            cLanguageABC.setMaxWidth(buttonWidth);
-
-            HBox cHbox1 = new HBox(vBoxPadding,cLanguageABC,cClear);
-            HBox cHbox2 = new HBox(vBoxPadding,cInsert,cInfo);
-            HBox cHbox3 = new HBox(vBoxPadding,cSwap,ReturnButton);
-            cHbox1.setAlignment(Pos.CENTER);
-            cHbox1.setTranslateY(vBoxPadding*5);
-            cHbox2.setAlignment(Pos.CENTER);
-            cHbox2.setTranslateY(vBoxPadding*5);
-            cHbox3.setAlignment(Pos.CENTER);
-            cHbox3.setTranslateY(vBoxPadding*5);
-
-            HBox.setHgrow(cLanguageABC,Priority.ALWAYS);
-            HBox.setHgrow(cClear,Priority.ALWAYS);
-            HBox.setHgrow(cInsert,Priority.ALWAYS);
-            HBox.setHgrow(cInfo,Priority.ALWAYS);
-            HBox.setHgrow(cSwap,Priority.ALWAYS);
-            HBox.setHgrow(ReturnButton,Priority.ALWAYS);
+            ButtonsSameSize(cLanguageABC,cClear,cInsert,cInfo,cSwap);
 
             Caesarvbox.setAlignment(Pos.CENTER);
             Caesarvbox.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
-            Caesarvbox.getChildren().addAll(cWelcomeText,cWarning,cABCinput,cStepInput,cWordInput,cNewWord,cHbox1,cHbox2,cHbox3);
+            Caesarvbox.getChildren().addAll(cWelcomeText,cWarning,cABCinput,cStepInput,cWordInput,cNewWord,
+                    ButtonsToVbox(cLanguageABC,cClear,cInsert,cInfo,cSwap));
 
             cSwap.setOnAction(event2 -> {
                 Swap(cNewWord,cWordInput);
@@ -394,45 +336,15 @@ public class myProject extends Application {
 
             //Defining the drop down menu
             ChoiceBox vLanguageABC = new ChoiceBox(FXCollections.observableArrayList(ABClanguages));
-            vLanguageABC.setTooltip(Choose); //dispay text if mouse is hovering over the button
-            vLanguageABC.getSelectionModel().selectFirst(); //dispays the first selectin by default
+            DefineABC(vLanguageABC);
+            ChangeABC(vLanguageABC,vABCinput);//replace alphabet if language is chosen from drop down menu
 
-            //replace alphabet if language is chosen from drop down menu
-            vLanguageABC.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-                @Override
-                public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                    vABCinput.setText(Alphabets[newValue.intValue()]);
-                }
-            });
-
-
-            //buttons to same size
-            vInsert.setMaxWidth(buttonWidth);
-            vClear.setMaxWidth(buttonWidth);
-            vSwap.setMaxWidth(buttonWidth);
-            vInfo.setMaxWidth(buttonWidth);
-            vLanguageABC.setMaxWidth(buttonWidth);
-
-            HBox vHbox1 = new HBox(vBoxPadding,vLanguageABC,vClear);
-            HBox vHbox2 = new HBox(vBoxPadding,vInsert,vInfo);
-            HBox vHbox3 = new HBox(vBoxPadding,vSwap,ReturnButton);
-            vHbox1.setAlignment(Pos.CENTER);
-            vHbox1.setTranslateY(vBoxPadding*5);
-            vHbox2.setAlignment(Pos.CENTER);
-            vHbox2.setTranslateY(vBoxPadding*5);
-            vHbox3.setAlignment(Pos.CENTER);
-            vHbox3.setTranslateY(vBoxPadding*5);
-
-            HBox.setHgrow(vLanguageABC,Priority.ALWAYS);
-            HBox.setHgrow(vClear,Priority.ALWAYS);
-            HBox.setHgrow(vInsert,Priority.ALWAYS);
-            HBox.setHgrow(vInfo,Priority.ALWAYS);
-            HBox.setHgrow(vSwap,Priority.ALWAYS);
-            HBox.setHgrow(ReturnButton,Priority.ALWAYS);
+            ButtonsSameSize(vLanguageABC,vClear,vInfo,vInfo,vSwap);
 
             Vigenerevbox.setAlignment(Pos.CENTER);
             Vigenerevbox.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
-            Vigenerevbox.getChildren().addAll(vWelcomeText,vWarning,vABCinput,vKeyInput,vWordInput,vNewWord,vHbox1,vHbox2,vHbox3);
+            Vigenerevbox.getChildren().addAll(vWelcomeText,vWarning,vABCinput,vKeyInput,vWordInput,vNewWord,
+                    ButtonsToVbox(vLanguageABC,vClear,vInfo,vInfo,vSwap));
 
             vSwap.setOnAction(event2 -> {
                 Swap(vNewWord,vWordInput);
@@ -553,30 +465,13 @@ public class myProject extends Application {
             Button mInfo = new Button("Info");
             Button mSwap = new Button("Answer to input");
 
-            mTranslate.setMaxWidth(buttonWidth);
-            mClear.setMaxWidth(buttonWidth);
-            mInfo.setMaxWidth(buttonWidth);
-            mSwap.setMaxWidth(buttonWidth);
 
-            HBox mHbox1 = new HBox(vBoxPadding,mTranslate,mClear);
-            mHbox1.setAlignment(Pos.CENTER);
-            mHbox1.setTranslateY(vBoxPadding*5);
-            HBox mHbox2 = new HBox(vBoxPadding,mSwap,mInfo);
-            mHbox2.setAlignment(Pos.CENTER);
-            mHbox2.setTranslateY(vBoxPadding*5);
-            HBox mHbox3 = new HBox(vBoxPadding,ReturnButton);
-            mHbox3.setAlignment(Pos.CENTER);
-            mHbox3.setTranslateY(vBoxPadding*5);
-
-            HBox.setHgrow(ReturnButton,Priority.ALWAYS);
-            HBox.setHgrow(mTranslate,Priority.ALWAYS);
-            HBox.setHgrow(mInfo,Priority.ALWAYS);
-            HBox.setHgrow(mClear,Priority.ALWAYS);
-            HBox.setHgrow(mSwap,Priority.ALWAYS);
+            ButtonsSameSize(null,mTranslate,mClear,mSwap,mInfo);
 
             Morsevbox.setAlignment(Pos.CENTER);
             Morsevbox.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
-            Morsevbox.getChildren().addAll(mWelcomeText,mWarning,mWordInput,mNewWord,mHbox1,mHbox2,mHbox3);
+            Morsevbox.getChildren().addAll(mWelcomeText,mWarning,mWordInput,mNewWord,
+                    ButtonsToVbox(null,mTranslate,mClear,mSwap,mInfo));
 
 
             mSwap.setOnAction(event1 -> {
@@ -691,6 +586,79 @@ public class myProject extends Application {
                 });
             });
         });
+    }
+
+    private void ChangeABC(ChoiceBox LanguageABC,TextField ABCinput) {
+        //replace alphabet if language is chosen from drop down menu
+        LanguageABC.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                ABCinput.setText(Alphabets[newValue.intValue()]);
+            }
+        });
+    }
+
+    private ChoiceBox DefineABC(ChoiceBox LanguageABC) {
+        LanguageABC.setTooltip(Choose); //dispay text if mouse is hovering over the button
+        LanguageABC.getSelectionModel().selectFirst(); //dispays the first selectin by default
+        return LanguageABC;
+    }
+
+    private VBox ButtonsToVbox(ChoiceBox Button1,Button Button2,Button Button3,Button Button4,Button Button5) {
+        VBox subPane = new VBox();
+
+        HBox Hbox1 = new HBox(vBoxPadding);
+        HBox Hbox2 = new HBox(vBoxPadding);
+        HBox Hbox3 = new HBox(vBoxPadding);
+
+        if (Button1 == null) {
+            Hbox1.getChildren().addAll(Button2,Button3);
+            Hbox2.getChildren().addAll(Button4,Button5);
+            Hbox3.getChildren().addAll(ReturnButton);
+        } else {
+            Hbox1.getChildren().addAll(Button1,Button2);
+            Hbox2.getChildren().addAll(Button3,Button4);
+            Hbox3.getChildren().addAll(Button5,ReturnButton);
+        }
+
+        Hbox1.setAlignment(Pos.CENTER);
+        Hbox1.setTranslateY(vBoxPadding*5);
+        Hbox2.setAlignment(Pos.CENTER);
+        Hbox2.setTranslateY(vBoxPadding*5);
+        Hbox3.setAlignment(Pos.CENTER);
+        Hbox3.setTranslateY(vBoxPadding*5);
+
+        subPane.getChildren().addAll(Hbox1,Hbox2,Hbox3);
+        return subPane;
+    }
+
+    private void ButtonsSameSize(ChoiceBox Button1,Button Button2,Button Button3,Button Button4,Button Button5) {
+        if (Button1 == null) {
+            Button[] Buttons = new Button[4];
+            Buttons[0] = Button2;
+            Buttons[1] = Button3;
+            Buttons[2] = Button4;
+            Buttons[3] = Button5;
+
+            for (int i = 0; i < 4; i++) {
+                Buttons[i].setMaxWidth(buttonWidth);
+                HBox.setHgrow(Buttons[i],Priority.ALWAYS);
+            }
+            HBox.setHgrow(ReturnButton,Priority.ALWAYS);
+        } else {
+            Button1.setMaxWidth(buttonWidth);
+            Button2.setMaxWidth(buttonWidth);
+            Button3.setMaxWidth(buttonWidth);
+            Button4.setMaxWidth(buttonWidth);
+            Button5.setMaxWidth(buttonWidth);
+
+            HBox.setHgrow(Button1,Priority.ALWAYS);
+            HBox.setHgrow(Button2,Priority.ALWAYS);
+            HBox.setHgrow(Button3,Priority.ALWAYS);
+            HBox.setHgrow(Button4,Priority.ALWAYS);
+            HBox.setHgrow(Button5,Priority.ALWAYS);
+            HBox.setHgrow(ReturnButton,Priority.ALWAYS);
+        }
     }
 
     private void InfoButton(String Title, int Width, int Heigth, String Filename) {
