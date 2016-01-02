@@ -1,16 +1,19 @@
 package Project;
 
+import com.sun.javafx.scene.control.skin.ChoiceBoxSkin;
 import com.sun.org.apache.xpath.internal.SourceTree;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -108,10 +111,12 @@ public class myProject extends Application {
 
             String aWordInputText = "Insert the word you want to encipher here";
             String aNewWordText = "Your answer will be displayed here";
-            TextField aABCinput = new TextField(ABCinputText);
-            TextField aWordInput = new TextField(aWordInputText);
+            TextField aABCinput = new TextField();
+            TextField aWordInput = new TextField();
+            SetPromptText(aABCinput,ABCinputText,aWordInput,aWordInputText,null,null);
             TextField aNewWord = new TextField(aNewWordText);
             WordNotEditable(aNewWord);//cannot change text in TextField
+
 
             ChoiceBox aLanguageABC = new ChoiceBox(FXCollections.observableArrayList(ABClanguages));//Defining the drop down menu
             DefineABC(aLanguageABC);
@@ -135,7 +140,7 @@ public class myProject extends Application {
 
             // button that resets the fields to their original state
             aClear.setOnAction(event1 -> {
-                Clear(aABCinput,null,null,aWordInput,aWordInputText,aNewWord,aNewWordText);
+                Clear(aLanguageABC,aABCinput,null,null,aWordInput,aWordInputText,aNewWord,aNewWordText);
             });
 
             // button with information about Atbash
@@ -200,9 +205,10 @@ public class myProject extends Application {
             String cStepInputText = "Insert the shift number (use minus (-) for left shift)";
             String cWordInputText = "Insert the word you want to encipher here";
             String cNewWordText = "Your answer will be displayed here";
-            TextField cABCinput = new TextField(ABCinputText);
-            TextField cStepInput = new TextField(cStepInputText);
-            TextField cWordInput = new TextField(cWordInputText);
+            TextField cABCinput = new TextField();
+            TextField cStepInput = new TextField();
+            TextField cWordInput = new TextField();
+            SetPromptText(cABCinput,ABCinputText,cStepInput,cStepInputText,cWordInput,cWordInputText);
             TextField cNewWord = new TextField(cNewWordText);
             WordNotEditable(cNewWord);//cannot change text in TextField
 
@@ -226,7 +232,7 @@ public class myProject extends Application {
             });
 
             cClear.setOnAction(event1 -> {
-                Clear(cABCinput, cStepInput, cStepInputText, cWordInput, cWordInputText, cNewWord, cNewWordText);
+                Clear(cLanguageABC,cABCinput, cStepInput, cStepInputText, cWordInput, cWordInputText, cNewWord, cNewWordText);
 
             });
 
@@ -300,9 +306,10 @@ public class myProject extends Application {
             String vKeyInputText = "Enter the keyword";
             String vWordInputText = "Insert the word you want to encipher here";
             String vNewWordText = "Your answer will be displayed here";
-            TextField vABCinput = new TextField(ABCinputText);
-            TextField vKeyInput = new TextField(vKeyInputText);
-            TextField vWordInput = new TextField(vWordInputText);
+            TextField vABCinput = new TextField();
+            TextField vKeyInput = new TextField();
+            TextField vWordInput = new TextField();
+            SetPromptText(vABCinput,ABCinputText,vKeyInput,vKeyInputText,vWordInput,vWordInputText);
             TextField vNewWord = new TextField(vNewWordText);
             WordNotEditable(vNewWord); //cannot change text in TextField
 
@@ -381,7 +388,7 @@ public class myProject extends Application {
             });
 
             vClear.setOnAction(event1 -> {
-                Clear(vABCinput,vKeyInput,vKeyInputText,vWordInput,vWordInputText,vNewWord,vNewWordText);
+                Clear(vLanguageABC,vABCinput,vKeyInput,vKeyInputText,vWordInput,vWordInputText,vNewWord,vNewWordText);
             });
 
             vInfo.setOnAction(event2 -> {
@@ -430,7 +437,8 @@ public class myProject extends Application {
 
             String mWordInputText = "Insert the word you want to translate into Morse code here";
             String mNewWordText = "Your answer will be displayed here";
-            TextField mWordInput = new TextField(mWordInputText);
+            TextField mWordInput = new TextField();
+            SetPromptText(mWordInput,mWordInputText,null,null,null,null);
             TextField mNewWord = new TextField(mNewWordText);
             WordNotEditable(mNewWord);//cannot change text in TextField
 
@@ -451,7 +459,7 @@ public class myProject extends Application {
             });
 
             mClear.setOnAction(event1 -> {
-                Clear(null,null,null,mWordInput,mWordInputText,mNewWord,mNewWordText);
+                Clear(null,null,null,null,mWordInput,mWordInputText,mNewWord,mNewWordText);
             });
 
             mTranslate.setOnAction(event2 -> {
@@ -542,6 +550,26 @@ public class myProject extends Application {
                 });
             });
         });
+    }
+
+    private void SetPromptText(TextField Field1,String Text1, TextField Field2,String Text2,
+                               TextField Field3, String Text3) {
+        Field1.setFocusTraversable(false);
+        if (Field3 == null){
+            if (Field2 == null){
+                Field1.setPromptText(Text1);
+            } else {
+                Field2.setFocusTraversable(false);
+                Field1.setPromptText(Text1);
+                Field2.setPromptText(Text2);
+            }
+        } else {
+            Field2.setFocusTraversable(false);
+            Field3.setFocusTraversable(false);
+            Field1.setPromptText(Text1);
+            Field2.setPromptText(Text2);
+            Field3.setPromptText(Text3);
+        }
     }
 
     private HashMap<String, String> FileToHashMap(boolean isMorse,String Line, HashMap<String, String> List,BufferedReader BR)
@@ -714,22 +742,28 @@ public class myProject extends Application {
         }
     }
 
-    private void Clear(TextField ABCinput,TextField StepInput,String StepInputText,TextField WordInput,String WordInputText,
-                       TextField NewWord,String NewWordText) {
+    //TO DO: NEED TO FIX PROMPT TEXT for ABC
+    private void Clear(ChoiceBox LanguageABC,TextField ABCinput,TextField StepInput,String StepInputText,
+                       TextField WordInput,String WordInputText,TextField NewWord,String NewWordText) {
         if (StepInput == null) {
             if (ABCinput == null){ //if step and alphabet don't exist
-                WordInput.setText(WordInputText);
+                WordInput.clear();
+                SetPromptText(WordInput,WordInputText,null,null,null,null);
                 NewWord.setText(NewWordText);
             } else { //if step doesn't exist
-                ABCinput.setText(ABCinputText);
-                WordInput.setText(WordInputText);
+                ABCinput.clear();
+                WordInput.clear();
+                SetPromptText(ABCinput,ABCinputText,WordInput,WordInputText,null,null);
                 NewWord.setText(NewWordText);
+                LanguageABC.getSelectionModel().selectFirst();
             }
         } else { //if everything exists
-            ABCinput.setText(ABCinputText);
-            StepInput.setText(StepInputText);
-            WordInput.setText(WordInputText);
+            ABCinput.clear();
+            WordInput.clear();
+            StepInput.clear();
+            SetPromptText(ABCinput,ABCinputText,WordInput,WordInputText,StepInput,StepInputText);
             NewWord.setText(NewWordText);
+            LanguageABC.getSelectionModel().selectFirst();
         }
     }
 
