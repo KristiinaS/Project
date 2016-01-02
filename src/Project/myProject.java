@@ -19,10 +19,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Kristiina on 30.11.2015.
@@ -127,7 +124,7 @@ public class myProject extends Application {
 
             Button aInsert = new Button("Try the cipher!");
             Button aClear = new Button("Clear fields");
-            Button aSwap = new Button("Swap the words");
+            Button aSwap = new Button("Answer to input");
             Button aInfo = new Button("Info");
 
             //Defining the drop down menu
@@ -143,6 +140,10 @@ public class myProject extends Application {
                 }
             });
 
+            HBox aHbox1 = new HBox(vBoxPadding,aLanguageABC,aClear);
+            HBox aHbox2 = new HBox(vBoxPadding,aInsert,aInfo);
+            HBox aHbox3 = new HBox(vBoxPadding,aSwap,ReturnButton);
+
             //buttons to same size
             aInsert.setMaxWidth(buttonWidth);
             aClear.setMaxWidth(buttonWidth);
@@ -150,9 +151,6 @@ public class myProject extends Application {
             aInfo.setMaxWidth(buttonWidth);
             aLanguageABC.setMaxWidth(buttonWidth);
 
-            HBox aHbox1 = new HBox(vBoxPadding,aLanguageABC,aClear);
-            HBox aHbox2 = new HBox(vBoxPadding,aInsert,aInfo);
-            HBox aHbox3 = new HBox(vBoxPadding,aSwap,ReturnButton);
             aHbox1.setAlignment(Pos.CENTER);
             aHbox1.setTranslateY(vBoxPadding*5);
             aHbox2.setAlignment(Pos.CENTER);
@@ -172,49 +170,25 @@ public class myProject extends Application {
             Atbashvbox.getChildren().addAll(aWelcomeText,aWarning,aABCinput,aWordInput,aNewWord,aHbox1,aHbox2,aHbox3);
 
             aSwap.setOnAction(event2 -> {
-                String aOldWord = aWordInput.getText();
-                String aCipherWord = aNewWord.getText();
-                aWordInput.setText(aCipherWord);
-                aNewWord.setText(aOldWord);
+                Swap(aNewWord,aWordInput);
             });
 
 
             // button that resets the fields to their original state
             aClear.setOnAction(event1 -> {
-                aABCinput.setText(ABCinputText);
-                aWordInput.setText(aWordInputText);
-                aNewWord.setText(aNewWordText);
+                Clear(aABCinput,null,null,aWordInput,aWordInputText,aNewWord,aNewWordText);
             });
 
             // button with information about Atbash
             aInfo.setOnAction(event3 ->{
-                VBox aHelpPane = new VBox();
-                aHelpPane.setPadding(new Insets(vBoxPadding));
-                //ScrollPane aScrollPane = new ScrollPane(aHelpPane); //pane that can be scrolled
-                //aScrollPane.setFitToWidth(true);
-                Scene aHelpScene = new Scene(aHelpPane,width, height/2);
-                Stage aHelpStage = new Stage(); // info opens in new window
-                aHelpStage.setTitle("Info");
-                aHelpStage.setScene(aHelpScene);
-                aHelpStage.getIcons().add(new Image("file:questionmark.png"));
-                aHelpStage.show();
-
-                Label aHelpTextHeader = new Label("Atbash Cipher");
-                aHelpTextHeader.setFont(Font.font(null, FontWeight.BOLD,20));
-                Label aHelpText = new Label();
-                aHelpText.setText("The Atbash Cipher was originally a monoalphabetic substitution cipher used " +
+                String aHeaderText = "Atbash Cipher";
+                String aInfoText = "The Atbash Cipher was originally a monoalphabetic substitution cipher used " +
                         "for the Hebrew alphabet. It is one of the earliest known subtitution ciphers to have " +
                         "been used, and is very simple.\n \nThe Atbash Cipher simply reverses the plaintext " +
                         "alphabet to create the ciphertext alphabet. That is, the first letter of the alphabet " +
                         "is encrypted to the last letter of the alphabet, the second letter to the second last " +
-                        "letter and so forth.");
-                aHelpText.setPrefWidth(width);
-                aHelpText.setWrapText(true);
-                aHelpText.setTextAlignment(TextAlignment.JUSTIFY);
-
-                aHelpPane.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
-                aHelpPane.getChildren().addAll(aHelpTextHeader,aHelpText);
-
+                        "letter and so forth.";
+                Info(aHeaderText,aInfoText,false,null);
             });
 
             // actions after the alphabet & word have been inserted
@@ -276,7 +250,7 @@ public class myProject extends Application {
 
             Button cInsert = new Button("Try the cipher!");
             Button cClear = new Button("Clear fields");
-            Button cSwap = new Button("Swap the words");
+            Button cSwap = new Button("Answer to input");
             Button cInfo = new Button("Info");
 
             cNewWord.setEditable(false);
@@ -324,47 +298,24 @@ public class myProject extends Application {
             Caesarvbox.getChildren().addAll(cWelcomeText,cWarning,cABCinput,cStepInput,cWordInput,cNewWord,cHbox1,cHbox2,cHbox3);
 
             cSwap.setOnAction(event2 -> {
-                String cOldWord = cWordInput.getText();
-                String cCipherWord = cNewWord.getText();
-                cWordInput.setText(cCipherWord);
-                cNewWord.setText(cOldWord);
+                Swap(cNewWord,cWordInput);
             });
 
             cClear.setOnAction(event1 -> {
-                cABCinput.setText(ABCinputText);
-                cStepInput.setText(cStepInputText);
-                cWordInput.setText(cWordInputText);
-                cNewWord.setText(cNewWordText);
+                Clear(cABCinput, cStepInput, cStepInputText, cWordInput, cWordInputText, cNewWord, cNewWordText);
+
             });
 
             cInfo.setOnAction(event2 -> {
-                VBox cHelpPane = new VBox();
-                cHelpPane.setPadding(new Insets(vBoxPadding));
-                //ScrollPane cScrollPane = new ScrollPane(cHelpPane); //pane that can be scrolled
-                //cScrollPane.setFitToWidth(true);
-                Scene cHelpScene = new Scene(cHelpPane,width, height/2);
-                Stage cHelpStage = new Stage(); // info opens in new window
-                cHelpStage.setTitle("Info");
-                cHelpStage.setScene(cHelpScene);
-                cHelpStage.getIcons().add(new Image("file:questionmark.png"));
-                cHelpStage.show();
-
-                Label cHelpTextHeader = new Label("Caesar Cipher");
-                cHelpTextHeader.setFont(Font.font(null, FontWeight.BOLD,20));
-                Label cHelpText = new Label();
-                cHelpText.setText("The Caesar cipher is one of the earliest known and simplest ciphers. The " +
+                String cHeaderText = "Caesar Cipher";
+                String cInfoText = "The Caesar cipher is one of the earliest known and simplest ciphers. The " +
                         "method is named after Julius Caesar, who apparently used it to communicate with his " +
                         "generals.\n \nIt is a type of substitution cipher in which each letter in the plaintext " +
                         "is 'shifted' a certain number of places down the alphabet. For example, with a shift " +
                         "of 1, A would be replaced by B, B would become C, and so on.\n \nIn order to reverse " +
                         "the encrypted text, you need to use the opposite value of the shift. For example, if " +
-                        "the original shift is 2, you can encode the text with shift -2.");
-                cHelpText.setPrefWidth(width);
-                cHelpText.setWrapText(true);
-                cHelpText.setTextAlignment(TextAlignment.JUSTIFY);
-
-                cHelpPane.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
-                cHelpPane.getChildren().addAll(cHelpTextHeader, cHelpText);
+                        "the original shift is 2, you can encode the text with shift -2.";
+                Info(cHeaderText,cInfoText,false,null);
             });
 
             cInsert.setOnAction(event1 -> {
@@ -437,7 +388,7 @@ public class myProject extends Application {
 
             Button vInsert = new Button("Try the cipher!");
             Button vClear = new Button("Clear fields");
-            Button vSwap = new Button("Swap the words");
+            Button vSwap = new Button("Answer to input");
             Button vInfo = new Button("Info");
 
 
@@ -484,10 +435,7 @@ public class myProject extends Application {
             Vigenerevbox.getChildren().addAll(vWelcomeText,vWarning,vABCinput,vKeyInput,vWordInput,vNewWord,vHbox1,vHbox2,vHbox3);
 
             vSwap.setOnAction(event2 -> {
-                String vOldWord = vWordInput.getText();
-                String vCipherWord = vNewWord.getText();
-                vWordInput.setText(vCipherWord);
-                vNewWord.setText(vOldWord);
+                Swap(vNewWord,vWordInput);
             });
 
             vInsert.setOnAction(event3 -> {
@@ -544,28 +492,12 @@ public class myProject extends Application {
             });
 
             vClear.setOnAction(event1 -> {
-                vABCinput.setText(ABCinputText);
-                vKeyInput.setText(vKeyInputText);
-                vWordInput.setText(vWordInputText);
-                vNewWord.setText(vNewWordText);
+                Clear(vABCinput,vKeyInput,vKeyInputText,vWordInput,vWordInputText,vNewWord,vNewWordText);
             });
 
             vInfo.setOnAction(event2 -> {
-                VBox vHelpPane = new VBox();
-                vHelpPane.setPadding(new Insets(vBoxPadding));
-                ScrollPane vScrollPane = new ScrollPane(vHelpPane); //pane that can be scrolled
-                vScrollPane.setFitToWidth(true);
-                Scene vHelpScene = new Scene(vScrollPane,width, height/2);
-                Stage vHelpStage = new Stage(); // info opens in new window
-                vHelpStage.setTitle("Info");
-                vHelpStage.setScene(vHelpScene);
-                vHelpStage.getIcons().add(new Image("file:questionmark.png"));
-                vHelpStage.show();
-
-                Label vHelpTextHeader = new Label("Vigenère Cipher");
-                vHelpTextHeader.setFont(Font.font(null, FontWeight.BOLD,20));
-                Label vHelpText = new Label();
-                vHelpText.setText("The Vigenère cipher was invented by a Frenchman, Blaise de Vigenère in " +
+                String vHeaderText = "Vigenère Cipher";
+                String vInfoText = "The Vigenère cipher was invented by a Frenchman, Blaise de Vigenère in " +
                         "the 16th century. It is a simple form of polyalphabetic cipher which uses a series of " +
                         "different Caesar ciphers to encrypt the data based on the letters of a keyword. " +
                         "Blaise de Vigenère developed a square to help encode messages (see below - " +
@@ -582,31 +514,14 @@ public class myProject extends Application {
                         "first letter, we go to the column headed by M and then see where it intersects the row " +
                         "starting with K, which is at the letter W. Consequently, the letter M in the plaintext " +
                         "is represented by W in the ciphertext. This step is continued until the whole text has " +
-                        "been enciphered. In this case the enciphered text would be WSRRIP.");
-                vHelpText.setPrefWidth(width);
-                vHelpText.setWrapText(true);
-                vHelpText.setTextAlignment(TextAlignment.JUSTIFY);
+                        "been enciphered. In this case the enciphered text would be WSRRIP.";
+                String vButtonTitle = "Vigenère table";
+                Button vTable = new Button(vButtonTitle);
+                Info(vHeaderText, vInfoText,true,vTable);
 
-                Button vTable = new Button("Vigenère table");
-
-                //TO DO: Fix scrollpane background!!
-                vHelpPane.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
-                vHelpPane.getChildren().addAll(vHelpTextHeader,vHelpText,vTable);
 
                 vTable.setOnAction(event1 -> {
-                    Pane vImagePane = new Pane();
-                    Scene vImageScene = new Scene(vImagePane,565,481);
-                    Stage vImageStage = new Stage();
-                    vImageStage.setScene(vImageScene);
-                    vImageStage.setTitle("Vigenére Table");
-                    vImageStage.getIcons().add(new Image("file:questionmark.png"));
-                    vImageStage.show();
-
-                    ImageView vImageView = new ImageView();
-                    Image VigenereTable = new Image("file:tabularecta.jpg");
-                    vImageView.setImage(VigenereTable);
-
-                    vImagePane.getChildren().addAll(vImageView);
+                    InfoButton(vButtonTitle,555,471,"tabularecta.jpg");
                 });
             });
         });
@@ -621,7 +536,7 @@ public class myProject extends Application {
             Label mWelcomeText = new Label("Morse Code");
             mWelcomeText.setFont(Font.font(null, FontWeight.BOLD,20));
 
-            Label mWarning = new Label("At the moment the translator is not working!");
+            Label mWarning = new Label("At the moment translating from Morse to Latin alphabet doesn't work!");
             mWarning.setFont(Font.font(null, FontPosture.ITALIC,14));
             mWarning.setTextFill(Color.RED);
 
@@ -636,7 +551,7 @@ public class myProject extends Application {
             Button mTranslate = new Button("Translate!");
             Button mClear = new Button("Clear fields");
             Button mInfo = new Button("Info");
-            Button mSwap = new Button("Swap the words");
+            Button mSwap = new Button("Answer to input");
 
             mTranslate.setMaxWidth(buttonWidth);
             mClear.setMaxWidth(buttonWidth);
@@ -665,15 +580,11 @@ public class myProject extends Application {
 
 
             mSwap.setOnAction(event1 -> {
-                String mOldWord = mWordInput.getText();
-                String mCipherWord = mNewWord.getText();
-                mWordInput.setText(mCipherWord);
-                mNewWord.setText(mOldWord);
+                Swap(mNewWord,mWordInput);
             });
 
             mClear.setOnAction(event1 -> {
-                mWordInput.setText(mWordInputText);
-                mNewWord.setText(mNewWordText);
+                Clear(null,null,null,mWordInput,mWordInputText,mNewWord,mNewWordText);
             });
 
             mTranslate.setOnAction(event2 -> {
@@ -681,6 +592,7 @@ public class myProject extends Application {
                 mWord = mWord.toUpperCase(); //convert input word to upper case
                 List<String> mWordList = new ArrayList<String>(Arrays.asList(mWord.split(""))); // Word string to list
                 int mLettersInWord = mWordList.size(); // get length of the word
+                //System.out.println("Tähti: " + mLettersInWord);
 
                 List<String> mOutputList = new ArrayList<String>(); // Empty list for the new word
 
@@ -701,14 +613,38 @@ public class myProject extends Application {
                         mList.put(mLetter, mMorse); //add key + value to HashMap
                         mLine = mBR.readLine(); //read next line
                     }
+
+
+                    Set<Map.Entry<String,String>> hashSet = mList.entrySet();
+                    int a = 0;
+                    for (Map.Entry entry:hashSet){
+                        System.out.println("Key="+entry.getKey()+", value="+entry.getValue()+ "(indeks: " + a + ")");
+                        a=a+1;
+                    }
+
+                    String item = mList.keySet().toArray()[45].toString();
+                    System.out.println("mis on kohal 45? " + item);
+
+
+                    //ERROR!! "A" täht ei tööta UTF-8-ga.
+
                     for (int i = 0; i < mLettersInWord; i++) {
                         String mLetter = mWordList.get(i); // find the letter from word
-                        if (mList.containsKey(mLetter)== false) { //adding characters that are not in ABC
-                            mOutputList.add(i, mLetter + " ");
-                        }
-                        else {
+                        /*
+                        System.out.println("Täht sõnest: " + mLetter);
+                        System.out.println("Kas on listis: " + mList.containsKey(mLetter));
+                        String Value = mList.get(mLetter);
+                        System.out.println("Võti = " + Value);
+                        */
+                        if (mList.containsKey(mLetter)== false) { //adding characters that are not in Morse code
+                            if (Character.isWhitespace(mLetter.charAt(0))){
+                                mOutputList.add(i, "/ ");
+                            } else {
+                                mOutputList.add(i, mLetter + " ");
+                            }
+                        } else {
                             String mValue = mList.get(mLetter);
-                            System.out.println("Võti = " + mValue);
+                            //System.out.println("Võti = " + mValue);
                             mOutputList.add(i, mValue + " "); //encrypted letter to output list
                         }
                     }
@@ -726,21 +662,8 @@ public class myProject extends Application {
             });
 
             mInfo.setOnAction(event1 -> {
-                VBox mHelpPane = new VBox();
-                mHelpPane.setPadding(new Insets(vBoxPadding));
-                //ScrollPane cScrollPane = new ScrollPane(cHelpPane); //pane that can be scrolled
-                //cScrollPane.setFitToWidth(true);
-                Scene mHelpScene = new Scene(mHelpPane,width, height/2);
-                Stage mHelpStage = new Stage(); // info opens in new window
-                mHelpStage.setTitle("Info");
-                mHelpStage.setScene(mHelpScene);
-                mHelpStage.getIcons().add(new Image("file:questionmark.png"));
-                mHelpStage.show();
-
-                Label mHelpTextHeader = new Label("Morse Code");
-                mHelpTextHeader.setFont(Font.font(null, FontWeight.BOLD,20));
-                Label mHelpText = new Label();
-                mHelpText.setText("Morse code is a method of transmitting text information as a series of " +
+                String mHeaderText = "Morse Code";
+                String mInfoText = "Morse code is a method of transmitting text information as a series of " +
                         "on-off tones, lights, or clicks that can be directly understood by a skilled listener " +
                         "or observer without special equipment. The International Morse Code encodes the ISO " +
                         "basic Latin alphabet, some extra Latin letters, the Arabic numerals and a small set " +
@@ -757,14 +680,95 @@ public class myProject extends Application {
                         "To increase the speed of the communication, the code was designed so that the length of " +
                         "each character in Morse varies approximately inversely to its frequency of occurrence in " +
                         "English. Thus the most common letter in English, the letter \"E\", has the shortest code, " +
-                        "a single dot.");
-                mHelpText.setPrefWidth(width);
-                mHelpText.setWrapText(true);
-                mHelpText.setTextAlignment(TextAlignment.JUSTIFY);
+                        "a single dot.\n \nThis translator uses the international Morse alphabet. The letters are " +
+                        "separated by a whitespace \" \" and words are separated by a slash \"\\\".";
+                String mButtonTitle = "International Morse alphabet";
+                Button mAlphabet = new Button(mButtonTitle);
+                Info(mHeaderText,mInfoText,true,mAlphabet);
 
-                mHelpPane.setStyle("-fx-background-image: url("+ BackgroundPicture + ")");
-                mHelpPane.getChildren().addAll(mHelpTextHeader, mHelpText);
+                mAlphabet.setOnAction(event2 -> {
+                    InfoButton(mButtonTitle, 695, 584, "LatinMorse.jpg");
+                });
             });
         });
+    }
+
+    private void InfoButton(String Title, int Width, int Heigth, String Filename) {
+        Pane ImagePane = new Pane();
+        Scene ImageScene = new Scene(ImagePane,Width,Heigth);
+        Stage ImageStage = new Stage();
+        ImageStage.setResizable(false);
+        ImageStage.setScene(ImageScene);
+        ImageStage.setTitle(Title);
+        ImageStage.getIcons().add(new Image("file:questionmark.png"));
+        ImageStage.show();
+
+        ImageView vImageView = new ImageView();
+        Image Picture = new Image("file:" + Filename);
+        vImageView.setImage(Picture);
+
+        ImagePane.getChildren().addAll(vImageView);
+    }
+
+    private void Info(String HeaderText,String InfoText,boolean Scroll, Button Picture) {
+        VBox HelpPane = new VBox();
+        HelpPane.setPadding(new Insets(vBoxPadding));
+        ScrollPane ScrollPane = new ScrollPane(HelpPane); //pane that can be scrolled
+        ScrollPane.setFitToWidth(true);
+        Scene HelpScene;
+
+        if (Scroll == true) { //check if window needs to be scrolled or not
+            HelpScene = new Scene(ScrollPane,width, height/2);
+        } else {
+            HelpScene = new Scene(HelpPane,width, height/2);
+        }
+
+        Stage HelpStage = new Stage(); // info opens in new window
+        HelpStage.setResizable(false);
+        HelpStage.setTitle("Info");
+        HelpStage.setScene(HelpScene);
+        HelpStage.getIcons().add(new Image("file:questionmark.png"));
+        HelpStage.show();
+
+        Label HelpTextHeader = new Label(HeaderText);
+        HelpTextHeader.setFont(Font.font(null, FontWeight.BOLD,20));
+        Label HelpText = new Label();
+        HelpText.setText(InfoText);
+        HelpText.setPrefWidth(width);
+        HelpText.setWrapText(true);
+        HelpText.setTextAlignment(TextAlignment.JUSTIFY);
+
+        //TO DO: Fix scrollpane background!!
+        HelpPane.setStyle("-fx-background-image: url("+ BackgroundPicture + ")"); //add background
+
+        if (Picture == null){ //content of pane without buttons
+            HelpPane.getChildren().addAll(HelpTextHeader, HelpText);
+        } else { //content of pane with buttons
+            HelpPane.getChildren().addAll(HelpTextHeader, HelpText, Picture);
+        }
+    }
+
+    private void Clear(TextField ABCinput,TextField StepInput,String StepInputText,TextField WordInput,String WordInputText,
+                       TextField NewWord,String NewWordText) {
+        if (StepInput == null) {
+            if (ABCinput == null){ //if step and alphabet don't exist
+                WordInput.setText(WordInputText);
+                NewWord.setText(NewWordText);
+            } else { //if step doesn't exist
+                ABCinput.setText(ABCinputText);
+                WordInput.setText(WordInputText);
+                NewWord.setText(NewWordText);
+            }
+        } else { //if everything exists
+            ABCinput.setText(ABCinputText);
+            StepInput.setText(StepInputText);
+            WordInput.setText(WordInputText);
+            NewWord.setText(NewWordText);
+        }
+    }
+
+    private void Swap(TextField NewWord, TextField WordInput) {
+        String CipherWord = NewWord.getText();
+        WordInput.setText(CipherWord);
     }
 }
