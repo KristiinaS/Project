@@ -3,10 +3,10 @@
 
 Antud programmis on koos erinevad šifrid ja koodid. Hetkel on olemas järgnevad šifrid ja koodid:
 * Šifrid
-    1. Atbash
-    2. Caesar
-    3. Vigenére
+    * Atbash
+    * Caesar
+    * Vigenére
 * Koodid
-    1. Morse
+    * Morse
 
 Kõigepealt tuleb programmis valida, millist šifrit/koodi soovitakse kasutada. Järgnevalt leiab igaühe juurest INFO alt selle kirjelduse ning kasutusjuhendi.
