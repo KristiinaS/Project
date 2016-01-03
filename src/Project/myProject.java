@@ -23,6 +23,8 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import jdk.nashorn.internal.ir.IfNode;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.*;
 
@@ -53,22 +55,14 @@ public class myProject extends Application {
     List<String> ABClanguages = new ArrayList<String>(Arrays.asList("User defined alphabet","Estonian",
             "English", "Russian","Danish/Norwegian","Swedish"));
 
-    //combining 2 arrays - for alphabet
-    public static String [] combine(String[] a, String[] b) {
-        int length = a.length + b.length;
-        String[] result = new String[length];
-        System.arraycopy(a,0,result,0,a.length);
-        System.arraycopy(b,0,result,a.length,b.length);
-        return result;
-    }
-
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         mainStage = primaryStage;
 
         mainvbox = new VBox();
         mainScene = new Scene(mainvbox, width, height);
+        mainStage.setResizable(false);
+        mainStage.sizeToScene();
         mainStage.setTitle("Ciphers and Codes"); // naming the window
         mainStage.setScene(mainScene);
         mainStage.getIcons().add(new Image("file:FolderIcon.png")); // different icon for the window
@@ -130,7 +124,7 @@ public class myProject extends Application {
             ButtonsSameSize(aLanguageABC,aClear,aInsert,aInfo,aSwap);
 
             PaneStyle(Atbashvbox);
-            Atbashvbox.getChildren().addAll(aWelcomeText,aWarning,aABCinput,aWordInput,aNewWord,
+            Atbashvbox.getChildren().addAll(aWelcomeText,aABCinput,aWordInput,aNewWord,
                     ButtonsToVbox(aLanguageABC,aClear,aInsert,aInfo,aSwap));
 
             aSwap.setOnAction(event2 -> {
@@ -162,12 +156,12 @@ public class myProject extends Application {
                 java.util.List<String> aABClist = new ArrayList<String>(Arrays.asList(aABC.split(""))); // ABC string to list
                 int LettersInABC = aABClist.size(); // get length of the ABC
 
-                String aWord = aWordInput.getText(); // save inserted word to string
-                aWord = aWord.toLowerCase(); // Convert string to lower case
+                String aUserInput = aWordInput.getText(); // save inserted word to string
+                String aWord = aUserInput.toLowerCase(); // Convert string to lower case
                 List<String> aWordList = new ArrayList<String>(Arrays.asList(aWord.split(""))); // Word string to list
                 int aLettersInWord = aWordList.size(); // get length of the word
 
-                List<String> aOutputList = new ArrayList<String>(); // Empty list for the new word
+                ArrayList<String> aOutputList = new ArrayList<String>(); // Empty list for the new word
 
                 for (int i = 0; i < aLettersInWord; i++) {
                     String aLetter = aWordList.get(i); // find the letter from word
@@ -181,6 +175,7 @@ public class myProject extends Application {
                     }
                 }
 
+                CheckUppercase(aLettersInWord,aOutputList,aUserInput);
                 String aOutput = String.join("",aOutputList);
                 aNewWord.setText(aOutput);
 
@@ -224,7 +219,7 @@ public class myProject extends Application {
             ButtonsSameSize(cLanguageABC,cClear,cInsert,cInfo,cSwap);
 
             PaneStyle(Caesarvbox);
-            Caesarvbox.getChildren().addAll(cWelcomeText,cWarning,cABCinput,cStepInput,cWordInput,cNewWord,
+            Caesarvbox.getChildren().addAll(cWelcomeText,cABCinput,cStepInput,cWordInput,cNewWord,
                     ButtonsToVbox(cLanguageABC,cClear,cInsert,cInfo,cSwap));
 
             cSwap.setOnAction(event2 -> {
@@ -254,37 +249,40 @@ public class myProject extends Application {
                 List<String> cABClist = new ArrayList<String>(Arrays.asList(cABC.split(""))); //ABC string to list
                 int cLettersInABC = cABClist.size();
 
-                int step = Integer.parseInt(cStepInput.getText()); // string input to int
-
-                String cWord = cWordInput.getText();
-                cWord = cWord.toLowerCase();
+                String cUserInput = cWordInput.getText();
+                String cWord = cUserInput.toLowerCase();
                 List<String> cWordList = new ArrayList<String>(Arrays.asList(cWord.split(""))); // word string to list
                 int cLettersInWord = cWordList.size();
 
 
-                List<String> cOutputList = new ArrayList<String>(); //list for new (output) word
+                ArrayList<String> cOutputList = new ArrayList<String>(); //list for new (output) word
 
-                for (int i = 0; i < cLettersInWord; i++) {
-                    String cLetter = cWordList.get(i);
-                    if (cABClist.contains(cLetter)== false) { //adding characters that are not in ABC
-                        cOutputList.add(i, cLetter);
-                    }
-                    else {
-                        int cABCindex = cABClist.indexOf(cLetter); //find the index of letter (from word) in ABC
-                        int cABCindex2 = (cABCindex + step) % cLettersInABC;
-
-                        if (cABCindex2 < 0) {
-                            if (Math.abs(step) > cLettersInABC){ //reduces the length of step (step <= ABC)
-                                step =  step % cLettersInABC;
-                            }
-                            cABCindex2 = cLettersInABC + cABCindex2;
+                if (cABC.equals("") || cStepInput.getText().isEmpty() || cWord.equals("")){
+                    cNewWord.setText("");
+                } else {
+                    int step = Integer.parseInt(cStepInput.getText()); // string input to int
+                    for (int i = 0; i < cLettersInWord; i++) {
+                        String cLetter = cWordList.get(i);
+                        if (cABClist.contains(cLetter)== false) { //adding characters that are not in ABC
+                            cOutputList.add(i, cLetter);
                         }
-                        cOutputList.add(i,cABClist.get(cABCindex2));
-                    }
-                }
+                        else {
+                            int cABCindex = cABClist.indexOf(cLetter); //find the index of letter (from word) in ABC
+                            int cABCindex2 = (cABCindex + step) % cLettersInABC;
 
-                String cOutput = String.join("",cOutputList);
-                cNewWord.setText(cOutput);
+                            if (cABCindex2 < 0) {
+                                if (Math.abs(step) > cLettersInABC){ //reduces the length of step (step <= ABC)
+                                    step =  step % cLettersInABC;
+                                }
+                                cABCindex2 = cLettersInABC + cABCindex2;
+                            }
+                            cOutputList.add(i,cABClist.get(cABCindex2));
+                        }
+                    }
+                    CheckUppercase(cLettersInWord,cOutputList,cUserInput);
+                    String cOutput = String.join("",cOutputList);
+                    cNewWord.setText(cOutput);
+                }
             });
         });
 
@@ -327,7 +325,7 @@ public class myProject extends Application {
             ButtonsSameSize(vLanguageABC,vClear,vInsert,vInfo,vSwap);
 
             PaneStyle(Vigenerevbox);
-            Vigenerevbox.getChildren().addAll(vWelcomeText,vWarning,vABCinput,vKeyInput,vWordInput,vNewWord,
+            Vigenerevbox.getChildren().addAll(vWelcomeText,vABCinput,vKeyInput,vWordInput,vNewWord,
                     ButtonsToVbox(vLanguageABC,vClear,vInsert,vInfo,vSwap));
 
             vSwap.setOnAction(event2 -> {
@@ -348,43 +346,45 @@ public class myProject extends Application {
                 }
                 int vLettersInKey = vKeyList.size(); //Length of keyword
 
-                String vWord = vWordInput.getText(); //Word input to string
-                vWord = vWord.toLowerCase(); //word to lower case
+                String vUserInput = vWordInput.getText(); //Word input to string
+                String vWord = vUserInput.toLowerCase(); //word to lower case
                 List<String> vWordList = new ArrayList<String>(Arrays.asList(vWord.split(""))); //Word string to list
                 int vLettersInWord = vWordList.size(); //Length of word
 
-                List<String> vOutputList = new ArrayList<String>(); //List for new (output) word
+                ArrayList<String> vOutputList = new ArrayList<String>(); //List for new (output) word
 
-                if (vLettersInWord > vLettersInKey){
-                    int vMissingLetters = vLettersInWord - vLettersInKey;//how many letters are missing from keyword
-                    for (int j = 0; j < vMissingLetters; j++) {
-                        char vChar = vKeyList.get(j);
-                        vKeyList.add(vChar); //adding missing letters to list
-                    }
-                }
-
-
-                for (int i = 0; i < vLettersInWord; i++) {
-                    String vWordLetter = vWordList.get(i); //check letters in the word
-                    char vKeyLetter = vKeyList.get(i);
-                    //Character.toString(vKeyLetter); //converting character to string
-                    int vStep = vABClist.indexOf(Character.toString(vKeyLetter));
-
-                    if (vABClist.contains(vWordLetter) == false) { //adding characters which are not in ABC to output
-                        vOutputList.add(i,vWordLetter);
-                    } else {
-                        int vABCindex = vABClist.indexOf(vWordLetter); //find index of word letter in ABC
-                        int vABCindex2 = vABCindex + vStep;
-                        if (vABCindex2 >= vLettersInABC) { //reduces length of step by abc length (step < abc !)
-                            vABCindex2 = vABCindex2 - vLettersInABC;
+                if (vABC.equals("") || vKey.equals("") || vWord.equals("")) {
+                    vNewWord.setText("");
+                } else {
+                    if (vLettersInWord > vLettersInKey){
+                        int vMissingLetters = vLettersInWord - vLettersInKey;//how many letters are missing from keyword
+                        for (int j = 0; j < vMissingLetters; j++) {
+                            char vChar = vKeyList.get(j);
+                            vKeyList.add(vChar); //adding missing letters to list
                         }
-                        vOutputList.add(i,vABClist.get(vABCindex2)); //add output letter to output list
                     }
+
+                    for (int i = 0; i < vLettersInWord; i++) {
+                        String vWordLetter = vWordList.get(i); //check letters in the word
+                        char vKeyLetter = vKeyList.get(i);
+                        //Character.toString(vKeyLetter); //converting character to string
+                        int vStep = vABClist.indexOf(Character.toString(vKeyLetter));
+
+                        if (vABClist.contains(vWordLetter) == false) { //adding characters which are not in ABC to output
+                            vOutputList.add(i,vWordLetter);
+                        } else {
+                            int vABCindex = vABClist.indexOf(vWordLetter); //find index of word letter in ABC
+                            int vABCindex2 = vABCindex + vStep;
+                            if (vABCindex2 >= vLettersInABC) { //reduces length of step by abc length (step < abc !)
+                                vABCindex2 = vABCindex2 - vLettersInABC;
+                            }
+                            vOutputList.add(i,vABClist.get(vABCindex2)); //add output letter to output list
+                        }
+                    }
+                    CheckUppercase(vLettersInWord,vOutputList,vUserInput);
+                    String vOutput = String.join("",vOutputList); //output list to string
+                    vNewWord.setText(vOutput);
                 }
-
-                String vOutput = String.join("",vOutputList); //output list to string
-                vNewWord.setText(vOutput);
-
             });
 
             vClear.setOnAction(event1 -> {
@@ -417,7 +417,7 @@ public class myProject extends Application {
 
 
                 vTable.setOnAction(event1 -> {
-                    InfoButton(vButtonTitle,555,471,"tabularecta.jpg");
+                    InfoButton(vButtonTitle,"tabularecta.jpg");
                 });
             });
         });
@@ -450,7 +450,7 @@ public class myProject extends Application {
             ButtonsSameSize(null,mTranslate,mClear,mSwap,mInfo);
 
             PaneStyle(Morsevbox);
-            Morsevbox.getChildren().addAll(mWelcomeText,mWarning,mWordInput,mNewWord,
+            Morsevbox.getChildren().addAll(mWelcomeText,mWordInput,mNewWord,
                     ButtonsToVbox(null,mTranslate,mClear,mSwap,mInfo));
 
 
@@ -472,17 +472,22 @@ public class myProject extends Application {
                     BufferedReader mBR = new BufferedReader(new FileReader(mMorseInternational)); //read file
                     String mLine = mBR.readLine(); //read line from file
 
-                    if (mWord.matches("^[/. -]+$")){ //Translate Morse to Latin
+                    if (mWord.equals("")){
+                        mNewWord.setText("");
+                    } else if (mWord.matches("^[/. -]+$")){ //Translate Morse to Latin
                         String[] mWordList = mWord.split("\\s+"); //Words from sentence to list
                         int mLettersInWord = mWordList.length; //elements in list
 
                         FileToHashMap(true,mLine,mList,mBR);
 
                         for (int i = 0; i < mLettersInWord; i++) {
+                            String mLetter = mWordList[i];
                             if (mWordList[i].equals("/")) {
                                 mOutputList.add(i," "); //Replace "/" with a whitespace
+                            } else if (mList.containsKey(mLetter)==false){
+                                mOutputList.add(i,"#");
                             } else {
-                                String mValue = mList.get(mWordList[i]); //find value of key
+                                String mValue = mList.get(mLetter); //find value of key
                                 mOutputList.add(i,mValue); //letter of morse code to output list
                             }
                         }
@@ -499,7 +504,7 @@ public class myProject extends Application {
                                 if (Character.isWhitespace(mLetter.charAt(0))){
                                     mOutputList.add(i, "/ ");
                                 } else {
-                                    mOutputList.add(i, mLetter + " ");
+                                    mOutputList.add(i, "# ");
                                 }
                             } else {
                                 String mValue = mList.get(mLetter);
@@ -540,30 +545,48 @@ public class myProject extends Application {
                         "each character in Morse varies approximately inversely to its frequency of occurrence in " +
                         "English. Thus the most common letter in English, the letter \"E\", has the shortest code, " +
                         "a single dot.\n \nThis translator uses the international Morse alphabet. The letters are " +
-                        "separated by a whitespace \" \" and words are separated by a slash \"\\\".";
+                        "separated by a whitespace \" \" and words are separated by a slash \"/\". If any letters " +
+                        "don't exist in the alphabet, the translator will replace it with \"#\".";
                 String mButtonTitle = "International Morse alphabet";
                 Button mAlphabet = new Button(mButtonTitle);
                 Info(mHeaderText,mInfoText,true,mAlphabet);
 
                 mAlphabet.setOnAction(event2 -> {
-                    InfoButton(mButtonTitle, 695, 584, "LatinMorse.jpg");
+                    InfoButton(mButtonTitle, "LatinMorse.jpg");
                 });
             });
         });
     }
 
+    private ArrayList<String> CheckUppercase(int LettersInWord, ArrayList<String> OutputList, String UserInput) {
+        for (int i = 0; i < LettersInWord; i++) {
+            char Char = OutputList.get(i).charAt(0);
+            if (Character.isUpperCase(UserInput.charAt(i))){
+                OutputList.remove(i);
+                char NewChar = Character.toUpperCase(Char);
+                String aNewString = Character.toString(NewChar);
+                OutputList.add(i,aNewString);
+            }
+        }
+        return OutputList;
+    }
+
     private void SetPromptText(TextField Field1,String Text1, TextField Field2,String Text2,
                                TextField Field3, String Text3) {
         Field1.setFocusTraversable(false);
+        Field1.clear();
         if (Field3 == null){
             if (Field2 == null){
                 Field1.setPromptText(Text1);
             } else {
+                Field2.clear();
                 Field2.setFocusTraversable(false);
                 Field1.setPromptText(Text1);
                 Field2.setPromptText(Text2);
             }
         } else {
+            Field2.clear();
+            Field3.clear();
             Field2.setFocusTraversable(false);
             Field3.setFocusTraversable(false);
             Field1.setPromptText(Text1);
@@ -618,7 +641,11 @@ public class myProject extends Application {
         LanguageABC.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                ABCinput.setText(Alphabets[newValue.intValue()]);
+                if (Alphabets[newValue.intValue()].equals(ABCinputText)){
+                    SetPromptText(ABCinput,ABCinputText,null,null,null,null);
+                } else {
+                    ABCinput.setText(Alphabets[newValue.intValue()]);
+                }
             }
         });
     }
@@ -687,18 +714,22 @@ public class myProject extends Application {
         }
     }
 
-    private void InfoButton(String Title, int Width, int Heigth, String Filename) {
+    private void InfoButton(String Title, String Filename) {
+        Image Picture = new Image("file:" + Filename);
+        double PictureWidth = Picture.getWidth();
+        double PictureHeigth = Picture.getHeight();
+
         Pane ImagePane = new Pane();
-        Scene ImageScene = new Scene(ImagePane,Width,Heigth);
+        Scene ImageScene = new Scene(ImagePane,PictureWidth,PictureHeigth);
         Stage ImageStage = new Stage();
         ImageStage.setResizable(false);
+        ImageStage.sizeToScene();
         ImageStage.setScene(ImageScene);
         ImageStage.setTitle(Title);
         ImageStage.getIcons().add(new Image("file:questionmark.png"));
         ImageStage.show();
 
         ImageView vImageView = new ImageView();
-        Image Picture = new Image("file:" + Filename);
         vImageView.setImage(Picture);
 
         ImagePane.getChildren().addAll(vImageView);
@@ -718,21 +749,20 @@ public class myProject extends Application {
         }
 
         Stage HelpStage = new Stage(); // info opens in new window
-        HelpStage.setResizable(false);
         HelpStage.setTitle("Info");
         HelpStage.setScene(HelpScene);
+        HelpStage.setResizable(false);
         HelpStage.getIcons().add(new Image("file:questionmark.png"));
         HelpStage.show();
 
         Label HelpTextHeader = new Label(HeaderText);
-        HelpTextHeader.setFont(Font.font(null, FontWeight.BOLD,20));
+        WelcomeTextStyle(HelpTextHeader);
         Label HelpText = new Label();
         HelpText.setText(InfoText);
         HelpText.setPrefWidth(width);
         HelpText.setWrapText(true);
         HelpText.setTextAlignment(TextAlignment.JUSTIFY);
 
-        //TO DO: Fix scrollpane background!!
         HelpPane.setStyle("-fx-background-image: url("+ BackgroundPicture + ")"); //add background
 
         if (Picture == null){ //content of pane without buttons
@@ -742,25 +772,18 @@ public class myProject extends Application {
         }
     }
 
-    //TO DO: NEED TO FIX PROMPT TEXT for ABC
     private void Clear(ChoiceBox LanguageABC,TextField ABCinput,TextField StepInput,String StepInputText,
                        TextField WordInput,String WordInputText,TextField NewWord,String NewWordText) {
         if (StepInput == null) {
             if (ABCinput == null){ //if step and alphabet don't exist
-                WordInput.clear();
                 SetPromptText(WordInput,WordInputText,null,null,null,null);
                 NewWord.setText(NewWordText);
             } else { //if step doesn't exist
-                ABCinput.clear();
-                WordInput.clear();
                 SetPromptText(ABCinput,ABCinputText,WordInput,WordInputText,null,null);
                 NewWord.setText(NewWordText);
                 LanguageABC.getSelectionModel().selectFirst();
             }
         } else { //if everything exists
-            ABCinput.clear();
-            WordInput.clear();
-            StepInput.clear();
             SetPromptText(ABCinput,ABCinputText,WordInput,WordInputText,StepInput,StepInputText);
             NewWord.setText(NewWordText);
             LanguageABC.getSelectionModel().selectFirst();
