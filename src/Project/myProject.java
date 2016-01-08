@@ -1,6 +1,7 @@
 package Project;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -116,6 +117,7 @@ public class myProject extends Application {
             Button aSwap = new Button("Answer to input");
             Button aInfo = new Button("Info");
 
+            FocusOnField(aClear);
             ButtonsSameSize(aLanguageABC,aClear,aInsert,null,aInfo,aSwap);
 
             PaneStyle(Atbashvbox);
@@ -184,6 +186,7 @@ public class myProject extends Application {
             DefineABC(cLanguageABC);
             ChangeABC(cLanguageABC, cABCinput);//replace alphabet if language is chosen from drop down menu
 
+            FocusOnField(cClear);
             ButtonsSameSize(cLanguageABC,cClear,cInsert,null,cInfo,cSwap);
 
             PaneStyle(Caesarvbox);
@@ -253,6 +256,7 @@ public class myProject extends Application {
             DefineABC(vLanguageABC);
             ChangeABC(vLanguageABC,vABCinput);//replace alphabet if language is chosen from drop down menu
 
+            FocusOnField(vClear);
             ButtonsSameSize(vLanguageABC,vClear,vEncode,vDecode,vInfo,vSwap);
 
             PaneStyle(Vigenerevbox);
@@ -332,6 +336,7 @@ public class myProject extends Application {
             Button mInfo = new Button("Info");
             Button mSwap = new Button("Answer to input");
 
+            FocusOnField(mClear);
             ButtonsSameSize(null,mTranslate,mClear, null,mSwap,mInfo);
 
             PaneStyle(Morsevbox);
@@ -381,6 +386,15 @@ public class myProject extends Application {
                     InfoButton(mButtonTitle, "LatinMorse.jpg");
                 });
             });
+        });
+    }
+
+    private void FocusOnField(Button Return) {
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                Return.requestFocus();
+            }
         });
     }
 
@@ -602,22 +616,19 @@ public class myProject extends Application {
 
     private void SetPromptText(TextField Field1,String Text1, TextField Field2,String Text2,
                                TextField Field3, String Text3) {
-        Field1.setFocusTraversable(false);
         Field1.clear();
         if (Field3 == null){
             if (Field2 == null){
                 Field1.setPromptText(Text1);
             } else {
                 Field2.clear();
-                Field2.setFocusTraversable(false);
+                Field2.isFocusTraversable();
                 Field1.setPromptText(Text1);
                 Field2.setPromptText(Text2);
             }
         } else {
             Field2.clear();
             Field3.clear();
-            Field2.setFocusTraversable(false);
-            Field3.setFocusTraversable(false);
             Field1.setPromptText(Text1);
             Field2.setPromptText(Text2);
             Field3.setPromptText(Text3);
@@ -685,7 +696,8 @@ public class myProject extends Application {
         return LanguageABC;
     }
 
-    private VBox ButtonsToVbox(ChoiceBox Button1,Button Button2,Button Button3,Button Button4,Button Button5,Button Button6) {
+    private VBox ButtonsToVbox(ChoiceBox Button1,Button Button2,Button Button3,Button Button4,Button Button5,
+                               Button Button6) {
         VBox subPane = new VBox();
 
         HBox Hbox1 = new HBox(vBoxPadding);
