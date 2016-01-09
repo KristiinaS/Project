@@ -27,32 +27,41 @@
       <file leaf-file-name="myProject.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Project/myProject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3650546">
-              <caret line="119" column="31" selection-start-line="119" selection-start-column="31" selection-end-line="119" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.4678748">
+              <caret line="769" column="26" selection-start-line="769" selection-start-column="26" selection-end-line="769" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#20260#20261#0" expanded="true" />
-                <element signature="e#20313#20314#0" expanded="true" />
+                <element signature="e#2150#2158#0" expanded="true" />
+                <element signature="e#5584#5592#0" expanded="true" />
+                <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+                <element signature="e#10676#10684#0" expanded="true" />
+                <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+                <element signature="e#12845#12853#0" expanded="true" />
+                <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+                <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+                <element signature="e#14721#14722#0" expanded="true" />
+                <element signature="e#14774#14775#0" expanded="true" />
                 <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-                <element signature="e#20738#20754#0" expanded="true" />
+                <element signature="e#14995#15003#0" expanded="true" />
+                <element signature="e#15199#15215#0" expanded="true" />
+                <element signature="e#16571#16579#0" expanded="true" />
                 <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+                <element signature="e#18224#18232#0" expanded="true" />
+                <element signature="e#18523#18534#0" expanded="true" />
+                <element signature="e#18903#18911#0" expanded="true" />
+                <element signature="e#19085#19093#0" expanded="true" />
                 <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-                <element signature="e#27547#27555#0" expanded="true" />
+                <element signature="e#21558#21566#0" expanded="true" />
+                <element signature="e#21810#21818#0" expanded="true" />
+                <element signature="e#21977#21985#0" expanded="true" />
                 <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+                <element signature="e#23693#23701#0" expanded="true" />
+                <element signature="e#24034#24042#0" expanded="true" />
+                <element signature="e#24226#24234#0" expanded="true" />
                 <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-                <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-                <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-                <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-                <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-                <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-                <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-                <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-                <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-                <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-                <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-                <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-                <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-                <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+                <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+                <element signature="e#27073#27074#0" expanded="true" />
+                <element signature="e#27145#27146#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -99,8 +108,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="751" />
-    <option name="width" value="1168" />
+    <option name="x" value="747" />
+    <option name="width" value="1174" />
     <option name="height" value="1032" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -402,7 +411,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="751" y="0" width="1168" height="1032" extended-state="0" />
+    <frame x="747" y="0" width="1174" height="1032" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -416,7 +425,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25689086" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19652174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19896194" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -443,7 +452,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -458,28 +467,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20260#20261#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+            <element signature="e#5584#5592#0" expanded="true" />
+            <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#10676#10684#0" expanded="true" />
+            <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#12845#12853#0" expanded="true" />
+            <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+            <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
             <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#20738#20754#0" expanded="true" />
+            <element signature="e#14995#15003#0" expanded="true" />
+            <element signature="e#15199#15215#0" expanded="true" />
+            <element signature="e#16571#16579#0" expanded="true" />
             <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#18224#18232#0" expanded="true" />
+            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="e#18903#18911#0" expanded="true" />
+            <element signature="e#19085#19093#0" expanded="true" />
             <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#27547#27555#0" expanded="true" />
+            <element signature="e#21558#21566#0" expanded="true" />
+            <element signature="e#21810#21818#0" expanded="true" />
+            <element signature="e#21977#21985#0" expanded="true" />
             <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#23693#23701#0" expanded="true" />
+            <element signature="e#24034#24042#0" expanded="true" />
+            <element signature="e#24226#24234#0" expanded="true" />
             <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-            <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-            <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="e#27073#27074#0" expanded="true" />
+            <element signature="e#27145#27146#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -490,28 +508,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20260#20261#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+            <element signature="e#5584#5592#0" expanded="true" />
+            <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#10676#10684#0" expanded="true" />
+            <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#12845#12853#0" expanded="true" />
+            <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+            <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
             <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#20738#20754#0" expanded="true" />
+            <element signature="e#14995#15003#0" expanded="true" />
+            <element signature="e#15199#15215#0" expanded="true" />
+            <element signature="e#16571#16579#0" expanded="true" />
             <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#18224#18232#0" expanded="true" />
+            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="e#18903#18911#0" expanded="true" />
+            <element signature="e#19085#19093#0" expanded="true" />
             <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#27547#27555#0" expanded="true" />
+            <element signature="e#21558#21566#0" expanded="true" />
+            <element signature="e#21810#21818#0" expanded="true" />
+            <element signature="e#21977#21985#0" expanded="true" />
             <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#23693#23701#0" expanded="true" />
+            <element signature="e#24034#24042#0" expanded="true" />
+            <element signature="e#24226#24234#0" expanded="true" />
             <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-            <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-            <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="e#27073#27074#0" expanded="true" />
+            <element signature="e#27145#27146#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -522,28 +549,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20260#20261#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+            <element signature="e#5584#5592#0" expanded="true" />
+            <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#10676#10684#0" expanded="true" />
+            <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#12845#12853#0" expanded="true" />
+            <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+            <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
             <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#20738#20754#0" expanded="true" />
+            <element signature="e#14995#15003#0" expanded="true" />
+            <element signature="e#15199#15215#0" expanded="true" />
+            <element signature="e#16571#16579#0" expanded="true" />
             <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#18224#18232#0" expanded="true" />
+            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="e#18903#18911#0" expanded="true" />
+            <element signature="e#19085#19093#0" expanded="true" />
             <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#27547#27555#0" expanded="true" />
+            <element signature="e#21558#21566#0" expanded="true" />
+            <element signature="e#21810#21818#0" expanded="true" />
+            <element signature="e#21977#21985#0" expanded="true" />
             <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#23693#23701#0" expanded="true" />
+            <element signature="e#24034#24042#0" expanded="true" />
+            <element signature="e#24226#24234#0" expanded="true" />
             <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-            <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-            <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="e#27073#27074#0" expanded="true" />
+            <element signature="e#27145#27146#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -554,28 +590,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20260#20261#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+            <element signature="e#5584#5592#0" expanded="true" />
+            <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#10676#10684#0" expanded="true" />
+            <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#12845#12853#0" expanded="true" />
+            <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+            <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
             <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#20738#20754#0" expanded="true" />
+            <element signature="e#14995#15003#0" expanded="true" />
+            <element signature="e#15199#15215#0" expanded="true" />
+            <element signature="e#16571#16579#0" expanded="true" />
             <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#18224#18232#0" expanded="true" />
+            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="e#18903#18911#0" expanded="true" />
+            <element signature="e#19085#19093#0" expanded="true" />
             <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#27547#27555#0" expanded="true" />
+            <element signature="e#21558#21566#0" expanded="true" />
+            <element signature="e#21810#21818#0" expanded="true" />
+            <element signature="e#21977#21985#0" expanded="true" />
             <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#23693#23701#0" expanded="true" />
+            <element signature="e#24034#24042#0" expanded="true" />
+            <element signature="e#24226#24234#0" expanded="true" />
             <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-            <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-            <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="e#27073#27074#0" expanded="true" />
+            <element signature="e#27145#27146#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -586,28 +631,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20260#20261#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+            <element signature="e#5584#5592#0" expanded="true" />
+            <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#10676#10684#0" expanded="true" />
+            <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#12845#12853#0" expanded="true" />
+            <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+            <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
             <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#20738#20754#0" expanded="true" />
+            <element signature="e#14995#15003#0" expanded="true" />
+            <element signature="e#15199#15215#0" expanded="true" />
+            <element signature="e#16571#16579#0" expanded="true" />
             <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#18224#18232#0" expanded="true" />
+            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="e#18903#18911#0" expanded="true" />
+            <element signature="e#19085#19093#0" expanded="true" />
             <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#27547#27555#0" expanded="true" />
+            <element signature="e#21558#21566#0" expanded="true" />
+            <element signature="e#21810#21818#0" expanded="true" />
+            <element signature="e#21977#21985#0" expanded="true" />
             <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#23693#23701#0" expanded="true" />
+            <element signature="e#24034#24042#0" expanded="true" />
+            <element signature="e#24226#24234#0" expanded="true" />
             <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-            <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-            <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="e#27073#27074#0" expanded="true" />
+            <element signature="e#27145#27146#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -618,28 +672,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20260#20261#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+            <element signature="e#5584#5592#0" expanded="true" />
+            <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#10676#10684#0" expanded="true" />
+            <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#12845#12853#0" expanded="true" />
+            <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+            <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
             <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#20738#20754#0" expanded="true" />
+            <element signature="e#14995#15003#0" expanded="true" />
+            <element signature="e#15199#15215#0" expanded="true" />
+            <element signature="e#16571#16579#0" expanded="true" />
             <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#18224#18232#0" expanded="true" />
+            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="e#18903#18911#0" expanded="true" />
+            <element signature="e#19085#19093#0" expanded="true" />
             <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#27547#27555#0" expanded="true" />
+            <element signature="e#21558#21566#0" expanded="true" />
+            <element signature="e#21810#21818#0" expanded="true" />
+            <element signature="e#21977#21985#0" expanded="true" />
             <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#23693#23701#0" expanded="true" />
+            <element signature="e#24034#24042#0" expanded="true" />
+            <element signature="e#24226#24234#0" expanded="true" />
             <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-            <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-            <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="e#27073#27074#0" expanded="true" />
+            <element signature="e#27145#27146#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -650,28 +713,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20260#20261#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+            <element signature="e#5584#5592#0" expanded="true" />
+            <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#10676#10684#0" expanded="true" />
+            <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#12845#12853#0" expanded="true" />
+            <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+            <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
             <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#20738#20754#0" expanded="true" />
+            <element signature="e#14995#15003#0" expanded="true" />
+            <element signature="e#15199#15215#0" expanded="true" />
+            <element signature="e#16571#16579#0" expanded="true" />
             <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#18224#18232#0" expanded="true" />
+            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="e#18903#18911#0" expanded="true" />
+            <element signature="e#19085#19093#0" expanded="true" />
             <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#27547#27555#0" expanded="true" />
+            <element signature="e#21558#21566#0" expanded="true" />
+            <element signature="e#21810#21818#0" expanded="true" />
+            <element signature="e#21977#21985#0" expanded="true" />
             <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#23693#23701#0" expanded="true" />
+            <element signature="e#24034#24042#0" expanded="true" />
+            <element signature="e#24226#24234#0" expanded="true" />
             <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-            <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-            <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="e#27073#27074#0" expanded="true" />
+            <element signature="e#27145#27146#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -682,28 +754,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20260#20261#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+            <element signature="e#5584#5592#0" expanded="true" />
+            <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#10676#10684#0" expanded="true" />
+            <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#12845#12853#0" expanded="true" />
+            <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+            <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
             <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#20738#20754#0" expanded="true" />
+            <element signature="e#14995#15003#0" expanded="true" />
+            <element signature="e#15199#15215#0" expanded="true" />
+            <element signature="e#16571#16579#0" expanded="true" />
             <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#18224#18232#0" expanded="true" />
+            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="e#18903#18911#0" expanded="true" />
+            <element signature="e#19085#19093#0" expanded="true" />
             <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#27547#27555#0" expanded="true" />
+            <element signature="e#21558#21566#0" expanded="true" />
+            <element signature="e#21810#21818#0" expanded="true" />
+            <element signature="e#21977#21985#0" expanded="true" />
             <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#23693#23701#0" expanded="true" />
+            <element signature="e#24034#24042#0" expanded="true" />
+            <element signature="e#24226#24234#0" expanded="true" />
             <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-            <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-            <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="e#27073#27074#0" expanded="true" />
+            <element signature="e#27145#27146#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -714,28 +795,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20260#20261#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+            <element signature="e#5584#5592#0" expanded="true" />
+            <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#10676#10684#0" expanded="true" />
+            <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#12845#12853#0" expanded="true" />
+            <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+            <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
             <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#20738#20754#0" expanded="true" />
+            <element signature="e#14995#15003#0" expanded="true" />
+            <element signature="e#15199#15215#0" expanded="true" />
+            <element signature="e#16571#16579#0" expanded="true" />
             <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#18224#18232#0" expanded="true" />
+            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="e#18903#18911#0" expanded="true" />
+            <element signature="e#19085#19093#0" expanded="true" />
             <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#27547#27555#0" expanded="true" />
+            <element signature="e#21558#21566#0" expanded="true" />
+            <element signature="e#21810#21818#0" expanded="true" />
+            <element signature="e#21977#21985#0" expanded="true" />
             <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#23693#23701#0" expanded="true" />
+            <element signature="e#24034#24042#0" expanded="true" />
+            <element signature="e#24226#24234#0" expanded="true" />
             <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-            <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-            <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="e#27073#27074#0" expanded="true" />
+            <element signature="e#27145#27146#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -746,28 +836,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20260#20261#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+            <element signature="e#5584#5592#0" expanded="true" />
+            <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#10676#10684#0" expanded="true" />
+            <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#12845#12853#0" expanded="true" />
+            <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+            <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
             <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#20738#20754#0" expanded="true" />
+            <element signature="e#14995#15003#0" expanded="true" />
+            <element signature="e#15199#15215#0" expanded="true" />
+            <element signature="e#16571#16579#0" expanded="true" />
             <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#18224#18232#0" expanded="true" />
+            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="e#18903#18911#0" expanded="true" />
+            <element signature="e#19085#19093#0" expanded="true" />
             <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#27547#27555#0" expanded="true" />
+            <element signature="e#21558#21566#0" expanded="true" />
+            <element signature="e#21810#21818#0" expanded="true" />
+            <element signature="e#21977#21985#0" expanded="true" />
             <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#23693#23701#0" expanded="true" />
+            <element signature="e#24034#24042#0" expanded="true" />
+            <element signature="e#24226#24234#0" expanded="true" />
             <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-            <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-            <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="e#27073#27074#0" expanded="true" />
+            <element signature="e#27145#27146#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -778,28 +877,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20260#20261#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+            <element signature="e#5584#5592#0" expanded="true" />
+            <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#10676#10684#0" expanded="true" />
+            <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#12845#12853#0" expanded="true" />
+            <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+            <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
             <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#20738#20754#0" expanded="true" />
+            <element signature="e#14995#15003#0" expanded="true" />
+            <element signature="e#15199#15215#0" expanded="true" />
+            <element signature="e#16571#16579#0" expanded="true" />
             <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#18224#18232#0" expanded="true" />
+            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="e#18903#18911#0" expanded="true" />
+            <element signature="e#19085#19093#0" expanded="true" />
             <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#27547#27555#0" expanded="true" />
+            <element signature="e#21558#21566#0" expanded="true" />
+            <element signature="e#21810#21818#0" expanded="true" />
+            <element signature="e#21977#21985#0" expanded="true" />
             <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#23693#23701#0" expanded="true" />
+            <element signature="e#24034#24042#0" expanded="true" />
+            <element signature="e#24226#24234#0" expanded="true" />
             <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-            <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-            <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="e#27073#27074#0" expanded="true" />
+            <element signature="e#27145#27146#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -810,28 +918,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20260#20261#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+            <element signature="e#5584#5592#0" expanded="true" />
+            <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#10676#10684#0" expanded="true" />
+            <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#12845#12853#0" expanded="true" />
+            <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+            <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
             <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#20738#20754#0" expanded="true" />
+            <element signature="e#14995#15003#0" expanded="true" />
+            <element signature="e#15199#15215#0" expanded="true" />
+            <element signature="e#16571#16579#0" expanded="true" />
             <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#18224#18232#0" expanded="true" />
+            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="e#18903#18911#0" expanded="true" />
+            <element signature="e#19085#19093#0" expanded="true" />
             <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#27547#27555#0" expanded="true" />
+            <element signature="e#21558#21566#0" expanded="true" />
+            <element signature="e#21810#21818#0" expanded="true" />
+            <element signature="e#21977#21985#0" expanded="true" />
             <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#23693#23701#0" expanded="true" />
+            <element signature="e#24034#24042#0" expanded="true" />
+            <element signature="e#24226#24234#0" expanded="true" />
             <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-            <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-            <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="e#27073#27074#0" expanded="true" />
+            <element signature="e#27145#27146#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -842,28 +959,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20260#20261#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+            <element signature="e#5584#5592#0" expanded="true" />
+            <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#10676#10684#0" expanded="true" />
+            <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#12845#12853#0" expanded="true" />
+            <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+            <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
             <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#20738#20754#0" expanded="true" />
+            <element signature="e#14995#15003#0" expanded="true" />
+            <element signature="e#15199#15215#0" expanded="true" />
+            <element signature="e#16571#16579#0" expanded="true" />
             <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#18224#18232#0" expanded="true" />
+            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="e#18903#18911#0" expanded="true" />
+            <element signature="e#19085#19093#0" expanded="true" />
             <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#27547#27555#0" expanded="true" />
+            <element signature="e#21558#21566#0" expanded="true" />
+            <element signature="e#21810#21818#0" expanded="true" />
+            <element signature="e#21977#21985#0" expanded="true" />
             <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#23693#23701#0" expanded="true" />
+            <element signature="e#24034#24042#0" expanded="true" />
+            <element signature="e#24226#24234#0" expanded="true" />
             <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-            <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-            <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="e#27073#27074#0" expanded="true" />
+            <element signature="e#27145#27146#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -874,28 +1000,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20260#20261#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+            <element signature="e#5584#5592#0" expanded="true" />
+            <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#10676#10684#0" expanded="true" />
+            <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#12845#12853#0" expanded="true" />
+            <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+            <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
             <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#20738#20754#0" expanded="true" />
+            <element signature="e#14995#15003#0" expanded="true" />
+            <element signature="e#15199#15215#0" expanded="true" />
+            <element signature="e#16571#16579#0" expanded="true" />
             <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#18224#18232#0" expanded="true" />
+            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="e#18903#18911#0" expanded="true" />
+            <element signature="e#19085#19093#0" expanded="true" />
             <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#27547#27555#0" expanded="true" />
+            <element signature="e#21558#21566#0" expanded="true" />
+            <element signature="e#21810#21818#0" expanded="true" />
+            <element signature="e#21977#21985#0" expanded="true" />
             <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#23693#23701#0" expanded="true" />
+            <element signature="e#24034#24042#0" expanded="true" />
+            <element signature="e#24226#24234#0" expanded="true" />
             <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-            <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-            <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="e#27073#27074#0" expanded="true" />
+            <element signature="e#27145#27146#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -906,28 +1041,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20260#20261#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+            <element signature="e#5584#5592#0" expanded="true" />
+            <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#10676#10684#0" expanded="true" />
+            <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#12845#12853#0" expanded="true" />
+            <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+            <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
             <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#20738#20754#0" expanded="true" />
+            <element signature="e#14995#15003#0" expanded="true" />
+            <element signature="e#15199#15215#0" expanded="true" />
+            <element signature="e#16571#16579#0" expanded="true" />
             <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#18224#18232#0" expanded="true" />
+            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="e#18903#18911#0" expanded="true" />
+            <element signature="e#19085#19093#0" expanded="true" />
             <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#27547#27555#0" expanded="true" />
+            <element signature="e#21558#21566#0" expanded="true" />
+            <element signature="e#21810#21818#0" expanded="true" />
+            <element signature="e#21977#21985#0" expanded="true" />
             <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#23693#23701#0" expanded="true" />
+            <element signature="e#24034#24042#0" expanded="true" />
+            <element signature="e#24226#24234#0" expanded="true" />
             <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-            <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-            <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="e#27073#27074#0" expanded="true" />
+            <element signature="e#27145#27146#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -938,28 +1082,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20260#20261#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+            <element signature="e#5584#5592#0" expanded="true" />
+            <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#10676#10684#0" expanded="true" />
+            <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#12845#12853#0" expanded="true" />
+            <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+            <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
             <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#20738#20754#0" expanded="true" />
+            <element signature="e#14995#15003#0" expanded="true" />
+            <element signature="e#15199#15215#0" expanded="true" />
+            <element signature="e#16571#16579#0" expanded="true" />
             <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#18224#18232#0" expanded="true" />
+            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="e#18903#18911#0" expanded="true" />
+            <element signature="e#19085#19093#0" expanded="true" />
             <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#27547#27555#0" expanded="true" />
+            <element signature="e#21558#21566#0" expanded="true" />
+            <element signature="e#21810#21818#0" expanded="true" />
+            <element signature="e#21977#21985#0" expanded="true" />
             <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#23693#23701#0" expanded="true" />
+            <element signature="e#24034#24042#0" expanded="true" />
+            <element signature="e#24226#24234#0" expanded="true" />
             <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-            <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-            <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="e#27073#27074#0" expanded="true" />
+            <element signature="e#27145#27146#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1002,32 +1155,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Project/myProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3650546">
-          <caret line="119" column="31" selection-start-line="119" selection-start-column="31" selection-end-line="119" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.4678748">
+          <caret line="769" column="26" selection-start-line="769" selection-start-column="26" selection-end-line="769" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20260#20261#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
+            <element signature="e#2150#2158#0" expanded="true" />
+            <element signature="e#5584#5592#0" expanded="true" />
+            <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#10676#10684#0" expanded="true" />
+            <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
+            <element signature="e#12845#12853#0" expanded="true" />
+            <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
+            <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
+            <element signature="e#14721#14722#0" expanded="true" />
+            <element signature="e#14774#14775#0" expanded="true" />
             <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#20738#20754#0" expanded="true" />
+            <element signature="e#14995#15003#0" expanded="true" />
+            <element signature="e#15199#15215#0" expanded="true" />
+            <element signature="e#16571#16579#0" expanded="true" />
             <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#18224#18232#0" expanded="true" />
+            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="e#18903#18911#0" expanded="true" />
+            <element signature="e#19085#19093#0" expanded="true" />
             <element signature="method#CaesarTranslator#0;class#myProject#0" expanded="false" />
-            <element signature="e#27547#27555#0" expanded="true" />
+            <element signature="e#21558#21566#0" expanded="true" />
+            <element signature="e#21810#21818#0" expanded="true" />
+            <element signature="e#21977#21985#0" expanded="true" />
             <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#23693#23701#0" expanded="true" />
+            <element signature="e#24034#24042#0" expanded="true" />
+            <element signature="e#24226#24234#0" expanded="true" />
             <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
-            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
-            <element signature="method#WarningTextStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#WordNotEditable#0;class#myProject#0" expanded="false" />
-            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
-            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
-            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
-            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
-            <element signature="method#InfoButton#0;class#myProject#0" expanded="false" />
-            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
-            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
-            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="e#27073#27074#0" expanded="true" />
+            <element signature="e#27145#27146#0" expanded="true" />
           </folding>
         </state>
       </provider>
