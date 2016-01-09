@@ -9,6 +9,10 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -18,29 +22,35 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import org.omg.CORBA.Any;
 
-import javax.xml.soap.Text;
+import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.List;
 
 /**
  * Created by Kristiina on 30.11.2015.
  */
 
 public class myProject extends Application {
-    Button AtbashButton, CaesarButton, VigenereButton, MorseButton, ReturnButton;
+    Button AtbashButton, CaesarButton, VigenereButton, MorseButton, ReturnButton, CloseButton;
     Scene mainScene, AtbashScene, CaesarScene, VigenereScene, MorseScene;
     VBox mainvbox, Atbashvbox, Caesarvbox, Vigenerevbox, Morsevbox;
     Stage mainStage;
     Tooltip Choose = new Tooltip("Choose alphabet");
 
-    String BackgroundPictureURL = "http://www.webdesignhot.com/wp-content/uploads/2012/09/" +
-            "Abstract-Green-Bokeh-Light-Background-Vector-Graphic.jpg";
-    Image BackgroundPicture = new Image("url:" + BackgroundPictureURL);
+    //String BackgroundPictureURL = "http://www.webdesignhot.com/wp-content/uploads/2012/09/Abstract-Green-Bokeh-Light-Background-Vector-Graphic.jpg";
+
+    Image BackgroundPicture = new Image("file:Background.jpg");
     int width = (int) BackgroundPicture.getWidth();
     int height = (int) BackgroundPicture.getHeight();
+    BackgroundImage BackgroundImage = new BackgroundImage(BackgroundPicture,null,null,BackgroundPosition.CENTER,null);
+    Background Background = new Background(BackgroundImage);
+
     int buttonWidth = width/3;
     int vBoxPadding = 5;
     String TextBackgroundColor = "#F2F2F2";
@@ -78,11 +88,16 @@ public class myProject extends Application {
         VigenereButton = new Button("Vigenère Cipher");
         MorseButton = new Button("Morse Code");
         ReturnButton = new Button("Return to menu");
+        CloseButton = new Button("Close window");
 
-        ButtonsSameSize(null,AtbashButton,CaesarButton,null,VigenereButton,MorseButton);// making the buttons same size
+        ButtonsSameSize(null, AtbashButton, CaesarButton, null, VigenereButton, MorseButton);// making the buttons same size
 
         PaneStyle(mainvbox); //background & alignment
         mainvbox.getChildren().addAll(welcomeText,AtbashButton,CaesarButton,VigenereButton,MorseButton);
+        
+        CloseButton.setOnAction(event2 -> {
+            CloseWindow();
+        });
 
         ReturnButton.setOnAction(event1 -> { // Button which takes back to the main view
             ReturnToMainView();
@@ -105,6 +120,11 @@ public class myProject extends Application {
         });
     }
 
+    private void CloseWindow() {
+        Stage stage = (Stage) CloseButton.getScene().getWindow();
+        stage.close();
+    }
+
     private void VigenereWindow() {
         Vigenerevbox = new VBox();
         Vigenerevbox.setPadding(new Insets(vBoxPadding));
@@ -118,17 +138,17 @@ public class myProject extends Application {
 
         Label vWarning = new Label("At the moment only one word can be enciphered at a time and all " +
                 "letters are converted to lower case!");
-        WarningTextStyle(vWarning);
+        WarningLableStyle(vWarning);
 
         String vKeyInputText = "Enter the keyword";
-        String vWordInputText = "Insert the word you want to encipher here";
+        String vWordInputText = "Insert the text you want to encipher here";
         String vNewWordText = "Your answer will be displayed here";
         TextField vABCinput = new TextField();
         TextField vKeyInput = new TextField();
         TextField vWordInput = new TextField();
         SetPromptText(vABCinput,ABCinputText,vKeyInput,vKeyInputText,vWordInput,vWordInputText);
         TextField vNewWord = new TextField(vNewWordText);
-        WordNotEditable(vNewWord); //cannot change text in TextField
+        TextNotEditable(vNewWord); //cannot change text in TextField
 
         Button vEncode = new Button("Encode");
         Button vDecode = new Button("Decode");
@@ -169,7 +189,7 @@ public class myProject extends Application {
             String vHeaderText = "Vigenère Cipher";
             String vButtonTitle = "Vigenère table";
             Button vTable = new Button(vButtonTitle);
-            DisplayInfo(vHeaderText, ReadTextFromFile("VigenereInfo.txt"), true, vTable);
+            DisplayInfo(vHeaderText, ReadTextFromFile("VigenereInfo.txt"), false,vTable);
 
             vTable.setOnAction(event1 -> {
                 ShowInfoPicture(vButtonTitle, "tabularecta.jpg");
@@ -179,6 +199,7 @@ public class myProject extends Application {
 
     private void MorseWindow() {
         Morsevbox = new VBox();
+        Morsevbox.setPadding(new Insets(vBoxPadding));
         MorseScene = new Scene(Morsevbox, width, height);
         mainStage.setScene(MorseScene);
         mainStage.setTitle("Morse Code");
@@ -188,14 +209,14 @@ public class myProject extends Application {
         WelcomeTextStyle(mWelcomeText);
 
         Label mWarning = new Label("At the moment translating from Morse to Latin alphabet doesn't work!");
-        WarningTextStyle(mWarning);
+        WarningLableStyle(mWarning);
 
-        String mWordInputText = "Insert the word you want to translate into Morse code here";
+        String mWordInputText = "Insert the text or Morse code you want to translate here";
         String mNewWordText = "Your answer will be displayed here";
         TextField mWordInput = new TextField();
         SetPromptText(mWordInput,mWordInputText,null,null,null,null);
         TextField mNewWord = new TextField(mNewWordText);
-        WordNotEditable(mNewWord);//cannot change text in TextField
+        TextNotEditable(mNewWord);//cannot change text in TextField
 
         Button mTranslate = new Button("Translate!");
         Button mClear = new Button("Clear fields");
@@ -226,7 +247,7 @@ public class myProject extends Application {
             String mHeaderText = "Morse Code";
             String mButtonTitle = "International Morse alphabet";
             Button mAlphabet = new Button(mButtonTitle);
-            DisplayInfo(mHeaderText, ReadTextFromFile("MorseInfo.txt"), true, mAlphabet);
+            DisplayInfo(mHeaderText, ReadTextFromFile("MorseInfo.txt"), false,mAlphabet);
 
             mAlphabet.setOnAction(event2 -> {
                 ShowInfoPicture(mButtonTitle, "LatinMorse.jpg");
@@ -246,17 +267,17 @@ public class myProject extends Application {
         WelcomeTextStyle(cWelcomeText);
 
         Label cWarning = new Label("At the moment all letters are converted to lower case!");
-        WarningTextStyle(cWarning);
+        WarningLableStyle(cWarning);
 
         String cStepInputText = "Insert the shift number (use minus (-) for left shift)";
-        String cWordInputText = "Insert the word you want to encipher here";
+        String cWordInputText = "Insert the text you want to encipher here";
         String cNewWordText = "Your answer will be displayed here";
         TextField cABCinput = new TextField();
         TextField cStepInput = new TextField();
         TextField cWordInput = new TextField();
         SetPromptText(cABCinput,ABCinputText,cStepInput,cStepInputText,cWordInput,cWordInputText);
         TextField cNewWord = new TextField(cNewWordText);
-        WordNotEditable(cNewWord);//cannot change text in TextField
+        TextNotEditable(cNewWord);//cannot change text in TextField
 
         Button cInsert = new Button("Try the cipher!");
         Button cClear = new Button("Clear fields");
@@ -286,7 +307,7 @@ public class myProject extends Application {
 
         cInfo.setOnAction(event2 -> {
             String cHeaderText = "Caesar Cipher";
-            DisplayInfo(cHeaderText, ReadTextFromFile("CaesarInfo.txt"), false, null);
+            DisplayInfo(cHeaderText, ReadTextFromFile("CaesarInfo.txt"), true,null);
         });
 
         cInsert.setOnAction(event1 -> {
@@ -306,15 +327,15 @@ public class myProject extends Application {
         WelcomeTextStyle(aWelcomeText);
 
         Label aWarning = new Label("At the moment all letters are converted to lower case!");
-        WarningTextStyle(aWarning);
+        WarningLableStyle(aWarning);
 
-        String aWordInputText = "Insert the word you want to encipher here";
+        String aWordInputText = "Insert the text you want to encipher here";
         String aNewWordText = "Your answer will be displayed here";
         TextField aABCinput = new TextField();
         TextField aWordInput = new TextField();
         SetPromptText(aABCinput,ABCinputText,aWordInput,aWordInputText,null,null);
         TextField aNewWord = new TextField(aNewWordText);
-        WordNotEditable(aNewWord);//cannot change text in TextField
+        TextNotEditable(aNewWord);//cannot change text in TextField
 
         //Defining the drop down menu
         ChoiceBox<String> aLanguageABC = new ChoiceBox<String>(FXCollections.observableArrayList(ABClanguages));
@@ -346,7 +367,7 @@ public class myProject extends Application {
         // button with information about Atbash
         aInfo.setOnAction(event3 ->{
             String aHeaderText = "Atbash Cipher";
-            DisplayInfo(aHeaderText, ReadTextFromFile("AtbashInfo.txt"), false, null);
+            DisplayInfo(aHeaderText, ReadTextFromFile("AtbashInfo.txt"),true,null);
         });
 
         // actions after the alphabet & word have been inserted
@@ -388,13 +409,26 @@ public class myProject extends Application {
                 NewWord.setText("");
             } else if (mWord.matches("^[/. -]+$")){ //Translate Morse to Latin
                 String[] mWordList = mWord.split("\\s+"); //Words from sentence to list
-                int mLettersInWord = mWordList.length; //elements in list
+                int mLettersInWord = mWordList.length; //how many elements in list
 
                 FileToHashMap(true,mLine,mList,mBR);
 
                 for (int i = 0; i < mLettersInWord; i++) {
                     String mLetter = mWordList[i];
-                    if (mWordList[i].equals("/")) {
+                    if (mWordList[i].contains("/") && !mWordList[i].matches("/")){
+                        String[] mTempWordList = mLetter.split("/");
+                        List<String> mTempOutputList = new ArrayList<>();
+                        for (int j = 0; j < 2; j++) {
+                            if (!mList.containsKey(mTempWordList[j])){
+                                mOutputList.add(j,"#");
+                            } else {
+                                mTempOutputList.add(j,mList.get(mTempWordList[j]));
+                            }
+                        }
+                        mTempOutputList.add(1," ");
+                        String mTempOutput = String.join("",mTempOutputList);
+                        mOutputList.add(mTempOutput);
+                    } else if (mWordList[i].equals("/")) {
                         mOutputList.add(i," "); //Replace "/" with a whitespace
                     } else if (!mList.containsKey(mLetter)){
                         mOutputList.add(i,"#");
@@ -408,7 +442,7 @@ public class myProject extends Application {
                 List<String> mWordList = new ArrayList<String>(Arrays.asList(mWord.split(""))); // Word string to list
                 int mLettersInWord = mWordList.size(); // get length of the word
 
-                FileToHashMap(false,mLine,mList,mBR);
+                FileToHashMap(false, mLine, mList, mBR);
 
                 for (int i = 0; i < mLettersInWord; i++) {
                     String mLetter = mWordList.get(i); // find the letter from word
@@ -429,8 +463,6 @@ public class myProject extends Application {
             NewWord.setText(mOutput);
 
             mBR.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -439,13 +471,15 @@ public class myProject extends Application {
 
     private TextField VigenereTranslator(boolean Encoder,TextField ABCinput, TextField KeyInput,
                                          TextField WordInput, TextField NewWord) {
+        TextNotEditableStyle(NewWord);
+
         String vABC = ABCinput.getText(); //ABC input to string
         vABC = vABC.trim().replaceAll("\\s","").replaceAll(",","").toLowerCase(); //Remove spaces, commas from ABC + to lower case
         List<String> vABClist = new ArrayList<String>(Arrays.asList(vABC.split(""))); //ABC string to list
         int vLettersInABC = vABClist.size(); //Length of ABC
 
         String vKey = KeyInput.getText(); //Keyword input to string
-        vKey = vKey.toLowerCase(); //Keyword to lower case
+        vKey = vKey.toLowerCase().trim(); //Keyword to lower case + remove spaces
         List<Character> vKeyList = new ArrayList<Character>();
         for (char c : vKey.toCharArray()) { //String characters to list
             vKeyList.add(c);
@@ -459,8 +493,12 @@ public class myProject extends Application {
 
         ArrayList<String> vOutputList = new ArrayList<String>(); //List for new (output) word
 
+
         if (vABC.equals("") || vKey.equals("") || vWord.equals("")) {
             NewWord.setText("");
+        } else if (!vKey.matches("^["+ vABC+"]+$")){
+            String vErrorText = "Inserted key contains letters that are missing from the alphabet!";
+            WarningTextToTextfield(NewWord,vErrorText);
         } else {
             if (vLettersInWord > vLettersInKey){
                 int vMissingLetters = vLettersInWord - vLettersInKey;//how many letters are missing from keyword
@@ -473,10 +511,10 @@ public class myProject extends Application {
             for (int i = 0; i < vLettersInWord; i++) {
                 String vWordLetter = vWordList.get(i); //check letters in the word
                 char vKeyLetter = vKeyList.get(i);
-                int vStep = vABClist.indexOf(Character.toString(vKeyLetter)); //index of keywork letter in ABC
+                int vStep = vABClist.indexOf(Character.toString(vKeyLetter)); //index of keyword letter in ABC
 
                 if (!vABClist.contains(vWordLetter)) { //adding characters which are not in ABC to output
-                    vOutputList.add(i,vWordLetter);
+                    vOutputList.add(i, vWordLetter);
                 } else {
                     int vABCindex = vABClist.indexOf(vWordLetter); //find index of word letter in ABC
                     int vABCindex2 = 0;
@@ -504,6 +542,8 @@ public class myProject extends Application {
 
     private TextField CaesarTranslator(TextField ABCinput, TextField WordInput, TextField StepInput,
                                        TextField NewWord) {
+        TextNotEditableStyle(NewWord);
+
         String cABC = ABCinput.getText(); //ABC input to string
         cABC = cABC.trim().replaceAll("\\s","").replaceAll(",","").toLowerCase(); //Remove spaces, commas from ABC + to lower case
         List<String> cABClist = new ArrayList<String>(Arrays.asList(cABC.split(""))); //ABC string to list
@@ -520,30 +560,57 @@ public class myProject extends Application {
         if (cABC.equals("") || StepInput.getText().isEmpty() || cWord.equals("")){
             NewWord.setText("");
         } else {
-            int step = Integer.parseInt(StepInput.getText()); // string input to int
-            for (int i = 0; i < cLettersInWord; i++) {
-                String cLetter = cWordList.get(i);
-                if (!cABClist.contains(cLetter)) { //adding characters that are not in ABC
-                    cOutputList.add(i, cLetter);
-                }
-                else {
-                    int cABCindex = cABClist.indexOf(cLetter); //find the index of letter (from word) in ABC
-                    int cABCindex2 = (cABCindex + step) % cLettersInABC;
+            String StepString = StepInput.getText(); // save Step as string
+            String FirstLetter = StepString.substring(0, 1); //save first letter of Step string
+            String OtherLetters = StepString.substring(1); // remove first letter of Step string
 
-                    if (cABCindex2 < 0) {
-                        if (Math.abs(step) > cLettersInABC){ //reduces the length of step (step <= ABC)
-                            step =  step % cLettersInABC;
-                        }
-                        cABCindex2 = cLettersInABC + cABCindex2;
-                    }
-                    cOutputList.add(i,cABClist.get(cABCindex2));
-                }
+            if (OtherLetters.equals("")){
+                OtherLetters = "NotEmpty"; //adds some string for next comparison to return false
             }
-            CheckUppercase(cLettersInWord,cOutputList,cUserInput);
-            String cOutput = String.join("",cOutputList);
-            NewWord.setText(cOutput);
+
+            if ((!FirstLetter.matches("[0-9]*") || !FirstLetter.matches("-")) && !OtherLetters.matches("[0-9]*")) {
+                String cErrorText = "The step must be an integer!"; //error displayed if step is not a number
+                WarningTextToTextfield(NewWord, cErrorText);
+            } else if (Float.parseFloat(StepString) > Integer.MAX_VALUE ||
+                    Float.parseFloat(StepString) < Integer.MIN_VALUE) {
+                String cErrorText = "The absalute value of the step is too big!"; //error displayed if step is too big to be integer (java)
+                WarningTextToTextfield(NewWord, cErrorText);
+            } else {
+                int step = Math.round(Float.parseFloat(StepString)); //save Step as int
+                for (int i = 0; i < cLettersInWord; i++) {
+                    String cLetter = cWordList.get(i);
+                    if (!cABClist.contains(cLetter)) { //adding characters that are not in ABC
+                        cOutputList.add(i, cLetter);
+                    }
+                    else {
+                        int cABCindex = cABClist.indexOf(cLetter); //find the index of letter (from word) in ABC
+                        int cABCindex2 = (cABCindex + step) % cLettersInABC;
+
+                        if (cABCindex2 < 0) {
+                            if (Math.abs(step) > cLettersInABC){ //reduces the length of step (step <= ABC)
+                                step =  step % cLettersInABC;
+                            }
+                            cABCindex2 = cLettersInABC + cABCindex2;
+                        }
+                        cOutputList.add(i,cABClist.get(cABCindex2));
+                    }
+                }
+                CheckUppercase(cLettersInWord,cOutputList,cUserInput);
+                String cOutput = String.join("",cOutputList);
+                NewWord.setText(cOutput);
+            }
         }
         return NewWord;
+    }
+
+    private void TextNotEditableStyle(TextField NewWord) {
+        NewWord.setStyle("-fx-text-inner-color: black; -fx-background-color:" + TextBackgroundColor);
+    }
+
+    private void WarningTextToTextfield(TextField NewWord,String ErrorText) {
+        NewWord.setStyle("-fx-text-inner-color: red; -fx-background-color:" + TextBackgroundColor + "; " +
+                "-fx-font-style: italic");
+        NewWord.setText(ErrorText);
     }
 
     private TextField AtbashTranslator(TextField ABCinput,TextField WordInput,TextField NewWord) {
@@ -559,21 +626,24 @@ public class myProject extends Application {
 
         ArrayList<String> aOutputList = new ArrayList<String>(); // Empty list for the new word
 
-        for (int i = 0; i < aLettersInWord; i++) {
-            String aLetter = aWordList.get(i); // find the letter from word
-            if (!aABClist.contains(aLetter)) { //adding characters that are not in ABC
-                aOutputList.add(i, aLetter);
+        if (aABC.equals("") || aWord.equals("")) {
+            NewWord.setText("");
+        } else {
+            for (int i = 0; i < aLettersInWord; i++) {
+                String aLetter = aWordList.get(i); // find the letter from word
+                if (!aABClist.contains(aLetter)) { //adding characters that are not in ABC
+                    aOutputList.add(i, aLetter);
+                }
+                else {
+                    int aABCindex = aABClist.indexOf(aLetter); //find index of the letter (from word) in ABC
+                    int aABCindex2 = (LettersInABC - 1) - aABCindex; //find index of the encrypted letter
+                    aOutputList.add(i, aABClist.get(aABCindex2)); //encrypted letter to output list
+                }
             }
-            else {
-                int aABCindex = aABClist.indexOf(aLetter); //find index of the letter (from word) in ABC
-                int aABCindex2 = (LettersInABC - 1) - aABCindex; //find index of the encrypted letter
-                aOutputList.add(i, aABClist.get(aABCindex2)); //encrypted letter to output list
-            }
+            CheckUppercase(aLettersInWord,aOutputList,aUserInput);
+            String aOutput = String.join("",aOutputList);
+            NewWord.setText(aOutput);
         }
-
-        CheckUppercase(aLettersInWord,aOutputList,aUserInput);
-        String aOutput = String.join("",aOutputList);
-        NewWord.setText(aOutput);
         return NewWord;
     }
 
@@ -631,18 +701,19 @@ public class myProject extends Application {
         WelcomeText.setFont(Font.font(null, FontWeight.BOLD,20));
     }
 
-    private void WarningTextStyle(Label Warning) {
+    private void WarningLableStyle(Label Warning) {
         Warning.setFont(Font.font(null, FontPosture.ITALIC,14));
         Warning.setTextFill(Color.RED);
     }
 
-    private void WordNotEditable(TextField NewWord) {
+    private void TextNotEditable(TextField NewWord) {
         NewWord.setEditable(false);
-        NewWord.setStyle("-fx-background-color:" + TextBackgroundColor);
+        NewWord.setFocusTraversable(false);
+        NewWord.setStyle("-fx-text-inner-color: black; -fx-background-color:" + TextBackgroundColor);
     }
 
     private void PaneStyle(VBox pane) {
-        pane.setStyle("-fx-background-image: url("+ BackgroundPictureURL + ")");
+        pane.setBackground(Background);
         pane.setAlignment(Pos.CENTER); // aligning main view text to center of the window
     }
 
@@ -775,21 +846,22 @@ public class myProject extends Application {
         ImagePane.getChildren().addAll(vImageView);
     }
 
-    private void DisplayInfo(String HeaderText,String InfoText,boolean Scroll, Button Picture) {
+    private void DisplayInfo(String HeaderText,String InfoText, boolean Small,Button Picture) {
         VBox HelpPane = new VBox();
         HelpPane.setPadding(new Insets(vBoxPadding));
+        HelpPane.setBackground(Background);
         ScrollPane ScrollPane = new ScrollPane(HelpPane); //pane that can be scrolled
         ScrollPane.setFitToWidth(true);
         Scene HelpScene;
-
-        if (Scroll) { //check if window needs to be scrolled or not
-            HelpScene = new Scene(ScrollPane,width, height/2);
+        if (Small){
+            HelpScene = new Scene(HelpPane,width,height/3);
         } else {
-            HelpScene = new Scene(HelpPane,width, height/2);
+            HelpScene = new Scene(HelpPane,width,height/3*2);
         }
 
         Stage HelpStage = new Stage(); // info opens in new window
         HelpStage.setTitle("Info");
+        HelpStage.sizeToScene();
         HelpStage.setScene(HelpScene);
         HelpStage.setResizable(false);
         HelpStage.getIcons().add(new Image("file:questionmark.png"));
@@ -799,23 +871,22 @@ public class myProject extends Application {
         WelcomeTextStyle(HelpTextHeader);
         Label HelpText = new Label();
         HelpText.setText(InfoText);
-        HelpText.setPrefWidth(width);
         HelpText.setWrapText(true);
         HelpText.setTextAlignment(TextAlignment.JUSTIFY);
-
-        HelpPane.setStyle("-fx-background-image: url("+ BackgroundPictureURL + ")"); //add background
 
         if (Picture == null){ //content of pane without buttons
             HelpPane.getChildren().addAll(HelpTextHeader, HelpText);
         } else { //content of pane with buttons
-            VBox PictureVbox = new VBox(Picture);
-            PictureVbox.setAlignment(Pos.CENTER);
-            HelpPane.getChildren().addAll(HelpTextHeader, HelpText, PictureVbox);
+            HBox PictureHbox = new HBox(Picture);
+            PictureHbox.setAlignment(Pos.CENTER);
+            HelpPane.getChildren().addAll(HelpTextHeader, HelpText, PictureHbox);
         }
     }
 
     private void ClearFields(ChoiceBox<String> LanguageABC,TextField ABCinput,TextField StepInput,String StepInputText,
                        TextField WordInput,String WordInputText,TextField NewWord,String NewWordText) {
+        TextNotEditableStyle(NewWord);
+
         if (StepInput == null) {
             if (ABCinput == null){ //if step and alphabet don't exist
                 SetPromptText(WordInput,WordInputText,null,null,null,null);
