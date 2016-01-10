@@ -20,10 +20,9 @@ import java.util.List;
  */
 public class GlobalVariables {
     public static String TextBackgroundColor = "#F2F2F2";
-    public static Buttons ReturnButton = new Buttons("Return to menu");
-    public static Buttons CloseButton = new Buttons("Close window");
     public static Scene mainScene;
     public static Stage mainStage;
+    public static String AnswerText = "Your answer will be displayed here";
 
     //Background for the application
     private static Image BackgroundPicture = new Image("file:Background.jpg");
@@ -36,6 +35,9 @@ public class GlobalVariables {
     public static int height = (int) BackgroundPicture.getHeight();
     public static int buttonWidth = width/3;
     public static int vBoxPadding = 5;
+
+    public static Buttons ReturnButton = new Buttons("Return to menu");
+
 
     //All that is needed for the alphabet
     public static String ABCinputText = "Insert the alphabet here or choose it from the list below";

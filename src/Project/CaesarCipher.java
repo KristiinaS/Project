@@ -2,22 +2,23 @@ package Project;
 
 import javafx.scene.control.TextField;
 
-import static Project.AtbashTranslator.Translate;
+import static Project.CaesarTranslator.Translate;
 import static Project.GlobalMethods.*;
 import static Project.GlobalVariables.*;
 import static Project.InfoWindow.*;
 
-
 /**
  * Created by Kristiina on 10.01.2016.
  */
-public class AtbashCipher {
-    public static void ShowAtbashCipher() {
-        CreateWindow.NewWindow("Atbash Cipher");
+public class CaesarCipher {
+    public static void ShowCaesarCipher() {
+        CreateWindow.NewWindow("Caesar Cipher");
 
+        String StepText = "Insert the shift number (use minus (-) for left shift)";
         String InputText = "Insert the text you want to encipher here";
 
         TextField Alphabet = CreateWindow.AddTextFieldWithPromptText(ABCinputText);
+        TextField Step = CreateWindow.AddTextFieldWithPromptText(StepText);
         TextField Input = CreateWindow.AddTextFieldWithPromptText(InputText);
         TextField Answer = CreateWindow.AddTextFieldWithNormalText(AnswerText);
 
@@ -37,20 +38,18 @@ public class AtbashCipher {
             SwapWords(Answer, Input);
         });
 
-        // button that resets the fields to their original state
         Clear.setOnAction(event1 -> {
-            ClearFields(ABCchoiceBox, Alphabet, null, null, Input, InputText, Answer, AnswerText);
+            ClearFields(ABCchoiceBox, Alphabet, Step, StepText, Input, InputText, Answer, AnswerText);
+
         });
 
-        // button with information about Atbash
-        Info.setOnAction(event3 ->{
-            String aHeaderText = "Atbash Cipher";
-            ShowInfo(aHeaderText, ReadTextFromFile("AtbashInfo.txt"), true, null);
+        Info.setOnAction(event2 -> {
+            String cHeaderText = "Caesar Cipher";
+            ShowInfo(cHeaderText, ReadTextFromFile("CaesarInfo.txt"), true, null);
         });
 
-        // actions after the alphabet & word have been inserted
         Insert.setOnAction(event1 -> {
-            Translate(Alphabet, Input, Answer);
+            Translate(Alphabet, Input, Step, Answer);
         });
     }
 }

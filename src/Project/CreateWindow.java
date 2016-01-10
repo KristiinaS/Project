@@ -11,6 +11,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 
 import static Project.GlobalMethods.*;
 import static Project.GlobalVariables.*;
@@ -20,7 +21,6 @@ import static Project.GlobalVariables.*;
  */
 public class CreateWindow {
     private static VBox NewVbox;
-    private static VBox SubVbox;
 
     public static void NewWindow(String Title) {
         NewVbox = new VBox();
@@ -37,21 +37,18 @@ public class CreateWindow {
         NewVbox.getChildren().addAll(WelcomeText);
     }
 
-    public static void AddTextFieldWithPromptText(String TextFieldText) {
+    public static TextField AddTextFieldWithPromptText(String TextFieldText) {
         TextField TextField = new TextField();
         SetPromptText(TextField, TextFieldText);
         NewVbox.getChildren().add(TextField);
+        return TextField;
     }
 
-    public static void AddTextFieldWithNormalText(String TextFieldText) {
+    public static TextField AddTextFieldWithNormalText(String TextFieldText) {
         TextField TextField = new TextField(TextFieldText);
         TextNotEditable(TextField);
         NewVbox.getChildren().add(TextField);
-    }
-
-    public static Buttons MakeButtons(Buttons Button,String ButtonTitle) {
-        Button = new Buttons(ButtonTitle);
-        return Button;
+        return TextField;
     }
 
     public static void AddButtonsToWindow (boolean ChoiceBox, Buttons Button1, Buttons Button2) {
@@ -77,14 +74,6 @@ public class CreateWindow {
     }
 
 
-    public static void FocusOnField(Buttons Button) {
-            Platform.runLater(new Runnable() {
-                @Override
-                public void run() {
-                    Button.requestFocus();
-                }
-            });
-    }
 
     public static void WelcomeTextStyle(Label WelcomeText) {
         WelcomeText.setFont(Font.font(null, FontWeight.BOLD, 20));
