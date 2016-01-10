@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5763f1f4-1bc0-4da8-85c9-8ee692a667a0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Project/myProject.java" afterPath="$PROJECT_DIR$/src/Project/myProject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,39 +27,41 @@
       <file leaf-file-name="myProject.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Project/myProject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4892916">
-              <caret line="418" column="55" selection-start-line="418" selection-start-column="55" selection-end-line="418" selection-end-column="55" />
+            <state vertical-scroll-proportion="2.4909391">
+              <caret line="621" column="68" selection-start-line="621" selection-start-column="68" selection-end-line="621" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2466#2474#0" expanded="true" />
+                <element signature="e#2467#2475#0" expanded="true" />
                 <element signature="method#start#0;class#myProject#0" expanded="false" />
                 <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
                 <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-                <element signature="e#6177#6185#0" expanded="true" />
+                <element signature="e#6178#6186#0" expanded="true" />
                 <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
                 <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-                <element signature="e#11324#11332#0" expanded="true" />
+                <element signature="e#11325#11333#0" expanded="true" />
                 <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-                <element signature="e#13492#13500#0" expanded="true" />
+                <element signature="e#13493#13501#0" expanded="true" />
                 <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
                 <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-                <element signature="e#15365#15366#0" expanded="true" />
-                <element signature="e#15418#15419#0" expanded="true" />
-                <element signature="e#15639#15647#0" expanded="true" />
-                <element signature="e#15843#15859#0" expanded="true" />
-                <element signature="e#18003#18011#0" expanded="true" />
-                <element signature="e#19622#19630#0" expanded="true" />
-                <element signature="e#19944#19955#0" expanded="true" />
-                <element signature="e#20324#20332#0" expanded="true" />
-                <element signature="e#20506#20514#0" expanded="true" />
-                <element signature="e#23231#23239#0" expanded="true" />
-                <element signature="e#23483#23491#0" expanded="true" />
-                <element signature="e#23650#23658#0" expanded="true" />
-                <element signature="e#29154#29162#0" expanded="true" />
-                <element signature="e#29495#29503#0" expanded="true" />
-                <element signature="e#29687#29695#0" expanded="true" />
-                <element signature="e#32700#32701#0" expanded="true" />
-                <element signature="e#32772#32773#0" expanded="true" />
+                <element signature="e#15366#15367#0" expanded="true" />
+                <element signature="e#15419#15420#0" expanded="true" />
+                <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+                <element signature="e#15640#15648#0" expanded="true" />
+                <element signature="e#15844#15860#0" expanded="true" />
+                <element signature="e#18004#18012#0" expanded="true" />
+                <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+                <element signature="e#19623#19631#0" expanded="true" />
+                <element signature="e#19945#19956#0" expanded="true" />
+                <element signature="e#20325#20333#0" expanded="true" />
+                <element signature="e#20507#20515#0" expanded="true" />
+                <element signature="e#23232#23240#0" expanded="true" />
+                <element signature="e#23484#23492#0" expanded="true" />
+                <element signature="e#23651#23659#0" expanded="true" />
+                <element signature="e#29296#29304#0" expanded="true" />
+                <element signature="e#29637#29645#0" expanded="true" />
+                <element signature="e#29829#29837#0" expanded="true" />
+                <element signature="e#32842#32843#0" expanded="true" />
+                <element signature="e#32914#32915#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -466,35 +467,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2466#2474#0" expanded="true" />
+            <element signature="e#2467#2475#0" expanded="true" />
             <element signature="method#start#0;class#myProject#0" expanded="false" />
             <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#6177#6185#0" expanded="true" />
+            <element signature="e#6178#6186#0" expanded="true" />
             <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#11324#11332#0" expanded="true" />
+            <element signature="e#11325#11333#0" expanded="true" />
             <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#13492#13500#0" expanded="true" />
+            <element signature="e#13493#13501#0" expanded="true" />
             <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
             <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-            <element signature="e#15365#15366#0" expanded="true" />
-            <element signature="e#15418#15419#0" expanded="true" />
-            <element signature="e#15639#15647#0" expanded="true" />
-            <element signature="e#15843#15859#0" expanded="true" />
-            <element signature="e#18003#18011#0" expanded="true" />
-            <element signature="e#19622#19630#0" expanded="true" />
-            <element signature="e#19944#19955#0" expanded="true" />
-            <element signature="e#20324#20332#0" expanded="true" />
-            <element signature="e#20506#20514#0" expanded="true" />
-            <element signature="e#23231#23239#0" expanded="true" />
-            <element signature="e#23483#23491#0" expanded="true" />
-            <element signature="e#23650#23658#0" expanded="true" />
-            <element signature="e#29154#29162#0" expanded="true" />
-            <element signature="e#29495#29503#0" expanded="true" />
-            <element signature="e#29687#29695#0" expanded="true" />
-            <element signature="e#32700#32701#0" expanded="true" />
-            <element signature="e#32772#32773#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#15640#15648#0" expanded="true" />
+            <element signature="e#15844#15860#0" expanded="true" />
+            <element signature="e#18004#18012#0" expanded="true" />
+            <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#19623#19631#0" expanded="true" />
+            <element signature="e#19945#19956#0" expanded="true" />
+            <element signature="e#20325#20333#0" expanded="true" />
+            <element signature="e#20507#20515#0" expanded="true" />
+            <element signature="e#23232#23240#0" expanded="true" />
+            <element signature="e#23484#23492#0" expanded="true" />
+            <element signature="e#23651#23659#0" expanded="true" />
+            <element signature="e#29296#29304#0" expanded="true" />
+            <element signature="e#29637#29645#0" expanded="true" />
+            <element signature="e#29829#29837#0" expanded="true" />
+            <element signature="e#32842#32843#0" expanded="true" />
+            <element signature="e#32914#32915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -505,35 +508,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2466#2474#0" expanded="true" />
+            <element signature="e#2467#2475#0" expanded="true" />
             <element signature="method#start#0;class#myProject#0" expanded="false" />
             <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#6177#6185#0" expanded="true" />
+            <element signature="e#6178#6186#0" expanded="true" />
             <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#11324#11332#0" expanded="true" />
+            <element signature="e#11325#11333#0" expanded="true" />
             <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#13492#13500#0" expanded="true" />
+            <element signature="e#13493#13501#0" expanded="true" />
             <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
             <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-            <element signature="e#15365#15366#0" expanded="true" />
-            <element signature="e#15418#15419#0" expanded="true" />
-            <element signature="e#15639#15647#0" expanded="true" />
-            <element signature="e#15843#15859#0" expanded="true" />
-            <element signature="e#18003#18011#0" expanded="true" />
-            <element signature="e#19622#19630#0" expanded="true" />
-            <element signature="e#19944#19955#0" expanded="true" />
-            <element signature="e#20324#20332#0" expanded="true" />
-            <element signature="e#20506#20514#0" expanded="true" />
-            <element signature="e#23231#23239#0" expanded="true" />
-            <element signature="e#23483#23491#0" expanded="true" />
-            <element signature="e#23650#23658#0" expanded="true" />
-            <element signature="e#29154#29162#0" expanded="true" />
-            <element signature="e#29495#29503#0" expanded="true" />
-            <element signature="e#29687#29695#0" expanded="true" />
-            <element signature="e#32700#32701#0" expanded="true" />
-            <element signature="e#32772#32773#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#15640#15648#0" expanded="true" />
+            <element signature="e#15844#15860#0" expanded="true" />
+            <element signature="e#18004#18012#0" expanded="true" />
+            <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#19623#19631#0" expanded="true" />
+            <element signature="e#19945#19956#0" expanded="true" />
+            <element signature="e#20325#20333#0" expanded="true" />
+            <element signature="e#20507#20515#0" expanded="true" />
+            <element signature="e#23232#23240#0" expanded="true" />
+            <element signature="e#23484#23492#0" expanded="true" />
+            <element signature="e#23651#23659#0" expanded="true" />
+            <element signature="e#29296#29304#0" expanded="true" />
+            <element signature="e#29637#29645#0" expanded="true" />
+            <element signature="e#29829#29837#0" expanded="true" />
+            <element signature="e#32842#32843#0" expanded="true" />
+            <element signature="e#32914#32915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -544,35 +549,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2466#2474#0" expanded="true" />
+            <element signature="e#2467#2475#0" expanded="true" />
             <element signature="method#start#0;class#myProject#0" expanded="false" />
             <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#6177#6185#0" expanded="true" />
+            <element signature="e#6178#6186#0" expanded="true" />
             <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#11324#11332#0" expanded="true" />
+            <element signature="e#11325#11333#0" expanded="true" />
             <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#13492#13500#0" expanded="true" />
+            <element signature="e#13493#13501#0" expanded="true" />
             <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
             <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-            <element signature="e#15365#15366#0" expanded="true" />
-            <element signature="e#15418#15419#0" expanded="true" />
-            <element signature="e#15639#15647#0" expanded="true" />
-            <element signature="e#15843#15859#0" expanded="true" />
-            <element signature="e#18003#18011#0" expanded="true" />
-            <element signature="e#19622#19630#0" expanded="true" />
-            <element signature="e#19944#19955#0" expanded="true" />
-            <element signature="e#20324#20332#0" expanded="true" />
-            <element signature="e#20506#20514#0" expanded="true" />
-            <element signature="e#23231#23239#0" expanded="true" />
-            <element signature="e#23483#23491#0" expanded="true" />
-            <element signature="e#23650#23658#0" expanded="true" />
-            <element signature="e#29154#29162#0" expanded="true" />
-            <element signature="e#29495#29503#0" expanded="true" />
-            <element signature="e#29687#29695#0" expanded="true" />
-            <element signature="e#32700#32701#0" expanded="true" />
-            <element signature="e#32772#32773#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#15640#15648#0" expanded="true" />
+            <element signature="e#15844#15860#0" expanded="true" />
+            <element signature="e#18004#18012#0" expanded="true" />
+            <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#19623#19631#0" expanded="true" />
+            <element signature="e#19945#19956#0" expanded="true" />
+            <element signature="e#20325#20333#0" expanded="true" />
+            <element signature="e#20507#20515#0" expanded="true" />
+            <element signature="e#23232#23240#0" expanded="true" />
+            <element signature="e#23484#23492#0" expanded="true" />
+            <element signature="e#23651#23659#0" expanded="true" />
+            <element signature="e#29296#29304#0" expanded="true" />
+            <element signature="e#29637#29645#0" expanded="true" />
+            <element signature="e#29829#29837#0" expanded="true" />
+            <element signature="e#32842#32843#0" expanded="true" />
+            <element signature="e#32914#32915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -583,35 +590,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2466#2474#0" expanded="true" />
+            <element signature="e#2467#2475#0" expanded="true" />
             <element signature="method#start#0;class#myProject#0" expanded="false" />
             <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#6177#6185#0" expanded="true" />
+            <element signature="e#6178#6186#0" expanded="true" />
             <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#11324#11332#0" expanded="true" />
+            <element signature="e#11325#11333#0" expanded="true" />
             <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#13492#13500#0" expanded="true" />
+            <element signature="e#13493#13501#0" expanded="true" />
             <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
             <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-            <element signature="e#15365#15366#0" expanded="true" />
-            <element signature="e#15418#15419#0" expanded="true" />
-            <element signature="e#15639#15647#0" expanded="true" />
-            <element signature="e#15843#15859#0" expanded="true" />
-            <element signature="e#18003#18011#0" expanded="true" />
-            <element signature="e#19622#19630#0" expanded="true" />
-            <element signature="e#19944#19955#0" expanded="true" />
-            <element signature="e#20324#20332#0" expanded="true" />
-            <element signature="e#20506#20514#0" expanded="true" />
-            <element signature="e#23231#23239#0" expanded="true" />
-            <element signature="e#23483#23491#0" expanded="true" />
-            <element signature="e#23650#23658#0" expanded="true" />
-            <element signature="e#29154#29162#0" expanded="true" />
-            <element signature="e#29495#29503#0" expanded="true" />
-            <element signature="e#29687#29695#0" expanded="true" />
-            <element signature="e#32700#32701#0" expanded="true" />
-            <element signature="e#32772#32773#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#15640#15648#0" expanded="true" />
+            <element signature="e#15844#15860#0" expanded="true" />
+            <element signature="e#18004#18012#0" expanded="true" />
+            <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#19623#19631#0" expanded="true" />
+            <element signature="e#19945#19956#0" expanded="true" />
+            <element signature="e#20325#20333#0" expanded="true" />
+            <element signature="e#20507#20515#0" expanded="true" />
+            <element signature="e#23232#23240#0" expanded="true" />
+            <element signature="e#23484#23492#0" expanded="true" />
+            <element signature="e#23651#23659#0" expanded="true" />
+            <element signature="e#29296#29304#0" expanded="true" />
+            <element signature="e#29637#29645#0" expanded="true" />
+            <element signature="e#29829#29837#0" expanded="true" />
+            <element signature="e#32842#32843#0" expanded="true" />
+            <element signature="e#32914#32915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -622,35 +631,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2466#2474#0" expanded="true" />
+            <element signature="e#2467#2475#0" expanded="true" />
             <element signature="method#start#0;class#myProject#0" expanded="false" />
             <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#6177#6185#0" expanded="true" />
+            <element signature="e#6178#6186#0" expanded="true" />
             <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#11324#11332#0" expanded="true" />
+            <element signature="e#11325#11333#0" expanded="true" />
             <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#13492#13500#0" expanded="true" />
+            <element signature="e#13493#13501#0" expanded="true" />
             <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
             <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-            <element signature="e#15365#15366#0" expanded="true" />
-            <element signature="e#15418#15419#0" expanded="true" />
-            <element signature="e#15639#15647#0" expanded="true" />
-            <element signature="e#15843#15859#0" expanded="true" />
-            <element signature="e#18003#18011#0" expanded="true" />
-            <element signature="e#19622#19630#0" expanded="true" />
-            <element signature="e#19944#19955#0" expanded="true" />
-            <element signature="e#20324#20332#0" expanded="true" />
-            <element signature="e#20506#20514#0" expanded="true" />
-            <element signature="e#23231#23239#0" expanded="true" />
-            <element signature="e#23483#23491#0" expanded="true" />
-            <element signature="e#23650#23658#0" expanded="true" />
-            <element signature="e#29154#29162#0" expanded="true" />
-            <element signature="e#29495#29503#0" expanded="true" />
-            <element signature="e#29687#29695#0" expanded="true" />
-            <element signature="e#32700#32701#0" expanded="true" />
-            <element signature="e#32772#32773#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#15640#15648#0" expanded="true" />
+            <element signature="e#15844#15860#0" expanded="true" />
+            <element signature="e#18004#18012#0" expanded="true" />
+            <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#19623#19631#0" expanded="true" />
+            <element signature="e#19945#19956#0" expanded="true" />
+            <element signature="e#20325#20333#0" expanded="true" />
+            <element signature="e#20507#20515#0" expanded="true" />
+            <element signature="e#23232#23240#0" expanded="true" />
+            <element signature="e#23484#23492#0" expanded="true" />
+            <element signature="e#23651#23659#0" expanded="true" />
+            <element signature="e#29296#29304#0" expanded="true" />
+            <element signature="e#29637#29645#0" expanded="true" />
+            <element signature="e#29829#29837#0" expanded="true" />
+            <element signature="e#32842#32843#0" expanded="true" />
+            <element signature="e#32914#32915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -661,35 +672,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2466#2474#0" expanded="true" />
+            <element signature="e#2467#2475#0" expanded="true" />
             <element signature="method#start#0;class#myProject#0" expanded="false" />
             <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#6177#6185#0" expanded="true" />
+            <element signature="e#6178#6186#0" expanded="true" />
             <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#11324#11332#0" expanded="true" />
+            <element signature="e#11325#11333#0" expanded="true" />
             <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#13492#13500#0" expanded="true" />
+            <element signature="e#13493#13501#0" expanded="true" />
             <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
             <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-            <element signature="e#15365#15366#0" expanded="true" />
-            <element signature="e#15418#15419#0" expanded="true" />
-            <element signature="e#15639#15647#0" expanded="true" />
-            <element signature="e#15843#15859#0" expanded="true" />
-            <element signature="e#18003#18011#0" expanded="true" />
-            <element signature="e#19622#19630#0" expanded="true" />
-            <element signature="e#19944#19955#0" expanded="true" />
-            <element signature="e#20324#20332#0" expanded="true" />
-            <element signature="e#20506#20514#0" expanded="true" />
-            <element signature="e#23231#23239#0" expanded="true" />
-            <element signature="e#23483#23491#0" expanded="true" />
-            <element signature="e#23650#23658#0" expanded="true" />
-            <element signature="e#29154#29162#0" expanded="true" />
-            <element signature="e#29495#29503#0" expanded="true" />
-            <element signature="e#29687#29695#0" expanded="true" />
-            <element signature="e#32700#32701#0" expanded="true" />
-            <element signature="e#32772#32773#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#15640#15648#0" expanded="true" />
+            <element signature="e#15844#15860#0" expanded="true" />
+            <element signature="e#18004#18012#0" expanded="true" />
+            <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#19623#19631#0" expanded="true" />
+            <element signature="e#19945#19956#0" expanded="true" />
+            <element signature="e#20325#20333#0" expanded="true" />
+            <element signature="e#20507#20515#0" expanded="true" />
+            <element signature="e#23232#23240#0" expanded="true" />
+            <element signature="e#23484#23492#0" expanded="true" />
+            <element signature="e#23651#23659#0" expanded="true" />
+            <element signature="e#29296#29304#0" expanded="true" />
+            <element signature="e#29637#29645#0" expanded="true" />
+            <element signature="e#29829#29837#0" expanded="true" />
+            <element signature="e#32842#32843#0" expanded="true" />
+            <element signature="e#32914#32915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -700,35 +713,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2466#2474#0" expanded="true" />
+            <element signature="e#2467#2475#0" expanded="true" />
             <element signature="method#start#0;class#myProject#0" expanded="false" />
             <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#6177#6185#0" expanded="true" />
+            <element signature="e#6178#6186#0" expanded="true" />
             <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#11324#11332#0" expanded="true" />
+            <element signature="e#11325#11333#0" expanded="true" />
             <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#13492#13500#0" expanded="true" />
+            <element signature="e#13493#13501#0" expanded="true" />
             <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
             <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-            <element signature="e#15365#15366#0" expanded="true" />
-            <element signature="e#15418#15419#0" expanded="true" />
-            <element signature="e#15639#15647#0" expanded="true" />
-            <element signature="e#15843#15859#0" expanded="true" />
-            <element signature="e#18003#18011#0" expanded="true" />
-            <element signature="e#19622#19630#0" expanded="true" />
-            <element signature="e#19944#19955#0" expanded="true" />
-            <element signature="e#20324#20332#0" expanded="true" />
-            <element signature="e#20506#20514#0" expanded="true" />
-            <element signature="e#23231#23239#0" expanded="true" />
-            <element signature="e#23483#23491#0" expanded="true" />
-            <element signature="e#23650#23658#0" expanded="true" />
-            <element signature="e#29154#29162#0" expanded="true" />
-            <element signature="e#29495#29503#0" expanded="true" />
-            <element signature="e#29687#29695#0" expanded="true" />
-            <element signature="e#32700#32701#0" expanded="true" />
-            <element signature="e#32772#32773#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#15640#15648#0" expanded="true" />
+            <element signature="e#15844#15860#0" expanded="true" />
+            <element signature="e#18004#18012#0" expanded="true" />
+            <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#19623#19631#0" expanded="true" />
+            <element signature="e#19945#19956#0" expanded="true" />
+            <element signature="e#20325#20333#0" expanded="true" />
+            <element signature="e#20507#20515#0" expanded="true" />
+            <element signature="e#23232#23240#0" expanded="true" />
+            <element signature="e#23484#23492#0" expanded="true" />
+            <element signature="e#23651#23659#0" expanded="true" />
+            <element signature="e#29296#29304#0" expanded="true" />
+            <element signature="e#29637#29645#0" expanded="true" />
+            <element signature="e#29829#29837#0" expanded="true" />
+            <element signature="e#32842#32843#0" expanded="true" />
+            <element signature="e#32914#32915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -739,35 +754,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2466#2474#0" expanded="true" />
+            <element signature="e#2467#2475#0" expanded="true" />
             <element signature="method#start#0;class#myProject#0" expanded="false" />
             <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#6177#6185#0" expanded="true" />
+            <element signature="e#6178#6186#0" expanded="true" />
             <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#11324#11332#0" expanded="true" />
+            <element signature="e#11325#11333#0" expanded="true" />
             <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#13492#13500#0" expanded="true" />
+            <element signature="e#13493#13501#0" expanded="true" />
             <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
             <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-            <element signature="e#15365#15366#0" expanded="true" />
-            <element signature="e#15418#15419#0" expanded="true" />
-            <element signature="e#15639#15647#0" expanded="true" />
-            <element signature="e#15843#15859#0" expanded="true" />
-            <element signature="e#18003#18011#0" expanded="true" />
-            <element signature="e#19622#19630#0" expanded="true" />
-            <element signature="e#19944#19955#0" expanded="true" />
-            <element signature="e#20324#20332#0" expanded="true" />
-            <element signature="e#20506#20514#0" expanded="true" />
-            <element signature="e#23231#23239#0" expanded="true" />
-            <element signature="e#23483#23491#0" expanded="true" />
-            <element signature="e#23650#23658#0" expanded="true" />
-            <element signature="e#29154#29162#0" expanded="true" />
-            <element signature="e#29495#29503#0" expanded="true" />
-            <element signature="e#29687#29695#0" expanded="true" />
-            <element signature="e#32700#32701#0" expanded="true" />
-            <element signature="e#32772#32773#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#15640#15648#0" expanded="true" />
+            <element signature="e#15844#15860#0" expanded="true" />
+            <element signature="e#18004#18012#0" expanded="true" />
+            <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#19623#19631#0" expanded="true" />
+            <element signature="e#19945#19956#0" expanded="true" />
+            <element signature="e#20325#20333#0" expanded="true" />
+            <element signature="e#20507#20515#0" expanded="true" />
+            <element signature="e#23232#23240#0" expanded="true" />
+            <element signature="e#23484#23492#0" expanded="true" />
+            <element signature="e#23651#23659#0" expanded="true" />
+            <element signature="e#29296#29304#0" expanded="true" />
+            <element signature="e#29637#29645#0" expanded="true" />
+            <element signature="e#29829#29837#0" expanded="true" />
+            <element signature="e#32842#32843#0" expanded="true" />
+            <element signature="e#32914#32915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -778,35 +795,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2466#2474#0" expanded="true" />
+            <element signature="e#2467#2475#0" expanded="true" />
             <element signature="method#start#0;class#myProject#0" expanded="false" />
             <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#6177#6185#0" expanded="true" />
+            <element signature="e#6178#6186#0" expanded="true" />
             <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#11324#11332#0" expanded="true" />
+            <element signature="e#11325#11333#0" expanded="true" />
             <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#13492#13500#0" expanded="true" />
+            <element signature="e#13493#13501#0" expanded="true" />
             <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
             <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-            <element signature="e#15365#15366#0" expanded="true" />
-            <element signature="e#15418#15419#0" expanded="true" />
-            <element signature="e#15639#15647#0" expanded="true" />
-            <element signature="e#15843#15859#0" expanded="true" />
-            <element signature="e#18003#18011#0" expanded="true" />
-            <element signature="e#19622#19630#0" expanded="true" />
-            <element signature="e#19944#19955#0" expanded="true" />
-            <element signature="e#20324#20332#0" expanded="true" />
-            <element signature="e#20506#20514#0" expanded="true" />
-            <element signature="e#23231#23239#0" expanded="true" />
-            <element signature="e#23483#23491#0" expanded="true" />
-            <element signature="e#23650#23658#0" expanded="true" />
-            <element signature="e#29154#29162#0" expanded="true" />
-            <element signature="e#29495#29503#0" expanded="true" />
-            <element signature="e#29687#29695#0" expanded="true" />
-            <element signature="e#32700#32701#0" expanded="true" />
-            <element signature="e#32772#32773#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#15640#15648#0" expanded="true" />
+            <element signature="e#15844#15860#0" expanded="true" />
+            <element signature="e#18004#18012#0" expanded="true" />
+            <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#19623#19631#0" expanded="true" />
+            <element signature="e#19945#19956#0" expanded="true" />
+            <element signature="e#20325#20333#0" expanded="true" />
+            <element signature="e#20507#20515#0" expanded="true" />
+            <element signature="e#23232#23240#0" expanded="true" />
+            <element signature="e#23484#23492#0" expanded="true" />
+            <element signature="e#23651#23659#0" expanded="true" />
+            <element signature="e#29296#29304#0" expanded="true" />
+            <element signature="e#29637#29645#0" expanded="true" />
+            <element signature="e#29829#29837#0" expanded="true" />
+            <element signature="e#32842#32843#0" expanded="true" />
+            <element signature="e#32914#32915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -817,35 +836,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2466#2474#0" expanded="true" />
+            <element signature="e#2467#2475#0" expanded="true" />
             <element signature="method#start#0;class#myProject#0" expanded="false" />
             <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#6177#6185#0" expanded="true" />
+            <element signature="e#6178#6186#0" expanded="true" />
             <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#11324#11332#0" expanded="true" />
+            <element signature="e#11325#11333#0" expanded="true" />
             <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#13492#13500#0" expanded="true" />
+            <element signature="e#13493#13501#0" expanded="true" />
             <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
             <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-            <element signature="e#15365#15366#0" expanded="true" />
-            <element signature="e#15418#15419#0" expanded="true" />
-            <element signature="e#15639#15647#0" expanded="true" />
-            <element signature="e#15843#15859#0" expanded="true" />
-            <element signature="e#18003#18011#0" expanded="true" />
-            <element signature="e#19622#19630#0" expanded="true" />
-            <element signature="e#19944#19955#0" expanded="true" />
-            <element signature="e#20324#20332#0" expanded="true" />
-            <element signature="e#20506#20514#0" expanded="true" />
-            <element signature="e#23231#23239#0" expanded="true" />
-            <element signature="e#23483#23491#0" expanded="true" />
-            <element signature="e#23650#23658#0" expanded="true" />
-            <element signature="e#29154#29162#0" expanded="true" />
-            <element signature="e#29495#29503#0" expanded="true" />
-            <element signature="e#29687#29695#0" expanded="true" />
-            <element signature="e#32700#32701#0" expanded="true" />
-            <element signature="e#32772#32773#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#15640#15648#0" expanded="true" />
+            <element signature="e#15844#15860#0" expanded="true" />
+            <element signature="e#18004#18012#0" expanded="true" />
+            <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#19623#19631#0" expanded="true" />
+            <element signature="e#19945#19956#0" expanded="true" />
+            <element signature="e#20325#20333#0" expanded="true" />
+            <element signature="e#20507#20515#0" expanded="true" />
+            <element signature="e#23232#23240#0" expanded="true" />
+            <element signature="e#23484#23492#0" expanded="true" />
+            <element signature="e#23651#23659#0" expanded="true" />
+            <element signature="e#29296#29304#0" expanded="true" />
+            <element signature="e#29637#29645#0" expanded="true" />
+            <element signature="e#29829#29837#0" expanded="true" />
+            <element signature="e#32842#32843#0" expanded="true" />
+            <element signature="e#32914#32915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -856,35 +877,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2466#2474#0" expanded="true" />
+            <element signature="e#2467#2475#0" expanded="true" />
             <element signature="method#start#0;class#myProject#0" expanded="false" />
             <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#6177#6185#0" expanded="true" />
+            <element signature="e#6178#6186#0" expanded="true" />
             <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#11324#11332#0" expanded="true" />
+            <element signature="e#11325#11333#0" expanded="true" />
             <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#13492#13500#0" expanded="true" />
+            <element signature="e#13493#13501#0" expanded="true" />
             <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
             <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-            <element signature="e#15365#15366#0" expanded="true" />
-            <element signature="e#15418#15419#0" expanded="true" />
-            <element signature="e#15639#15647#0" expanded="true" />
-            <element signature="e#15843#15859#0" expanded="true" />
-            <element signature="e#18003#18011#0" expanded="true" />
-            <element signature="e#19622#19630#0" expanded="true" />
-            <element signature="e#19944#19955#0" expanded="true" />
-            <element signature="e#20324#20332#0" expanded="true" />
-            <element signature="e#20506#20514#0" expanded="true" />
-            <element signature="e#23231#23239#0" expanded="true" />
-            <element signature="e#23483#23491#0" expanded="true" />
-            <element signature="e#23650#23658#0" expanded="true" />
-            <element signature="e#29154#29162#0" expanded="true" />
-            <element signature="e#29495#29503#0" expanded="true" />
-            <element signature="e#29687#29695#0" expanded="true" />
-            <element signature="e#32700#32701#0" expanded="true" />
-            <element signature="e#32772#32773#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#15640#15648#0" expanded="true" />
+            <element signature="e#15844#15860#0" expanded="true" />
+            <element signature="e#18004#18012#0" expanded="true" />
+            <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#19623#19631#0" expanded="true" />
+            <element signature="e#19945#19956#0" expanded="true" />
+            <element signature="e#20325#20333#0" expanded="true" />
+            <element signature="e#20507#20515#0" expanded="true" />
+            <element signature="e#23232#23240#0" expanded="true" />
+            <element signature="e#23484#23492#0" expanded="true" />
+            <element signature="e#23651#23659#0" expanded="true" />
+            <element signature="e#29296#29304#0" expanded="true" />
+            <element signature="e#29637#29645#0" expanded="true" />
+            <element signature="e#29829#29837#0" expanded="true" />
+            <element signature="e#32842#32843#0" expanded="true" />
+            <element signature="e#32914#32915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -895,35 +918,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2466#2474#0" expanded="true" />
+            <element signature="e#2467#2475#0" expanded="true" />
             <element signature="method#start#0;class#myProject#0" expanded="false" />
             <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#6177#6185#0" expanded="true" />
+            <element signature="e#6178#6186#0" expanded="true" />
             <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#11324#11332#0" expanded="true" />
+            <element signature="e#11325#11333#0" expanded="true" />
             <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#13492#13500#0" expanded="true" />
+            <element signature="e#13493#13501#0" expanded="true" />
             <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
             <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-            <element signature="e#15365#15366#0" expanded="true" />
-            <element signature="e#15418#15419#0" expanded="true" />
-            <element signature="e#15639#15647#0" expanded="true" />
-            <element signature="e#15843#15859#0" expanded="true" />
-            <element signature="e#18003#18011#0" expanded="true" />
-            <element signature="e#19622#19630#0" expanded="true" />
-            <element signature="e#19944#19955#0" expanded="true" />
-            <element signature="e#20324#20332#0" expanded="true" />
-            <element signature="e#20506#20514#0" expanded="true" />
-            <element signature="e#23231#23239#0" expanded="true" />
-            <element signature="e#23483#23491#0" expanded="true" />
-            <element signature="e#23650#23658#0" expanded="true" />
-            <element signature="e#29154#29162#0" expanded="true" />
-            <element signature="e#29495#29503#0" expanded="true" />
-            <element signature="e#29687#29695#0" expanded="true" />
-            <element signature="e#32700#32701#0" expanded="true" />
-            <element signature="e#32772#32773#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#15640#15648#0" expanded="true" />
+            <element signature="e#15844#15860#0" expanded="true" />
+            <element signature="e#18004#18012#0" expanded="true" />
+            <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#19623#19631#0" expanded="true" />
+            <element signature="e#19945#19956#0" expanded="true" />
+            <element signature="e#20325#20333#0" expanded="true" />
+            <element signature="e#20507#20515#0" expanded="true" />
+            <element signature="e#23232#23240#0" expanded="true" />
+            <element signature="e#23484#23492#0" expanded="true" />
+            <element signature="e#23651#23659#0" expanded="true" />
+            <element signature="e#29296#29304#0" expanded="true" />
+            <element signature="e#29637#29645#0" expanded="true" />
+            <element signature="e#29829#29837#0" expanded="true" />
+            <element signature="e#32842#32843#0" expanded="true" />
+            <element signature="e#32914#32915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -934,35 +959,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2466#2474#0" expanded="true" />
+            <element signature="e#2467#2475#0" expanded="true" />
             <element signature="method#start#0;class#myProject#0" expanded="false" />
             <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#6177#6185#0" expanded="true" />
+            <element signature="e#6178#6186#0" expanded="true" />
             <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#11324#11332#0" expanded="true" />
+            <element signature="e#11325#11333#0" expanded="true" />
             <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#13492#13500#0" expanded="true" />
+            <element signature="e#13493#13501#0" expanded="true" />
             <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
             <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-            <element signature="e#15365#15366#0" expanded="true" />
-            <element signature="e#15418#15419#0" expanded="true" />
-            <element signature="e#15639#15647#0" expanded="true" />
-            <element signature="e#15843#15859#0" expanded="true" />
-            <element signature="e#18003#18011#0" expanded="true" />
-            <element signature="e#19622#19630#0" expanded="true" />
-            <element signature="e#19944#19955#0" expanded="true" />
-            <element signature="e#20324#20332#0" expanded="true" />
-            <element signature="e#20506#20514#0" expanded="true" />
-            <element signature="e#23231#23239#0" expanded="true" />
-            <element signature="e#23483#23491#0" expanded="true" />
-            <element signature="e#23650#23658#0" expanded="true" />
-            <element signature="e#29154#29162#0" expanded="true" />
-            <element signature="e#29495#29503#0" expanded="true" />
-            <element signature="e#29687#29695#0" expanded="true" />
-            <element signature="e#32700#32701#0" expanded="true" />
-            <element signature="e#32772#32773#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#15640#15648#0" expanded="true" />
+            <element signature="e#15844#15860#0" expanded="true" />
+            <element signature="e#18004#18012#0" expanded="true" />
+            <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#19623#19631#0" expanded="true" />
+            <element signature="e#19945#19956#0" expanded="true" />
+            <element signature="e#20325#20333#0" expanded="true" />
+            <element signature="e#20507#20515#0" expanded="true" />
+            <element signature="e#23232#23240#0" expanded="true" />
+            <element signature="e#23484#23492#0" expanded="true" />
+            <element signature="e#23651#23659#0" expanded="true" />
+            <element signature="e#29296#29304#0" expanded="true" />
+            <element signature="e#29637#29645#0" expanded="true" />
+            <element signature="e#29829#29837#0" expanded="true" />
+            <element signature="e#32842#32843#0" expanded="true" />
+            <element signature="e#32914#32915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -973,35 +1000,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2466#2474#0" expanded="true" />
+            <element signature="e#2467#2475#0" expanded="true" />
             <element signature="method#start#0;class#myProject#0" expanded="false" />
             <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#6177#6185#0" expanded="true" />
+            <element signature="e#6178#6186#0" expanded="true" />
             <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#11324#11332#0" expanded="true" />
+            <element signature="e#11325#11333#0" expanded="true" />
             <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#13492#13500#0" expanded="true" />
+            <element signature="e#13493#13501#0" expanded="true" />
             <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
             <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-            <element signature="e#15365#15366#0" expanded="true" />
-            <element signature="e#15418#15419#0" expanded="true" />
-            <element signature="e#15639#15647#0" expanded="true" />
-            <element signature="e#15843#15859#0" expanded="true" />
-            <element signature="e#18003#18011#0" expanded="true" />
-            <element signature="e#19622#19630#0" expanded="true" />
-            <element signature="e#19944#19955#0" expanded="true" />
-            <element signature="e#20324#20332#0" expanded="true" />
-            <element signature="e#20506#20514#0" expanded="true" />
-            <element signature="e#23231#23239#0" expanded="true" />
-            <element signature="e#23483#23491#0" expanded="true" />
-            <element signature="e#23650#23658#0" expanded="true" />
-            <element signature="e#29154#29162#0" expanded="true" />
-            <element signature="e#29495#29503#0" expanded="true" />
-            <element signature="e#29687#29695#0" expanded="true" />
-            <element signature="e#32700#32701#0" expanded="true" />
-            <element signature="e#32772#32773#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#15640#15648#0" expanded="true" />
+            <element signature="e#15844#15860#0" expanded="true" />
+            <element signature="e#18004#18012#0" expanded="true" />
+            <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#19623#19631#0" expanded="true" />
+            <element signature="e#19945#19956#0" expanded="true" />
+            <element signature="e#20325#20333#0" expanded="true" />
+            <element signature="e#20507#20515#0" expanded="true" />
+            <element signature="e#23232#23240#0" expanded="true" />
+            <element signature="e#23484#23492#0" expanded="true" />
+            <element signature="e#23651#23659#0" expanded="true" />
+            <element signature="e#29296#29304#0" expanded="true" />
+            <element signature="e#29637#29645#0" expanded="true" />
+            <element signature="e#29829#29837#0" expanded="true" />
+            <element signature="e#32842#32843#0" expanded="true" />
+            <element signature="e#32914#32915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1012,35 +1041,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2466#2474#0" expanded="true" />
+            <element signature="e#2467#2475#0" expanded="true" />
             <element signature="method#start#0;class#myProject#0" expanded="false" />
             <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#6177#6185#0" expanded="true" />
+            <element signature="e#6178#6186#0" expanded="true" />
             <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#11324#11332#0" expanded="true" />
+            <element signature="e#11325#11333#0" expanded="true" />
             <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#13492#13500#0" expanded="true" />
+            <element signature="e#13493#13501#0" expanded="true" />
             <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
             <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-            <element signature="e#15365#15366#0" expanded="true" />
-            <element signature="e#15418#15419#0" expanded="true" />
-            <element signature="e#15639#15647#0" expanded="true" />
-            <element signature="e#15843#15859#0" expanded="true" />
-            <element signature="e#18003#18011#0" expanded="true" />
-            <element signature="e#19622#19630#0" expanded="true" />
-            <element signature="e#19944#19955#0" expanded="true" />
-            <element signature="e#20324#20332#0" expanded="true" />
-            <element signature="e#20506#20514#0" expanded="true" />
-            <element signature="e#23231#23239#0" expanded="true" />
-            <element signature="e#23483#23491#0" expanded="true" />
-            <element signature="e#23650#23658#0" expanded="true" />
-            <element signature="e#29154#29162#0" expanded="true" />
-            <element signature="e#29495#29503#0" expanded="true" />
-            <element signature="e#29687#29695#0" expanded="true" />
-            <element signature="e#32700#32701#0" expanded="true" />
-            <element signature="e#32772#32773#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#15640#15648#0" expanded="true" />
+            <element signature="e#15844#15860#0" expanded="true" />
+            <element signature="e#18004#18012#0" expanded="true" />
+            <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#19623#19631#0" expanded="true" />
+            <element signature="e#19945#19956#0" expanded="true" />
+            <element signature="e#20325#20333#0" expanded="true" />
+            <element signature="e#20507#20515#0" expanded="true" />
+            <element signature="e#23232#23240#0" expanded="true" />
+            <element signature="e#23484#23492#0" expanded="true" />
+            <element signature="e#23651#23659#0" expanded="true" />
+            <element signature="e#29296#29304#0" expanded="true" />
+            <element signature="e#29637#29645#0" expanded="true" />
+            <element signature="e#29829#29837#0" expanded="true" />
+            <element signature="e#32842#32843#0" expanded="true" />
+            <element signature="e#32914#32915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1051,35 +1082,37 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2466#2474#0" expanded="true" />
+            <element signature="e#2467#2475#0" expanded="true" />
             <element signature="method#start#0;class#myProject#0" expanded="false" />
             <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#6177#6185#0" expanded="true" />
+            <element signature="e#6178#6186#0" expanded="true" />
             <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#11324#11332#0" expanded="true" />
+            <element signature="e#11325#11333#0" expanded="true" />
             <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#13492#13500#0" expanded="true" />
+            <element signature="e#13493#13501#0" expanded="true" />
             <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
             <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-            <element signature="e#15365#15366#0" expanded="true" />
-            <element signature="e#15418#15419#0" expanded="true" />
-            <element signature="e#15639#15647#0" expanded="true" />
-            <element signature="e#15843#15859#0" expanded="true" />
-            <element signature="e#18003#18011#0" expanded="true" />
-            <element signature="e#19622#19630#0" expanded="true" />
-            <element signature="e#19944#19955#0" expanded="true" />
-            <element signature="e#20324#20332#0" expanded="true" />
-            <element signature="e#20506#20514#0" expanded="true" />
-            <element signature="e#23231#23239#0" expanded="true" />
-            <element signature="e#23483#23491#0" expanded="true" />
-            <element signature="e#23650#23658#0" expanded="true" />
-            <element signature="e#29154#29162#0" expanded="true" />
-            <element signature="e#29495#29503#0" expanded="true" />
-            <element signature="e#29687#29695#0" expanded="true" />
-            <element signature="e#32700#32701#0" expanded="true" />
-            <element signature="e#32772#32773#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#15640#15648#0" expanded="true" />
+            <element signature="e#15844#15860#0" expanded="true" />
+            <element signature="e#18004#18012#0" expanded="true" />
+            <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#19623#19631#0" expanded="true" />
+            <element signature="e#19945#19956#0" expanded="true" />
+            <element signature="e#20325#20333#0" expanded="true" />
+            <element signature="e#20507#20515#0" expanded="true" />
+            <element signature="e#23232#23240#0" expanded="true" />
+            <element signature="e#23484#23492#0" expanded="true" />
+            <element signature="e#23651#23659#0" expanded="true" />
+            <element signature="e#29296#29304#0" expanded="true" />
+            <element signature="e#29637#29645#0" expanded="true" />
+            <element signature="e#29829#29837#0" expanded="true" />
+            <element signature="e#32842#32843#0" expanded="true" />
+            <element signature="e#32914#32915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1131,39 +1164,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Project/myProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4892916">
-          <caret line="418" column="55" selection-start-line="418" selection-start-column="55" selection-end-line="418" selection-end-column="55" />
+        <state vertical-scroll-proportion="2.4909391">
+          <caret line="621" column="68" selection-start-line="621" selection-start-column="68" selection-end-line="621" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2466#2474#0" expanded="true" />
+            <element signature="e#2467#2475#0" expanded="true" />
             <element signature="method#start#0;class#myProject#0" expanded="false" />
             <element signature="method#CloseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#VigenereWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#6177#6185#0" expanded="true" />
+            <element signature="e#6178#6186#0" expanded="true" />
             <element signature="method#MorseWindow#0;class#myProject#0" expanded="false" />
             <element signature="method#CaesarWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#11324#11332#0" expanded="true" />
+            <element signature="e#11325#11333#0" expanded="true" />
             <element signature="method#AtbashWindow#0;class#myProject#0" expanded="false" />
-            <element signature="e#13492#13500#0" expanded="true" />
+            <element signature="e#13493#13501#0" expanded="true" />
             <element signature="method#ReadTextFromFile#0;class#myProject#0" expanded="false" />
             <element signature="method#FocusOnField#0;class#myProject#0" expanded="false" />
-            <element signature="e#15365#15366#0" expanded="true" />
-            <element signature="e#15418#15419#0" expanded="true" />
-            <element signature="e#15639#15647#0" expanded="true" />
-            <element signature="e#15843#15859#0" expanded="true" />
-            <element signature="e#18003#18011#0" expanded="true" />
-            <element signature="e#19622#19630#0" expanded="true" />
-            <element signature="e#19944#19955#0" expanded="true" />
-            <element signature="e#20324#20332#0" expanded="true" />
-            <element signature="e#20506#20514#0" expanded="true" />
-            <element signature="e#23231#23239#0" expanded="true" />
-            <element signature="e#23483#23491#0" expanded="true" />
-            <element signature="e#23650#23658#0" expanded="true" />
-            <element signature="e#29154#29162#0" expanded="true" />
-            <element signature="e#29495#29503#0" expanded="true" />
-            <element signature="e#29687#29695#0" expanded="true" />
-            <element signature="e#32700#32701#0" expanded="true" />
-            <element signature="e#32772#32773#0" expanded="true" />
+            <element signature="e#15366#15367#0" expanded="true" />
+            <element signature="e#15419#15420#0" expanded="true" />
+            <element signature="method#MorseTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#15640#15648#0" expanded="true" />
+            <element signature="e#15844#15860#0" expanded="true" />
+            <element signature="e#18004#18012#0" expanded="true" />
+            <element signature="method#VigenereTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#19623#19631#0" expanded="true" />
+            <element signature="e#19945#19956#0" expanded="true" />
+            <element signature="e#20325#20333#0" expanded="true" />
+            <element signature="e#20507#20515#0" expanded="true" />
+            <element signature="e#23232#23240#0" expanded="true" />
+            <element signature="e#23484#23492#0" expanded="true" />
+            <element signature="e#23651#23659#0" expanded="true" />
+            <element signature="e#29296#29304#0" expanded="true" />
+            <element signature="e#29637#29645#0" expanded="true" />
+            <element signature="e#29829#29837#0" expanded="true" />
+            <element signature="e#32842#32843#0" expanded="true" />
+            <element signature="e#32914#32915#0" expanded="true" />
           </folding>
         </state>
       </provider>
