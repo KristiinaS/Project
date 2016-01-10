@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5763f1f4-1bc0-4da8-85c9-8ee692a667a0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Project/myProject.java" afterPath="$PROJECT_DIR$/src/Project/myProject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +28,8 @@
       <file leaf-file-name="myProject.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Project/myProject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.4909391">
-              <caret line="621" column="68" selection-start-line="621" selection-start-column="68" selection-end-line="621" selection-end-column="68" />
+            <state vertical-scroll-proportion="-1.8962109">
+              <caret line="556" column="66" selection-start-line="556" selection-start-column="66" selection-end-line="556" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2467#2475#0" expanded="true" />
@@ -57,11 +58,27 @@
                 <element signature="e#23232#23240#0" expanded="true" />
                 <element signature="e#23484#23492#0" expanded="true" />
                 <element signature="e#23651#23659#0" expanded="true" />
-                <element signature="e#29296#29304#0" expanded="true" />
-                <element signature="e#29637#29645#0" expanded="true" />
-                <element signature="e#29829#29837#0" expanded="true" />
-                <element signature="e#32842#32843#0" expanded="true" />
-                <element signature="e#32914#32915#0" expanded="true" />
+                <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+                <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+                <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+                <element signature="e#30629#30637#0" expanded="true" />
+                <element signature="e#30970#30978#0" expanded="true" />
+                <element signature="e#31162#31170#0" expanded="true" />
+                <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+                <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+                <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+                <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+                <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+                <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+                <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+                <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+                <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+                <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+                <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+                <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+                <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+                <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+                <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -493,11 +510,27 @@
             <element signature="e#23232#23240#0" expanded="true" />
             <element signature="e#23484#23492#0" expanded="true" />
             <element signature="e#23651#23659#0" expanded="true" />
-            <element signature="e#29296#29304#0" expanded="true" />
-            <element signature="e#29637#29645#0" expanded="true" />
-            <element signature="e#29829#29837#0" expanded="true" />
-            <element signature="e#32842#32843#0" expanded="true" />
-            <element signature="e#32914#32915#0" expanded="true" />
+            <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+            <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#30629#30637#0" expanded="true" />
+            <element signature="e#30970#30978#0" expanded="true" />
+            <element signature="e#31162#31170#0" expanded="true" />
+            <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+            <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -534,11 +567,27 @@
             <element signature="e#23232#23240#0" expanded="true" />
             <element signature="e#23484#23492#0" expanded="true" />
             <element signature="e#23651#23659#0" expanded="true" />
-            <element signature="e#29296#29304#0" expanded="true" />
-            <element signature="e#29637#29645#0" expanded="true" />
-            <element signature="e#29829#29837#0" expanded="true" />
-            <element signature="e#32842#32843#0" expanded="true" />
-            <element signature="e#32914#32915#0" expanded="true" />
+            <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+            <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#30629#30637#0" expanded="true" />
+            <element signature="e#30970#30978#0" expanded="true" />
+            <element signature="e#31162#31170#0" expanded="true" />
+            <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+            <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -575,11 +624,27 @@
             <element signature="e#23232#23240#0" expanded="true" />
             <element signature="e#23484#23492#0" expanded="true" />
             <element signature="e#23651#23659#0" expanded="true" />
-            <element signature="e#29296#29304#0" expanded="true" />
-            <element signature="e#29637#29645#0" expanded="true" />
-            <element signature="e#29829#29837#0" expanded="true" />
-            <element signature="e#32842#32843#0" expanded="true" />
-            <element signature="e#32914#32915#0" expanded="true" />
+            <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+            <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#30629#30637#0" expanded="true" />
+            <element signature="e#30970#30978#0" expanded="true" />
+            <element signature="e#31162#31170#0" expanded="true" />
+            <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+            <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -616,11 +681,27 @@
             <element signature="e#23232#23240#0" expanded="true" />
             <element signature="e#23484#23492#0" expanded="true" />
             <element signature="e#23651#23659#0" expanded="true" />
-            <element signature="e#29296#29304#0" expanded="true" />
-            <element signature="e#29637#29645#0" expanded="true" />
-            <element signature="e#29829#29837#0" expanded="true" />
-            <element signature="e#32842#32843#0" expanded="true" />
-            <element signature="e#32914#32915#0" expanded="true" />
+            <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+            <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#30629#30637#0" expanded="true" />
+            <element signature="e#30970#30978#0" expanded="true" />
+            <element signature="e#31162#31170#0" expanded="true" />
+            <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+            <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -657,11 +738,27 @@
             <element signature="e#23232#23240#0" expanded="true" />
             <element signature="e#23484#23492#0" expanded="true" />
             <element signature="e#23651#23659#0" expanded="true" />
-            <element signature="e#29296#29304#0" expanded="true" />
-            <element signature="e#29637#29645#0" expanded="true" />
-            <element signature="e#29829#29837#0" expanded="true" />
-            <element signature="e#32842#32843#0" expanded="true" />
-            <element signature="e#32914#32915#0" expanded="true" />
+            <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+            <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#30629#30637#0" expanded="true" />
+            <element signature="e#30970#30978#0" expanded="true" />
+            <element signature="e#31162#31170#0" expanded="true" />
+            <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+            <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -698,11 +795,27 @@
             <element signature="e#23232#23240#0" expanded="true" />
             <element signature="e#23484#23492#0" expanded="true" />
             <element signature="e#23651#23659#0" expanded="true" />
-            <element signature="e#29296#29304#0" expanded="true" />
-            <element signature="e#29637#29645#0" expanded="true" />
-            <element signature="e#29829#29837#0" expanded="true" />
-            <element signature="e#32842#32843#0" expanded="true" />
-            <element signature="e#32914#32915#0" expanded="true" />
+            <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+            <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#30629#30637#0" expanded="true" />
+            <element signature="e#30970#30978#0" expanded="true" />
+            <element signature="e#31162#31170#0" expanded="true" />
+            <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+            <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -739,11 +852,27 @@
             <element signature="e#23232#23240#0" expanded="true" />
             <element signature="e#23484#23492#0" expanded="true" />
             <element signature="e#23651#23659#0" expanded="true" />
-            <element signature="e#29296#29304#0" expanded="true" />
-            <element signature="e#29637#29645#0" expanded="true" />
-            <element signature="e#29829#29837#0" expanded="true" />
-            <element signature="e#32842#32843#0" expanded="true" />
-            <element signature="e#32914#32915#0" expanded="true" />
+            <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+            <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#30629#30637#0" expanded="true" />
+            <element signature="e#30970#30978#0" expanded="true" />
+            <element signature="e#31162#31170#0" expanded="true" />
+            <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+            <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -780,11 +909,27 @@
             <element signature="e#23232#23240#0" expanded="true" />
             <element signature="e#23484#23492#0" expanded="true" />
             <element signature="e#23651#23659#0" expanded="true" />
-            <element signature="e#29296#29304#0" expanded="true" />
-            <element signature="e#29637#29645#0" expanded="true" />
-            <element signature="e#29829#29837#0" expanded="true" />
-            <element signature="e#32842#32843#0" expanded="true" />
-            <element signature="e#32914#32915#0" expanded="true" />
+            <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+            <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#30629#30637#0" expanded="true" />
+            <element signature="e#30970#30978#0" expanded="true" />
+            <element signature="e#31162#31170#0" expanded="true" />
+            <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+            <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -821,11 +966,27 @@
             <element signature="e#23232#23240#0" expanded="true" />
             <element signature="e#23484#23492#0" expanded="true" />
             <element signature="e#23651#23659#0" expanded="true" />
-            <element signature="e#29296#29304#0" expanded="true" />
-            <element signature="e#29637#29645#0" expanded="true" />
-            <element signature="e#29829#29837#0" expanded="true" />
-            <element signature="e#32842#32843#0" expanded="true" />
-            <element signature="e#32914#32915#0" expanded="true" />
+            <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+            <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#30629#30637#0" expanded="true" />
+            <element signature="e#30970#30978#0" expanded="true" />
+            <element signature="e#31162#31170#0" expanded="true" />
+            <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+            <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -862,11 +1023,27 @@
             <element signature="e#23232#23240#0" expanded="true" />
             <element signature="e#23484#23492#0" expanded="true" />
             <element signature="e#23651#23659#0" expanded="true" />
-            <element signature="e#29296#29304#0" expanded="true" />
-            <element signature="e#29637#29645#0" expanded="true" />
-            <element signature="e#29829#29837#0" expanded="true" />
-            <element signature="e#32842#32843#0" expanded="true" />
-            <element signature="e#32914#32915#0" expanded="true" />
+            <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+            <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#30629#30637#0" expanded="true" />
+            <element signature="e#30970#30978#0" expanded="true" />
+            <element signature="e#31162#31170#0" expanded="true" />
+            <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+            <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -903,11 +1080,27 @@
             <element signature="e#23232#23240#0" expanded="true" />
             <element signature="e#23484#23492#0" expanded="true" />
             <element signature="e#23651#23659#0" expanded="true" />
-            <element signature="e#29296#29304#0" expanded="true" />
-            <element signature="e#29637#29645#0" expanded="true" />
-            <element signature="e#29829#29837#0" expanded="true" />
-            <element signature="e#32842#32843#0" expanded="true" />
-            <element signature="e#32914#32915#0" expanded="true" />
+            <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+            <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#30629#30637#0" expanded="true" />
+            <element signature="e#30970#30978#0" expanded="true" />
+            <element signature="e#31162#31170#0" expanded="true" />
+            <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+            <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -944,11 +1137,27 @@
             <element signature="e#23232#23240#0" expanded="true" />
             <element signature="e#23484#23492#0" expanded="true" />
             <element signature="e#23651#23659#0" expanded="true" />
-            <element signature="e#29296#29304#0" expanded="true" />
-            <element signature="e#29637#29645#0" expanded="true" />
-            <element signature="e#29829#29837#0" expanded="true" />
-            <element signature="e#32842#32843#0" expanded="true" />
-            <element signature="e#32914#32915#0" expanded="true" />
+            <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+            <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#30629#30637#0" expanded="true" />
+            <element signature="e#30970#30978#0" expanded="true" />
+            <element signature="e#31162#31170#0" expanded="true" />
+            <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+            <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -985,11 +1194,27 @@
             <element signature="e#23232#23240#0" expanded="true" />
             <element signature="e#23484#23492#0" expanded="true" />
             <element signature="e#23651#23659#0" expanded="true" />
-            <element signature="e#29296#29304#0" expanded="true" />
-            <element signature="e#29637#29645#0" expanded="true" />
-            <element signature="e#29829#29837#0" expanded="true" />
-            <element signature="e#32842#32843#0" expanded="true" />
-            <element signature="e#32914#32915#0" expanded="true" />
+            <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+            <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#30629#30637#0" expanded="true" />
+            <element signature="e#30970#30978#0" expanded="true" />
+            <element signature="e#31162#31170#0" expanded="true" />
+            <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+            <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1026,11 +1251,27 @@
             <element signature="e#23232#23240#0" expanded="true" />
             <element signature="e#23484#23492#0" expanded="true" />
             <element signature="e#23651#23659#0" expanded="true" />
-            <element signature="e#29296#29304#0" expanded="true" />
-            <element signature="e#29637#29645#0" expanded="true" />
-            <element signature="e#29829#29837#0" expanded="true" />
-            <element signature="e#32842#32843#0" expanded="true" />
-            <element signature="e#32914#32915#0" expanded="true" />
+            <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+            <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#30629#30637#0" expanded="true" />
+            <element signature="e#30970#30978#0" expanded="true" />
+            <element signature="e#31162#31170#0" expanded="true" />
+            <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+            <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1067,11 +1308,27 @@
             <element signature="e#23232#23240#0" expanded="true" />
             <element signature="e#23484#23492#0" expanded="true" />
             <element signature="e#23651#23659#0" expanded="true" />
-            <element signature="e#29296#29304#0" expanded="true" />
-            <element signature="e#29637#29645#0" expanded="true" />
-            <element signature="e#29829#29837#0" expanded="true" />
-            <element signature="e#32842#32843#0" expanded="true" />
-            <element signature="e#32914#32915#0" expanded="true" />
+            <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+            <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#30629#30637#0" expanded="true" />
+            <element signature="e#30970#30978#0" expanded="true" />
+            <element signature="e#31162#31170#0" expanded="true" />
+            <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+            <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1108,11 +1365,27 @@
             <element signature="e#23232#23240#0" expanded="true" />
             <element signature="e#23484#23492#0" expanded="true" />
             <element signature="e#23651#23659#0" expanded="true" />
-            <element signature="e#29296#29304#0" expanded="true" />
-            <element signature="e#29637#29645#0" expanded="true" />
-            <element signature="e#29829#29837#0" expanded="true" />
-            <element signature="e#32842#32843#0" expanded="true" />
-            <element signature="e#32914#32915#0" expanded="true" />
+            <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+            <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#30629#30637#0" expanded="true" />
+            <element signature="e#30970#30978#0" expanded="true" />
+            <element signature="e#31162#31170#0" expanded="true" />
+            <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+            <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1164,8 +1437,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Project/myProject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.4909391">
-          <caret line="621" column="68" selection-start-line="621" selection-start-column="68" selection-end-line="621" selection-end-column="68" />
+        <state vertical-scroll-proportion="-1.8962109">
+          <caret line="556" column="66" selection-start-line="556" selection-start-column="66" selection-end-line="556" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2467#2475#0" expanded="true" />
@@ -1194,11 +1467,27 @@
             <element signature="e#23232#23240#0" expanded="true" />
             <element signature="e#23484#23492#0" expanded="true" />
             <element signature="e#23651#23659#0" expanded="true" />
-            <element signature="e#29296#29304#0" expanded="true" />
-            <element signature="e#29637#29645#0" expanded="true" />
-            <element signature="e#29829#29837#0" expanded="true" />
-            <element signature="e#32842#32843#0" expanded="true" />
-            <element signature="e#32914#32915#0" expanded="true" />
+            <element signature="method#TextNotEditableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningTextToTextfield#0;class#myProject#0" expanded="false" />
+            <element signature="method#AtbashTranslator#0;class#myProject#0" expanded="false" />
+            <element signature="e#30629#30637#0" expanded="true" />
+            <element signature="e#30970#30978#0" expanded="true" />
+            <element signature="e#31162#31170#0" expanded="true" />
+            <element signature="method#CheckUppercase#0;class#myProject#0" expanded="false" />
+            <element signature="method#SetPromptText#0;class#myProject#0" expanded="false" />
+            <element signature="method#FileToHashMap#0;class#myProject#0" expanded="false" />
+            <element signature="method#WarningLableStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#TextNotEditable#0;class#myProject#0" expanded="false" />
+            <element signature="method#PaneStyle#0;class#myProject#0" expanded="false" />
+            <element signature="method#ReturnToMainView#0;class#myProject#0" expanded="false" />
+            <element signature="method#ChangeABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#DefineABC#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsToVbox#0;class#myProject#0" expanded="false" />
+            <element signature="method#ButtonsSameSize#0;class#myProject#0" expanded="false" />
+            <element signature="method#ShowInfoPicture#0;class#myProject#0" expanded="false" />
+            <element signature="method#DisplayInfo#0;class#myProject#0" expanded="false" />
+            <element signature="method#ClearFields#0;class#myProject#0" expanded="false" />
+            <element signature="method#SwapWords#0;class#myProject#0" expanded="false" />
           </folding>
         </state>
       </provider>
