@@ -411,7 +411,7 @@ public class myProject extends Application {
 
                 for (int i = 0; i < mLettersInWord; i++) {
                     String mLetter = mWordList[i];
-                    if (mWordList[i].contains("/") && !mWordList[i].matches("/")){
+                    /*if (mWordList[i].contains("/") && !mWordList[i].matches("/")){
                         String[] mTempWordList = mLetter.split("/");
                         List<String> mTempOutputList = new ArrayList<>();
                         for (int j = 0; j < 2; j++) {
@@ -424,7 +424,7 @@ public class myProject extends Application {
                         mTempOutputList.add(1," ");
                         String mTempOutput = String.join("",mTempOutputList);
                         mOutputList.add(mTempOutput);
-                    } else if (mWordList[i].equals("/")) {
+                    } else*/ if (mWordList[i].equals("/")) {
                         mOutputList.add(i," "); //Replace "/" with a whitespace
                     } else if (!mList.containsKey(mLetter)){
                         mOutputList.add(i,"#");
@@ -564,36 +564,70 @@ public class myProject extends Application {
                 OtherLetters = "NotEmpty"; //adds some string for next comparison to return false
             }
 
-            if ((!FirstLetter.matches("[0-9]*") || !FirstLetter.matches("-")) && !OtherLetters.matches("[0-9]*")) {
-                String cErrorText = "The step must be an integer!"; //error displayed if step is not a number
-                WarningTextToTextfield(NewWord, cErrorText);
-            } else if (Float.parseFloat(StepString) > Integer.MAX_VALUE ||
-                    Float.parseFloat(StepString) < Integer.MIN_VALUE) {
-                String cErrorText = "The absalute value of the step is too big!"; //error displayed if step is too big to be integer (java)
-                WarningTextToTextfield(NewWord, cErrorText);
-            } else {
-                int step = Math.round(Float.parseFloat(StepString)); //save Step as int
-                for (int i = 0; i < cLettersInWord; i++) {
-                    String cLetter = cWordList.get(i);
-                    if (!cABClist.contains(cLetter)) { //adding characters that are not in ABC
-                        cOutputList.add(i, cLetter);
-                    }
-                    else {
-                        int cABCindex = cABClist.indexOf(cLetter); //find the index of letter (from word) in ABC
-                        int cABCindex2 = (cABCindex + step) % cLettersInABC;
+            if (FirstLetter.matches("-")){
+                if (!OtherLetters.matches("[0-9]*")){
+                    String cErrorText = "The step must be an integer!"; //error displayed if step is not a number
+                    WarningTextToTextfield(NewWord, cErrorText);
+                } else {
+                    if (Float.parseFloat(StepString) > Integer.MAX_VALUE ||
+                            Float.parseFloat(StepString) < Integer.MIN_VALUE) {
+                        String cErrorText = "The absalute value of the step is too big!"; //error displayed if step is too big to be integer (java)
+                        WarningTextToTextfield(NewWord, cErrorText);
+                    } else {
+                        int step = Math.round(Float.parseFloat(StepString)); //save Step as int
+                        for (int i = 0; i < cLettersInWord; i++) {
+                            String cLetter = cWordList.get(i);
+                            if (!cABClist.contains(cLetter)) { //adding characters that are not in ABC
+                                cOutputList.add(i, cLetter);
+                            } else {
+                                int cABCindex = cABClist.indexOf(cLetter); //find the index of letter (from word) in ABC
+                                int cABCindex2 = (cABCindex + step) % cLettersInABC;
 
-                        if (cABCindex2 < 0) {
-                            if (Math.abs(step) > cLettersInABC){ //reduces the length of step (step <= ABC)
-                                step =  step % cLettersInABC;
+                                if (cABCindex2 < 0) {
+                                    if (Math.abs(step) > cLettersInABC) { //reduces the length of step (step <= ABC)
+                                        step = step % cLettersInABC;
+                                    }
+                                    cABCindex2 = cLettersInABC + cABCindex2;
+                                }
+                                cOutputList.add(i, cABClist.get(cABCindex2));
                             }
-                            cABCindex2 = cLettersInABC + cABCindex2;
                         }
-                        cOutputList.add(i,cABClist.get(cABCindex2));
+                        CheckUppercase(cLettersInWord, cOutputList, cUserInput);
+                        String cOutput = String.join("", cOutputList);
+                        NewWord.setText(cOutput);
                     }
                 }
-                CheckUppercase(cLettersInWord,cOutputList,cUserInput);
-                String cOutput = String.join("",cOutputList);
-                NewWord.setText(cOutput);
+            } else {
+                if (!FirstLetter.matches("[0-9]*")) {
+                    String cErrorText = "The step must be an integer!"; //error displayed if step is not a number
+                    WarningTextToTextfield(NewWord, cErrorText);
+                } else if (Float.parseFloat(StepString) > Integer.MAX_VALUE ||
+                        Float.parseFloat(StepString) < Integer.MIN_VALUE) {
+                    String cErrorText = "The absalute value of the step is too big!"; //error displayed if step is too big to be integer (java)
+                    WarningTextToTextfield(NewWord, cErrorText);
+                } else {
+                    int step = Math.round(Float.parseFloat(StepString)); //save Step as int
+                    for (int i = 0; i < cLettersInWord; i++) {
+                        String cLetter = cWordList.get(i);
+                        if (!cABClist.contains(cLetter)) { //adding characters that are not in ABC
+                            cOutputList.add(i, cLetter);
+                        } else {
+                            int cABCindex = cABClist.indexOf(cLetter); //find the index of letter (from word) in ABC
+                            int cABCindex2 = (cABCindex + step) % cLettersInABC;
+
+                            if (cABCindex2 < 0) {
+                                if (Math.abs(step) > cLettersInABC) { //reduces the length of step (step <= ABC)
+                                    step = step % cLettersInABC;
+                                }
+                                cABCindex2 = cLettersInABC + cABCindex2;
+                            }
+                            cOutputList.add(i, cABClist.get(cABCindex2));
+                        }
+                    }
+                    CheckUppercase(cLettersInWord, cOutputList, cUserInput);
+                    String cOutput = String.join("", cOutputList);
+                    NewWord.setText(cOutput);
+                }
             }
         }
         return NewWord;
