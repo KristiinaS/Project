@@ -27,29 +27,39 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
 import java.util.List;
+;
+import static Project.CreateWindow.*;
+import static Project.GlobalMethods.*;
+import static Project.GlobalVariables.*;
 
 /**
  * Created by Kristiina on 30.11.2015.
  */
 
 public class myProject extends Application {
-    Button AtbashButton, CaesarButton, VigenereButton, MorseButton, ReturnButton, CloseButton;
-    Scene mainScene, AtbashScene, CaesarScene, VigenereScene, MorseScene;
-    VBox mainvbox, Atbashvbox, Caesarvbox, Vigenerevbox, Morsevbox;
-    Stage mainStage;
-    Tooltip Choose = new Tooltip("Choose alphabet");
+    //Buttons ReturnButton = new Buttons("Return to menu");
+
+    //Button AtbashButton, CaesarButton, VigenereButton, MorseButton, /*ReturnButton,*/ CloseButton;
+    //Scene /*mainScene,*/ AtbashScene, CaesarScene, VigenereScene, MorseScene;
+    //VBox mainvbox, Atbashvbox, Caesarvbox, Vigenerevbox, Morsevbox;
+    //Stage mainStage;
+    //Tooltip Choose = new Tooltip("Choose alphabet");
 
     //String BackgroundPictureURL = "http://www.webdesignhot.com/wp-content/uploads/2012/09/Abstract-Green-Bokeh-Light-Background-Vector-Graphic.jpg";
 
+    /*
     Image BackgroundPicture = new Image("file:Background.jpg");
     int width = (int) BackgroundPicture.getWidth();
     int height = (int) BackgroundPicture.getHeight();
     BackgroundImage BackgroundImage = new BackgroundImage(BackgroundPicture,null,null,BackgroundPosition.CENTER,null);
     Background Background = new Background(BackgroundImage);
 
-
     int buttonWidth = width/3;
-    int vBoxPadding = 5;
+*/
+
+    //public static int vBoxPadding = 5;
+
+/*
     String TextBackgroundColor = "#F2F2F2";
 
     String ABCinputText = "Insert the alphabet here or choose it from the list below";
@@ -62,12 +72,13 @@ public class myProject extends Application {
 
     List<String> ABClanguages = new ArrayList<String>(Arrays.asList("User defined alphabet","Estonian",
             "English", "Russian","Danish/Norwegian","Swedish"));
+*/
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         mainStage = primaryStage;
 
-        mainvbox = new VBox();
+        VBox mainvbox = new VBox();
         mainScene = new Scene(mainvbox, width, height);
         mainStage.setResizable(false);
         mainStage.sizeToScene();
@@ -80,28 +91,28 @@ public class myProject extends Application {
         WelcomeTextStyle(welcomeText);
 
         // defining buttons on main page
-        AtbashButton = new Button("Atbash Cipher");
-        CaesarButton = new Button("Caesar Shift Cipher");
-        VigenereButton = new Button("Vigenère Cipher");
-        MorseButton = new Button("Morse Code");
-        ReturnButton = new Button("Return to menu");
-        CloseButton = new Button("Close window");
+        Buttons AtbashButton = new Buttons("Atbash Cipher");
+        Buttons CaesarButton = new Buttons("Caesar Shift Cipher");
+        Buttons VigenereButton = new Buttons("Vigenère Cipher");
+        Buttons MorseButton = new Buttons("Morse Code");
+        //ReturnButton = new Button("Return to menu");
+        //CloseButton = new Button("Close window");
 
-        ButtonsSameSize(null, AtbashButton, CaesarButton, null, VigenereButton, MorseButton);// making the buttons same size
+        //ButtonsSameSize(null, AtbashButton, CaesarButton, null, VigenereButton, MorseButton);// making the buttons same size
 
         PaneStyle(mainvbox); //background & alignment
         mainvbox.getChildren().addAll(welcomeText,AtbashButton,CaesarButton,VigenereButton,MorseButton);
-        
+/*
         CloseButton.setOnAction(event2 -> {
             CloseWindow();
         });
-
+*/
         ReturnButton.setOnAction(event1 -> { // Button which takes back to the main view
             ReturnToMainView();
         });
 
         AtbashButton.setOnAction(event -> { // Atbach Cipher content
-            AtbashWindow();
+            AtbashCipher.AtbashCipher();
         });
 
         CaesarButton.setOnAction(event -> { //Caesar Cipher content
@@ -116,16 +127,16 @@ public class myProject extends Application {
             MorseWindow();
         });
     }
-
+/*
     private void CloseWindow() {
         Stage stage = (Stage) CloseButton.getScene().getWindow();
         stage.close();
     }
-
+*/
     private void VigenereWindow() {
-        Vigenerevbox = new VBox();
+        VBox Vigenerevbox = new VBox();
         Vigenerevbox.setPadding(new Insets(vBoxPadding));
-        VigenereScene = new Scene(Vigenerevbox, width, height);
+        Scene VigenereScene = new Scene(Vigenerevbox, width, height);
         mainStage.setScene(VigenereScene);
         mainStage.setTitle("Vigenère Cipher");
         mainStage.show();
@@ -143,27 +154,30 @@ public class myProject extends Application {
         TextField vABCinput = new TextField();
         TextField vKeyInput = new TextField();
         TextField vWordInput = new TextField();
-        SetPromptText(vABCinput,ABCinputText,vKeyInput,vKeyInputText,vWordInput,vWordInputText);
+        SetPromptText(vABCinput,ABCinputText);
+        SetPromptText(vKeyInput,vKeyInputText);
+        SetPromptText(vWordInput,vWordInputText);
         TextField vNewWord = new TextField(vNewWordText);
         TextNotEditable(vNewWord); //cannot change text in TextField
 
-        Button vEncode = new Button("Encode");
-        Button vDecode = new Button("Decode");
-        Button vClear = new Button("Clear fields");
-        Button vSwap = new Button("Answer to input");
-        Button vInfo = new Button("Info");
+        Buttons vEncode = new Buttons("Encode");
+        Buttons vDecode = new Buttons("Decode");
+        Buttons vClear = new Buttons("Clear fields");
+        Buttons vSwap = new Buttons("Answer to input");
+        Buttons vInfo = new Buttons("Info");
 
         //Defining the drop down menu
-        ChoiceBox<String> vLanguageABC = new ChoiceBox<String>(FXCollections.observableArrayList(ABClanguages));
-        DefineABC(vLanguageABC);
-        ChangeABC(vLanguageABC,vABCinput);//replace alphabet if language is chosen from drop down menu
+        //ChoiceBox<String> vLanguageABC = new ChoiceBox<String>(FXCollections.observableArrayList(ABClanguages));
+        //DefineABC(vLanguageABC);
+        //ChangeABC(LanguageABC,vABCinput);//replace alphabet if language is chosen from drop down menu
+        DefineABC();
 
         FocusOnField(vClear);
-        ButtonsSameSize(vLanguageABC,vClear,vEncode,vDecode,vInfo,vSwap);
+        //ButtonsSameSize(vLanguageABC,vClear,vEncode,vDecode,vInfo,vSwap);
 
         PaneStyle(Vigenerevbox);
         Vigenerevbox.getChildren().addAll(vWelcomeText,vABCinput,vKeyInput,vWordInput,vNewWord,
-                ButtonsToVbox(vLanguageABC,vClear,vEncode,vDecode,vInfo,vSwap));
+                ButtonsToVbox(ABCchoiceBox,vClear,vEncode,vDecode,vInfo,vSwap));
 
         vSwap.setOnAction(event2 -> {
             SwapWords(vNewWord, vWordInput);
@@ -178,14 +192,14 @@ public class myProject extends Application {
         });
 
         vClear.setOnAction(event1 -> {
-            ClearFields(vLanguageABC, vABCinput, vKeyInput, vKeyInputText, vWordInput, vWordInputText,
+            ClearFields(ABCchoiceBox, vABCinput, vKeyInput, vKeyInputText, vWordInput, vWordInputText,
                     vNewWord, vNewWordText);
         });
 
         vInfo.setOnAction(event2 -> {
             String vHeaderText = "Vigenère Cipher";
             String vButtonTitle = "Vigenère table";
-            Button vTable = new Button(vButtonTitle);
+            Buttons vTable = new Buttons(vButtonTitle);
             DisplayInfo(vHeaderText, ReadTextFromFile("VigenereInfo.txt"), false,vTable);
 
             vTable.setOnAction(event1 -> {
@@ -195,9 +209,9 @@ public class myProject extends Application {
     }
 
     private void MorseWindow() {
-        Morsevbox = new VBox();
+        VBox Morsevbox = new VBox();
         Morsevbox.setPadding(new Insets(vBoxPadding));
-        MorseScene = new Scene(Morsevbox, width, height);
+        Scene MorseScene = new Scene(Morsevbox, width, height);
         mainStage.setScene(MorseScene);
         mainStage.setTitle("Morse Code");
         mainStage.show();
@@ -211,17 +225,17 @@ public class myProject extends Application {
         String mWordInputText = "Insert the text or Morse code you want to translate here";
         String mNewWordText = "Your answer will be displayed here";
         TextField mWordInput = new TextField();
-        SetPromptText(mWordInput,mWordInputText,null,null,null,null);
+        SetPromptText(mWordInput,mWordInputText);
         TextField mNewWord = new TextField(mNewWordText);
         TextNotEditable(mNewWord);//cannot change text in TextField
 
-        Button mTranslate = new Button("Translate!");
-        Button mClear = new Button("Clear fields");
-        Button mInfo = new Button("Info");
-        Button mSwap = new Button("Answer to input");
+        Buttons mTranslate = new Buttons("Translate!");
+        Buttons mClear = new Buttons("Clear fields");
+        Buttons mInfo = new Buttons("Info");
+        Buttons mSwap = new Buttons("Answer to input");
 
         FocusOnField(mClear);
-        ButtonsSameSize(null,mTranslate,mClear, null,mSwap,mInfo);
+        //ButtonsSameSize(null,mTranslate,mClear, null,mSwap,mInfo);
 
         PaneStyle(Morsevbox);
         Morsevbox.getChildren().addAll(mWelcomeText,mWordInput,mNewWord,
@@ -243,7 +257,7 @@ public class myProject extends Application {
         mInfo.setOnAction(event1 -> {
             String mHeaderText = "Morse Code";
             String mButtonTitle = "International Morse alphabet";
-            Button mAlphabet = new Button(mButtonTitle);
+            Buttons mAlphabet = new Buttons(mButtonTitle);
             DisplayInfo(mHeaderText, ReadTextFromFile("MorseInfo.txt"), false,mAlphabet);
 
             mAlphabet.setOnAction(event2 -> {
@@ -253,9 +267,9 @@ public class myProject extends Application {
     }
 
     private void CaesarWindow() {
-        Caesarvbox = new VBox();
+        VBox Caesarvbox = new VBox();
         Caesarvbox.setPadding(new Insets(vBoxPadding));
-        CaesarScene = new Scene(Caesarvbox, width, height);
+        Scene CaesarScene = new Scene(Caesarvbox, width, height);
         mainStage.setScene(CaesarScene);
         mainStage.setTitle("Caesar Cipher");
         mainStage.show();
@@ -272,33 +286,35 @@ public class myProject extends Application {
         TextField cABCinput = new TextField();
         TextField cStepInput = new TextField();
         TextField cWordInput = new TextField();
-        SetPromptText(cABCinput,ABCinputText,cStepInput,cStepInputText,cWordInput,cWordInputText);
+        SetPromptText(cABCinput,ABCinputText);
+        SetPromptText(cStepInput,cStepInputText);
+        SetPromptText(cWordInput,cWordInputText);
         TextField cNewWord = new TextField(cNewWordText);
         TextNotEditable(cNewWord);//cannot change text in TextField
 
-        Button cInsert = new Button("Try the cipher!");
-        Button cClear = new Button("Clear fields");
-        Button cSwap = new Button("Answer to input");
-        Button cInfo = new Button("Info");
+        Buttons cInsert = new Buttons("Try the cipher!");
+        Buttons cClear = new Buttons("Clear fields");
+        Buttons cSwap = new Buttons("Answer to input");
+        Buttons cInfo = new Buttons("Info");
 
         //Defining the drop down menu
-        ChoiceBox<String> cLanguageABC = new ChoiceBox<String>(FXCollections.observableArrayList(ABClanguages));
-        DefineABC(cLanguageABC);
-        ChangeABC(cLanguageABC, cABCinput);//replace alphabet if language is chosen from drop down menu
+        //ChoiceBox<String> cLanguageABC = new ChoiceBox<String>(FXCollections.observableArrayList(ABClanguages));
+        DefineABC();
+        ChangeABC(ABCchoiceBox, cABCinput);//replace alphabet if language is chosen from drop down menu
 
         FocusOnField(cClear);
-        ButtonsSameSize(cLanguageABC,cClear,cInsert,null,cInfo,cSwap);
+        //ButtonsSameSize(cLanguageABC,cClear,cInsert,null,cInfo,cSwap);
 
         PaneStyle(Caesarvbox);
         Caesarvbox.getChildren().addAll(cWelcomeText,cABCinput,cStepInput,cWordInput,cNewWord,
-                ButtonsToVbox(cLanguageABC,cClear,cInsert,null,cInfo,cSwap));
+                ButtonsToVbox(ABCchoiceBox,cClear,cInsert,null,cInfo,cSwap));
 
         cSwap.setOnAction(event2 -> {
             SwapWords(cNewWord, cWordInput);
         });
 
         cClear.setOnAction(event1 -> {
-            ClearFields(cLanguageABC, cABCinput, cStepInput, cStepInputText, cWordInput, cWordInputText, cNewWord, cNewWordText);
+            ClearFields(ABCchoiceBox, cABCinput, cStepInput, cStepInputText, cWordInput, cWordInputText, cNewWord, cNewWordText);
 
         });
 
@@ -311,11 +327,11 @@ public class myProject extends Application {
             CaesarTranslator(cABCinput,cWordInput,cStepInput,cNewWord);
         });
     }
-
+    /*
     private void AtbashWindow() {
-        Atbashvbox = new VBox();
+        VBox Atbashvbox = new VBox();
         Atbashvbox.setPadding(new Insets(vBoxPadding));
-        AtbashScene = new Scene(Atbashvbox, width, height);
+        Scene AtbashScene = new Scene(Atbashvbox, width, height);
         mainStage.setScene(AtbashScene);
         mainStage.setTitle("Atbash Cipher");
         mainStage.show();
@@ -330,26 +346,27 @@ public class myProject extends Application {
         String aNewWordText = "Your answer will be displayed here";
         TextField aABCinput = new TextField();
         TextField aWordInput = new TextField();
-        SetPromptText(aABCinput,ABCinputText,aWordInput,aWordInputText,null,null);
+        SetPromptText(aABCinput,ABCinputText);
+        SetPromptText(aWordInput,aWordInputText);
         TextField aNewWord = new TextField(aNewWordText);
         TextNotEditable(aNewWord);//cannot change text in TextField
 
         //Defining the drop down menu
-        ChoiceBox<String> aLanguageABC = new ChoiceBox<String>(FXCollections.observableArrayList(ABClanguages));
-        DefineABC(aLanguageABC);
-        ChangeABC(aLanguageABC,aABCinput);//replace alphabet if different ABC is chosen from drop down menu
+        //ChoiceBox<String> aLanguageABC = new ChoiceBox<String>(FXCollections.observableArrayList(ABClanguages));
+        DefineABC();
+        ChangeABC(LanguageABC,aABCinput);//replace alphabet if different ABC is chosen from drop down menu
 
-        Button aInsert = new Button("Try the cipher!");
-        Button aClear = new Button("Clear fields");
-        Button aSwap = new Button("Answer to input");
-        Button aInfo = new Button("Info");
+        Buttons aInsert = new Buttons("Try the cipher!");
+        Buttons aClear = new Buttons("Clear fields");
+        Buttons aSwap = new Buttons("Answer to input");
+        Buttons aInfo = new Buttons("Info");
 
         FocusOnField(aClear);
-        ButtonsSameSize(aLanguageABC,aClear,aInsert,null,aInfo,aSwap);
+        //ButtonsSameSize(aLanguageABC,aClear,aInsert,null,aInfo,aSwap);
 
         PaneStyle(Atbashvbox);
         Atbashvbox.getChildren().addAll(aWelcomeText,aABCinput,aWordInput,aNewWord,
-                ButtonsToVbox(aLanguageABC,aClear,aInsert,null,aInfo,aSwap));
+                ButtonsToVbox(LanguageABC,aClear,aInsert,null,aInfo,aSwap));
 
         aSwap.setOnAction(event2 -> {
             SwapWords(aNewWord, aWordInput);
@@ -358,7 +375,7 @@ public class myProject extends Application {
 
         // button that resets the fields to their original state
         aClear.setOnAction(event1 -> {
-            ClearFields(aLanguageABC, aABCinput, null, null, aWordInput, aWordInputText, aNewWord, aNewWordText);
+            ClearFields(LanguageABC, aABCinput, null, null, aWordInput, aWordInputText, aNewWord, aNewWordText);
         });
 
         // button with information about Atbash
@@ -372,7 +389,7 @@ public class myProject extends Application {
             AtbashTranslator(aABCinput,aWordInput,aNewWord);
         });
     }
-
+*/
     private String ReadTextFromFile(String FileName) {
         String InfoText = "";
         try {
@@ -382,7 +399,7 @@ public class myProject extends Application {
         }
         return InfoText;
     }
-
+/*
     private void FocusOnField(Button Button) {
         Platform.runLater(new Runnable() {
             @Override
@@ -391,7 +408,7 @@ public class myProject extends Application {
             }
         });
     }
-
+*/
     private TextField MorseTranslator(TextField WordInput, TextField NewWord) {
         String mWord = WordInput.getText(); //save input from TextField
         List<String> mOutputList = new ArrayList<String>(); // Empty list for the new word
@@ -657,11 +674,11 @@ public class myProject extends Application {
         }
         return NewWord;
     }
-
+/*
     private void TextNotEditableStyle(TextField NewWord) {
         NewWord.setStyle("-fx-text-inner-color: black; -fx-background-color:" + TextBackgroundColor);
     }
-
+*/
     private void WarningTextToTextfield(TextField NewWord,String ErrorText) {
         NewWord.setStyle("-fx-text-inner-color: red; -fx-background-color:" + TextBackgroundColor + "; " +
                 "-fx-font-style: italic");
@@ -714,8 +731,8 @@ public class myProject extends Application {
         }
         return OutputList;
     }
-
-    private void SetPromptText(TextField Field1,String Text1, TextField Field2,String Text2,
+/*
+    public static void SetPromptText(TextField Field1,String Text1, TextField Field2,String Text2,
                                TextField Field3, String Text3) {
         Field1.clear();
         if (Field3 == null){
@@ -735,7 +752,7 @@ public class myProject extends Application {
             Field3.setPromptText(Text3);
         }
     }
-
+*/
     private HashMap<String, String> FileToHashMap(boolean isMorse,String Line, HashMap<String, String> List,BufferedReader BR)
             throws IOException {
         while (Line != null) {
@@ -751,40 +768,44 @@ public class myProject extends Application {
         }
         return List;
     }
-
+/*
     private void WelcomeTextStyle(Label WelcomeText) {
         WelcomeText.setFont(Font.font(null, FontWeight.BOLD,20));
     }
-
+*/
+    /*
     private void WarningLableStyle(Label Warning) {
         Warning.setFont(Font.font(null, FontPosture.ITALIC,14));
         Warning.setTextFill(Color.RED);
     }
-
+*/
+    /*
     private void TextNotEditable(TextField NewWord) {
         NewWord.setEditable(false);
         NewWord.setFocusTraversable(false);
         NewWord.setStyle("-fx-text-inner-color: black; -fx-background-color:" + TextBackgroundColor);
     }
-
+    */
+/*
     private void PaneStyle(VBox pane) {
         pane.setBackground(Background);
         pane.setAlignment(Pos.CENTER); // aligning main view text to center of the window
     }
-
-    private void ReturnToMainView() {
+    */
+/*
+    public static void ReturnToMainView() {
         mainStage.setScene(mainScene);
         mainStage.setTitle("Ciphers");
         mainStage.show();
     }
-
-    private void ChangeABC(ChoiceBox<String> LanguageABC,TextField ABCinput) {
+*/
+    private void ChangeABC(ChoiceBox<String> ABCchoiceBox,TextField ABCinput) {
         //replace alphabet if language is chosen from drop down menu
-        LanguageABC.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+        ABCchoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 if (Alphabets[newValue.intValue()].equals(ABCinputText)){
-                    SetPromptText(ABCinput,ABCinputText,null,null,null,null);
+                    SetPromptText(ABCinput,ABCinputText);
                 } else {
                     ABCinput.setText(Alphabets[newValue.intValue()]);
                 }
@@ -792,11 +813,14 @@ public class myProject extends Application {
         });
     }
 
+    /*
     private ChoiceBox<String> DefineABC(ChoiceBox<String> LanguageABC) {
         LanguageABC.setTooltip(Choose); //dispay text if mouse is hovering over the button
         LanguageABC.getSelectionModel().selectFirst(); //dispays the first selectin by default
         return LanguageABC;
     }
+    */
+
 
     private VBox ButtonsToVbox(ChoiceBox<String> Button1,Button Button2,Button Button3,Button Button4,Button Button5,
                                Button Button6) {
@@ -835,6 +859,7 @@ public class myProject extends Application {
         return subPane;
     }
 
+/*
     private void ButtonsSameSize(ChoiceBox<String> Button1,Button Button2,Button Button3,Button Button4,Button Button5,
                                  Button Button6) {
         ReturnButton.setMaxWidth(buttonWidth);
@@ -879,6 +904,7 @@ public class myProject extends Application {
             HBox.setHgrow(Button6,Priority.ALWAYS);
         }
     }
+*/
 
     private void ShowInfoPicture(String Title, String Filename) {
         Image Picture = new Image("file:" + Filename);
@@ -938,23 +964,26 @@ public class myProject extends Application {
         }
     }
 
-    private void ClearFields(ChoiceBox<String> LanguageABC,TextField ABCinput,TextField StepInput,String StepInputText,
+    private void ClearFields(ChoiceBox<String> ABCchoiceBox,TextField ABCinput,TextField StepInput,String StepInputText,
                        TextField WordInput,String WordInputText,TextField NewWord,String NewWordText) {
         TextNotEditableStyle(NewWord);
 
         if (StepInput == null) {
             if (ABCinput == null){ //if step and alphabet don't exist
-                SetPromptText(WordInput,WordInputText,null,null,null,null);
+                SetPromptText(WordInput,WordInputText);
                 NewWord.setText(NewWordText);
             } else { //if step doesn't exist
-                SetPromptText(ABCinput,ABCinputText,WordInput,WordInputText,null,null);
+                SetPromptText(ABCinput,ABCinputText);
+                SetPromptText(WordInput,WordInputText);
                 NewWord.setText(NewWordText);
-                LanguageABC.getSelectionModel().selectFirst();
+                ABCchoiceBox.getSelectionModel().selectFirst();
             }
         } else { //if everything exists
-            SetPromptText(ABCinput,ABCinputText,WordInput,WordInputText,StepInput,StepInputText);
+            SetPromptText(ABCinput,ABCinputText);
+            SetPromptText(WordInput,WordInputText);
+            SetPromptText(StepInput,StepInputText);
             NewWord.setText(NewWordText);
-            LanguageABC.getSelectionModel().selectFirst();
+            ABCchoiceBox.getSelectionModel().selectFirst();
         }
     }
 
@@ -963,3 +992,5 @@ public class myProject extends Application {
         WordInput.setText(CipherWord);
     }
 }
+
+
