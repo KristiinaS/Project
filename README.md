@@ -1,5 +1,4 @@
 # Project - Ciphers and Codes
-**Kristiina Sikkar**
 
 Antud programmis on koos erinevad šifrid ja koodid. Hetkel on olemas järgnevad šifrid ja koodid:
 * Šifrid
